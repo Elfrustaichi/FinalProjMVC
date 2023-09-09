@@ -1,0 +1,36 @@
+$color_1: #212529;
+$color_2: #7e7e7e;
+
+.page-not-found {
+	.page-image {
+		text-align: center;
+		img {
+			width: 60%;
+		}
+	}
+	.page-container {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-align: center;
+		-ms-flex-align: center;
+		align-items: center;
+		-webkit-box-pack: center;
+		-ms-flex-pack: center;
+		justify-content: center;
+		text-align: center;
+		padding: 0 calc(0px + (50 - 0) * ((100vw - 320px) / (1920 - 320)));
+		margin-top: calc(10px + (20 - 10) * ((100vw - 320px) / (1920 - 320)));
+		h2 {
+			margin-bottom: calc(15px + (20 - 15) * ((100vw - 320px) / (1920 - 320)));
+			color: $color_1;
+			font-size: calc(25px + (35 - 25) * ((100vw - 320px) / (1920 - 320)));
+			margin-top: -3px;
+		}
+		p {
+			font-size: 16px;
+			line-height: 1.6;
+			color: $color_2;
+		}
+	}
+}

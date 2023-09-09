@@ -1,0 +1,125 @@
+$color_1: #fff;
+$color_2: #212529;
+$background-color_1: #e9e9e9;
+
+.cookie-bar-section {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	max-width: 365px;
+	background: #eff2f7;
+	padding: 30px;
+	border-radius: 0;
+	-webkit-box-shadow: 1px 7px 14px -5px rgba(0, 0, 0, 0.15);
+	box-shadow: 1px 7px 14px -5px rgba(0, 0, 0, 0.15);
+	text-align: center;
+	z-index: 99;
+	-webkit-box-shadow: 0 4px 7px rgba(0, 0, 0, 0.15);
+	box-shadow: 0 4px 7px rgba(0, 0, 0, 0.15);
+	opacity: 1;
+	-webkit-transition: 0.5s ease;
+	transition: 0.5s ease;
+	img {
+		max-width: calc(40px + (60 - 40) * ((100vw - 320px) / (1920 - 320)));
+	}
+	&::-moz-selection {
+		color: $color_1;
+		background: #fcba7f;
+	}
+	&::selection {
+		color: $color_1;
+		background: #fcba7f;
+	}
+}
+.cookie-bar-section.cookiebar-left-section {
+	right: unset;
+	left: 20px;
+}
+[dir="rtl"] {
+	.cookie-bar-section {
+		right: unset;
+		left: 20px;
+	}
+}
+.cookie-bar-section.chair-cookiebar {
+	background-color: $background-color_1;
+}
+.cookie-bar-section.hide {
+	opacity: 0;
+	bottom: -350px;
+}
+.content {
+	margin-top: 10px;
+	h3 {
+		color: $color_2;
+		font-size: calc(16px + (22 - 16) * ((100vw - 320px) / (1920 - 320)));
+		font-weight: 600;
+	}
+	p {
+		margin: calc(8px + (12 - 8) * ((100vw - 320px) / (1920 - 320))) 0;
+		line-height: 1.6;
+		letter-spacing: 0.03em;
+	}
+	.buttons {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-align: center;
+		-ms-flex-align: center;
+		align-items: center;
+		-webkit-box-pack: center;
+		-ms-flex-pack: center;
+		justify-content: center;
+	}
+}
+@media (max-width: 767px) {
+	.cookie-bar-section.cookiebar-left-section {
+		bottom: 10px;
+		left: 10px;
+	}
+	[dir="rtl"] {
+		.cookie-bar-section.cookiebar-left-section {
+			left: unset;
+			right: 10px;
+		}
+		.cookie-bar-section {
+			right: unset;
+			left: 10px;
+		}
+	}
+	.cookie-bar-section {
+		bottom: 10px;
+		right: 10px;
+	}
+}
+@media (max-width: 360px) {
+	.cookie-bar-section.cookiebar-left-section {
+		bottom: 0;
+		left: 0;
+		margin: 15px;
+		padding: 20px 10px;
+		border-radius: 7px;
+	}
+	[dir="rtl"] {
+		.cookie-bar-section.cookiebar-left-section {
+			left: unset;
+			right: 0;
+		}
+		.cookie-bar-section {
+			right: unset;
+			left: 0;
+		}
+	}
+	.cookie-bar-section {
+		bottom: 0;
+		right: 0;
+		margin: 10px;
+		padding: 20px 10px;
+		border-radius: 7px;
+	}
+	.content {
+		h3 {
+			font-size: 19px;
+		}
+	}
+}

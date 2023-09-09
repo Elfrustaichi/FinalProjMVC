@@ -1,0 +1,22 @@
+$color_1: var(--theme-color);
+
+.load-more {
+	text-align: center;
+	margin: 40px auto 0;
+	width: 280px;
+	a {
+		font-size: 18px;
+		text-transform: uppercase;
+		display: block;
+		padding: 10px 0;
+		border-top: 1px solid #ddd;
+		border-bottom: 1px solid #ddd;
+		width: 100%;
+		color: $color_1;
+	}
+}
+.product-load-more {
+	.col-grid-box {
+		display: none;
+	}
+}

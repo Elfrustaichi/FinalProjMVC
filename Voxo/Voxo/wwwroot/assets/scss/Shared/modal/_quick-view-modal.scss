@@ -1,0 +1,256 @@
+$color_1: #fff;
+$font-family_1: "Font Awesome 5 Free";
+
+.quick-view-modal {
+	.btn-close {
+		width: 54px;
+		height: 54px;
+		top: -50px;
+		right: -50px;
+		line-height: 54px;
+		position: absolute;
+		text-decoration: none;
+		text-align: center;
+		color: $color_1;
+		background: 0 0;
+		border: none;
+		cursor: pointer;
+		-webkit-transition: all 0.2s linear;
+		transition: all 0.2s linear;
+		opacity: 1;
+		&:before {
+			content: "\f00d";
+			font-family: $font-family_1;
+			font-weight: 900;
+			font-size: 22px;
+		}
+	}
+	.modal-body {
+		padding: calc(15px + (30 - 15) * ((100vw - 320px) / (1920 - 320)));
+	}
+	.quick-view-image {
+		position: relative;
+		img {
+			width: 100%;
+		}
+		.quick-nav {
+			position: absolute;
+			bottom: 20px;
+			left: 20px;
+			.slick-slide {
+				>div {
+					img {
+						margin: 0;
+						border: 1px solid #ced4da;
+						width: 40px;
+						height: 40px;
+						-o-object-fit: cover;
+						object-fit: cover;
+					}
+				}
+			}
+			.slick-slide.slick-current {
+				>div {
+					img {
+						border: 1px solid var(--theme-color);
+					}
+				}
+			}
+		}
+	}
+	.product-right.veg-product-right {
+		h2 {
+			font-size: 26px;
+		}
+		.product-details {
+			margin-top: 10px;
+		}
+		.product-btns {
+			a {
+				font-size: 14px;
+			}
+		}
+		.price {
+			display: block;
+			li {
+				width: 100%;
+				.custome-form-check {
+					width: 100%;
+					padding: 15px 8px 15px 30px;
+					border-radius: 4px;
+					border: 1px solid #d0d0d0;
+					-webkit-transition: all 0.3s ease-in-out;
+					transition: all 0.3s ease-in-out;
+					-webkit-box-shadow: 0 4px 10px rgba(33, 37, 41, 0.1);
+					box-shadow: 0 4px 10px rgba(33, 37, 41, 0.1);
+					background: #f7f7f7;
+				}
+			}
+		}
+		.veg-details {
+			margin-top: 30px;
+			padding: 20px 0;
+			border-top: 1px dashed #ced4da;
+			p {
+				line-height: 1.7;
+			}
+		}
+	}
+	.product-right {
+		h2 {
+			font-weight: 500;
+		}
+		h6 {
+			font-weight: 400;
+		}
+		h4 {
+			margin-bottom: 10px;
+			text-transform: capitalize;
+		}
+		.price {
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-align: center;
+			-ms-flex-align: center;
+			align-items: center;
+			h3 {
+				padding-right: 20px;
+			}
+		}
+		.color-types {
+			margin-top: 20px;
+			padding: 20px 0;
+			border-top: 1px dashed #ced4da;
+		}
+		.color-types.veg-details {
+			p {
+				line-height: 1.7;
+			}
+		}
+		.size-detail {
+			padding: 20px 0;
+			border-top: 1px dashed #ced4da;
+			ul {
+				display: -webkit-box;
+				display: -ms-flexbox;
+				display: flex;
+				li {
+					width: 30px;
+					height: 30px;
+					text-align: center;
+					border: 1px solid #ced4da;
+					cursor: pointer;
+					display: -webkit-box;
+					display: -ms-flexbox;
+					display: flex;
+					-webkit-box-align: center;
+					-ms-flex-align: center;
+					align-items: center;
+					-webkit-box-pack: center;
+					-ms-flex-pack: center;
+					justify-content: center;
+					+ {
+						li {
+							margin-left: 10px;
+						}
+					}
+				}
+				li.selected {
+					-webkit-box-shadow: 0 2px 7px rgba(0, 0, 0, 0.2);
+					box-shadow: 0 2px 7px rgba(0, 0, 0, 0.2);
+				}
+			}
+		}
+		.product-details {
+			padding: 20px 0;
+			border-top: 1px dashed #ced4da;
+			border-bottom: 1px dashed #ced4da;
+			ul {
+				li {
+					display: block;
+					+ {
+						li {
+							margin-top: 5px;
+						}
+					}
+					span {
+						min-width: 150px;
+					}
+				}
+			}
+		}
+		.product-btns {
+			margin-top: 20px;
+		}
+	}
+}
+[dir="rtl"] {
+	.quick-view-modal {
+		.product-right {
+			.price {
+				h3 {
+					padding-right: unset;
+					padding-left: 20px;
+				}
+			}
+		}
+	}
+}
+@media (max-width: 575px) {
+	.quick-view-modal {
+		.btn-close {
+			right: -14px;
+		}
+		.product-right.veg-product-right {
+			.veg-details {
+				margin-top: 15px;
+				padding: 15px 0;
+			}
+		}
+		.product-right {
+			.color-types {
+				margin-top: 15px;
+				padding: 15px 0;
+			}
+			.size-detail {
+				padding: 15px 0;
+			}
+			.product-details {
+				padding: 15px 0;
+			}
+			.product-btns {
+				margin-top: 15px;
+			}
+		}
+	}
+	[dir="rtl"] {
+		.quick-view-modal {
+			.btn-close {
+				right: unset;
+				left: -14px;
+			}
+		}
+	}
+}
+@media (max-width: 991px) {
+	.quick-view-modal {
+		.quick-view-image {
+			img {
+				max-height: 400px;
+				-o-object-fit: cover;
+				object-fit: cover;
+			}
+		}
+		.product-right.veg-product-right {
+			.veg-details {
+				margin-top: 20px;
+			}
+		}
+		.product-right {
+			.color-types {
+				margin-top: 20px;
+			}
+		}
+	}
+}

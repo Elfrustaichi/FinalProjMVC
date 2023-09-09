@@ -1,0 +1,240 @@
+$color_1: #fff;
+$color_2: #212529;
+$background-color_1: rgba(35, 35, 35, 0.8);
+$background-color_2: #fff;
+$background-color_3: rgba(232, 115, 22, 0.8);
+$background-color_4: rgba(255, 255, 255, 0.5);
+
+/**=====================
+     timer css start
+==========================**/
+.timer {
+	ul {
+		padding: 20px;
+		background-color: $background-color_1;
+		color: $color_1;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-align: center;
+		-ms-flex-align: center;
+		align-items: center;
+		-webkit-box-pack: space-evenly;
+		-ms-flex-pack: space-evenly;
+		justify-content: space-evenly;
+		li {
+			position: relative;
+			span {
+				display: block;
+				margin-bottom: 3px;
+			}
+			+ {
+				li {
+					margin-left: 30px;
+					&::before {
+						content: "";
+						position: absolute;
+						top: 50%;
+						-webkit-transform: translateY(-50%);
+						transform: translateY(-50%);
+						left: -17px;
+						border-left: 1px solid rgba(126, 126, 126, 0.4);
+						height: 50%;
+					}
+				}
+			}
+		}
+	}
+}
+[dir="rtl"] {
+	.timer {
+		ul {
+			padding: 20px;
+			li {
+				+ {
+					li {
+						&::before {
+							right: -17px;
+							left: unset !important;
+							border-right: 1px solid rgba(126, 126, 126, 0.4);
+							border-left: unset;
+						}
+						margin-right: 30px;
+						margin-left: unset !important;
+					}
+				}
+			}
+		}
+	}
+}
+.timer-style-2 {
+	ul {
+		margin: calc(-5px + (-15 - -5) * ((100vw - 320px) / (1920 - 320)));
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-align: center;
+		-ms-flex-align: center;
+		align-items: center;
+		li {
+			margin: calc(5px + (15 - 5) * ((100vw - 320px) / (1920 - 320)));
+			background-color: $background-color_2;
+			padding: calc(8px + (10 - 8) * ((100vw - 320px) / (1920 - 320))) calc(12px + (20 - 12) * ((100vw - 320px) / (1920 - 320)));
+			margin-right: 0;
+			color: $color_2;
+			h2 {
+				font-size: calc(18px + (28 - 18) * ((100vw - 320px) / (1920 - 320)));
+			}
+			span {
+				display: block;
+				margin-bottom: 3px;
+			}
+		}
+	}
+}
+.timer-style-3 {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	background-color: $background-color_3;
+	-webkit-backdrop-filter: blur(2px);
+	backdrop-filter: blur(2px);
+	width: 80%;
+	ul {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-align: center;
+		-ms-flex-align: center;
+		align-items: center;
+		-webkit-box-pack: space-evenly;
+		-ms-flex-pack: space-evenly;
+		justify-content: space-evenly;
+		text-align: center;
+		color: $color_1;
+		width: 100%;
+		li {
+			margin: calc(5px + (5 - 5) * ((100vw - 320px) / (1920 - 320))) calc(5px + (5 - 5) * ((100vw - 320px) / (1920 - 320))) calc(5px + (5 - 5) * ((100vw - 320px) / (1920 - 320))) 0;
+			padding: calc(8px + (10 - 8) * ((100vw - 320px) / (1920 - 320))) calc(12px + (20 - 12) * ((100vw - 320px) / (1920 - 320)));
+			width: 25%;
+			+ {
+				li {
+					position: relative;
+					&::after {
+						content: "";
+						position: absolute;
+						top: 50%;
+						-webkit-transform: translateY(-50%);
+						transform: translateY(-50%);
+						width: 1px;
+						height: 50%;
+						background-color: $background-color_4;
+						left: 0%;
+					}
+				}
+			}
+			&:nth-child(4) {
+				margin-right: 0;
+			}
+			h2 {
+				font-size: calc(18px + (28 - 18) * ((100vw - 320px) / (1920 - 320)));
+			}
+			span {
+				display: block;
+				margin-bottom: 3px;
+			}
+		}
+	}
+}
+@media (max-width: 1366px) {
+	.timer {
+		ul {
+			padding: 15px;
+			li {
+				+ {
+					li {
+						&::before {
+							left: -12px;
+						}
+						margin-left: 20px;
+					}
+				}
+			}
+		}
+	}
+	[dir="rtl"] {
+		.timer {
+			ul {
+				li {
+					+ {
+						li {
+							&::before {
+								right: -12px;
+							}
+							margin-right: 20px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+@media (max-width: 480px) {
+	.timer {
+		ul {
+			padding: 10px;
+			li {
+				font-size: 12px;
+				h5 {
+					font-size: 13px;
+				}
+				+ {
+					li {
+						&::before {
+							left: -5px;
+						}
+						margin-left: 6px;
+					}
+				}
+			}
+		}
+	}
+	[dir="rtl"] {
+		.timer {
+			ul {
+				li {
+					+ {
+						li {
+							&::before {
+								right: -5px;
+							}
+							margin-right: 6px;
+						}
+					}
+				}
+			}
+		}
+	}
+	.timer-style-2 {
+		ul {
+			li {
+				font-size: 12px;
+				h5 {
+					font-size: 13px;
+				}
+			}
+		}
+	}
+	.timer-style-3 {
+		ul {
+			li {
+				font-size: 12px;
+				h5 {
+					font-size: 13px;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,96 @@
+$color_1: #212529;
+$color_2: #7e7e7e;
+$background-color_1: #fff;
+$background-color_2: var(--theme-color);
+$background-color_3: #6c757d;
+$border-color_1: rgba(33, 37, 41, 0.125);
+$border-color_2: var(--theme-color);
+
+.your-cart-box {
+	position: sticky;
+	top: 10px;
+	.list-group {
+		.lh-condensed {
+			padding: 15px 25px;
+			background-color: $background-color_1;
+			h6 {
+				color: $color_1;
+			}
+			small {
+				color: $color_2;
+			}
+			span {
+				color: $color_2;
+			}
+			strong {
+				color: $color_2;
+			}
+		}
+		.lh-condensed.active {
+			background: #eff2f7;
+			border-color: $border-color_1;
+		}
+		.card {
+			border: none;
+		}
+	}
+	.new-badge {
+		border-radius: 50% !important;
+		padding: 8px;
+		line-height: 0;
+		font-size: 13px;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-align: center;
+		-ms-flex-align: center;
+		align-items: center;
+		-webkit-box-pack: center;
+		-ms-flex-pack: center;
+		justify-content: center;
+		width: 25px;
+		height: 25px;
+	}
+	.custome-imput-group {
+		.form-control {
+			padding: 6px 12px;
+		}
+	}
+}
+.custome-form-select {
+	padding: 12px 20px;
+}
+.checkout-label {
+	padding-top: 2px;
+}
+.custome-radio-box {
+	display: inline-block;
+	margin-right: 10px;
+	.form-check-input {
+		-webkit-transition: all 0.3s ease-in-out;
+		transition: all 0.3s ease-in-out;
+		margin-top: 2px;
+		background-color: $background-color_1;
+		&:checked {
+			background-color: $background-color_2;
+			border-color: $border-color_2;
+		}
+		&:active {
+			-webkit-filter: none;
+			filter: none;
+		}
+		&:focus {
+			-webkit-box-shadow: none;
+			box-shadow: none;
+		}
+	}
+}
+[dir="rtl"] {
+	.custome-radio-box {
+		margin-right: 0;
+		margin-left: 10px;
+	}
+}
+hr {
+	background-color: $background-color_3;
+}

@@ -1,0 +1,39 @@
+$color_1: #fff;
+$background-color_1: #000;
+$background-color_2: var(--theme-color);
+
+.label {
+	font-size: 12px;
+	padding: 6px 10px;
+	text-transform: uppercase;
+	color: $color_1;
+	display: inline-block;
+	font-weight: 500;
+}
+.label-block {
+	position: absolute;
+	padding: calc(15px + (20 - 15) * ((100vw - 320px) / (1920 - 320)));
+	top: 0;
+	width: 100%;
+	z-index: 1;
+}
+.label-dark {
+	background-color: $background-color_1;
+}
+.label-black {
+	background-color: $background-color_1;
+}
+[dir="rtl"] {
+	.label-black {
+		float: right;
+	}
+}
+.label-theme {
+	background-color: $background-color_2;
+}
+@media (max-width: 575px) {
+	.label {
+		padding: 4px 6px;
+		font-size: 10px;
+	}
+}

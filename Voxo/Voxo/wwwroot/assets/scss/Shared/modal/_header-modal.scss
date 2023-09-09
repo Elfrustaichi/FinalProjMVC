@@ -1,0 +1,53 @@
+$color_1: #fff;
+$font-family_1: "Font Awesome 5 Free";
+
+.modal-header {
+	border: none;
+	padding: 0;
+	.btn-close {
+		width: 54px;
+		height: 54px;
+		top: -50px;
+		right: -50px;
+		line-height: 54px;
+		position: absolute;
+		text-decoration: none;
+		text-align: center;
+		color: $color_1;
+		background: 0 0;
+		border: none;
+		cursor: pointer;
+		-webkit-transition: all 0.2s linear;
+		transition: all 0.2s linear;
+		opacity: 1;
+		&:before {
+			content: "\f00d";
+			font-family: $font-family_1;
+			font-weight: 900;
+			font-size: 22px;
+		}
+	}
+}
+[dir="rtl"] {
+	.modal-header {
+		.btn-close {
+			right: unset;
+			left: -50px;
+		}
+	}
+}
+@media (max-width: 575px) {
+	.modal-header {
+		.btn-close {
+			right: -14px;
+		}
+	}
+	[dir="rtl"] {
+		.modal-header {
+			.btn-close {
+				right: unset;
+				left: -14px;
+			}
+		}
+	}
+}

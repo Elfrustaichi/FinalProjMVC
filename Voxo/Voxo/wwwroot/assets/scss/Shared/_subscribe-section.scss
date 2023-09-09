@@ -1,0 +1,38 @@
+$background-color_1: #eff3f7;
+$background-color_2: #f0f8f0;
+
+.subscribe-section {
+	background-color: $background-color_1;
+	.subscribe-details {
+		height: 100%;
+		h2 {
+			font-size: calc(18px + (30 - 18) * ((100vw - 320px) / (1920 - 320)));
+			margin-top: -2px;
+		}
+		h6 {
+			font-size: 15px;
+			font-weight: normal;
+			display: block;
+			margin-bottom: -3px;
+			line-height: 1.6;
+		}
+	}
+	.subsribe-input {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-align: center;
+		-ms-flex-align: center;
+		align-items: center;
+		-webkit-box-pack: center;
+		-ms-flex-pack: center;
+		justify-content: center;
+		height: 100%;
+		.form-control {
+			border-radius: 0;
+		}
+	}
+}
+.subscribe-section-light {
+	background-color: $background-color_2;
+}

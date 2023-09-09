@@ -1,0 +1,201 @@
+$color_1: #212529;
+$background-color_1: #eff3f7;
+$background-color_2: #e3ddf4;
+$background-color_3: #efdee7;
+$background-color_4: #eee1e6;
+
+.discount-image-details {
+	background-color: $background-color_1;
+	padding: calc(22px + (50 - 22) * ((100vw - 320px) / (1920 - 320))) calc(30px + (100 - 30) * ((100vw - 320px) / (1920 - 320)));
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	position: relative;
+	.discount-images {
+		margin-right: 80px;
+		.theme-circle {
+			width: 450px;
+			height: 450px;
+			background: #752add;
+			background: radial-gradient(circle, #752add 0%, #572e93 100%);
+			border-radius: 50%;
+		}
+		.shoes-images-1 {
+			position: absolute;
+			top: 18%;
+			left: 59px;
+			-webkit-transform: rotate(34deg);
+			transform: rotate(34deg);
+			width: 40%;
+		}
+		.shoes-images-2 {
+			position: absolute;
+			top: 50px;
+			left: 430px;
+			width: 20%;
+			-webkit-transform: rotateY(180deg) rotate(45deg);
+			transform: rotateY(180deg) rotate(45deg);
+		}
+	}
+	.discunt-details {
+		width: 100%;
+		height: 100%;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-align: center;
+		-ms-flex-align: center;
+		align-items: center;
+		-webkit-box-pack: center;
+		-ms-flex-pack: center;
+		justify-content: center;
+		text-align: center;
+		.heart-button {
+			background-color: $background-color_2;
+			border-radius: 50%;
+			width: 40px;
+			height: 40px;
+			margin: 0 auto;
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-align: center;
+			-ms-flex-align: center;
+			align-items: center;
+			-webkit-box-pack: center;
+			-ms-flex-pack: center;
+			justify-content: center;
+			.fa-heart {
+				margin-top: 2px;
+			}
+		}
+		.heart-button-2 {
+			background-color: $background-color_3 !important;
+		}
+		.heart-button-light {
+			background-color: $background-color_4;
+		}
+		h5 {
+			color: $color_1;
+		}
+		.deal-text {
+			font-size: calc(22px + (45 - 22) * ((100vw - 320px) / (1920 - 320)));
+			line-height: 1.1;
+			font-weight: 900;
+			color: $color_1;
+		}
+	}
+}
+.discount-image-details.discount-spacing {
+	padding: calc(50px + (180 - 50) * ((100vw - 320px) / (1920 - 320)));
+}
+[dir="rtl"] {
+	.discount-image-details {
+		.discount-images {
+			margin-right: 0;
+			margin-left: 80px;
+			.shoes-images-1 {
+				left: unset;
+				right: 130px;
+			}
+			.shoes-images-2 {
+				left: unset;
+				right: 30px;
+			}
+		}
+	}
+}
+@media (max-width: 991px) {
+	.discount-image-details {
+		display: block;
+		.discount-images {
+			margin-right: 0;
+			position: relative;
+			.theme-circle {
+				display: none;
+			}
+			.shoes-images-1 {
+				position: relative;
+				-webkit-transform: rotate(0);
+				transform: rotate(0);
+				display: block;
+				width: 100%;
+				left: 0;
+				-webkit-animation: run-shoes 15s infinite linear;
+				animation: run-shoes 15s infinite linear;
+			}
+			.shoes-images-2 {
+				display: none;
+			}
+		}
+		.discunt-details {
+			position: relative;
+			width: 100%;
+			display: block;
+		}
+	}
+	[dir="rtl"] {
+		.discount-image-details {
+			.discount-images {
+				margin-right: 0;
+				margin-left: 0px;
+				.shoes-images-1 {
+					left: unset;
+					right: 0 !important;
+				}
+			}
+		}
+	}
+}
+@media (max-width: 1366px) {
+	.discount-image-details {
+		.discount-images {
+			.theme-circle {
+				width: 420px;
+				height: 420px;
+			}
+			.shoes-images-1 {
+				top: 24%;
+				left: 50px;
+				width: 43%;
+			}
+			.shoes-images-2 {
+				top: 90px;
+				left: 375px;
+				width: 18%;
+			}
+		}
+	}
+}
+@media (max-width: 1199px) {
+	.discount-image-details {
+		.discount-images {
+			.theme-circle {
+				width: 340px;
+				height: 340px;
+			}
+			.shoes-images-1 {
+				top: 33%;
+				left: 55px;
+				width: 40%;
+			}
+			.shoes-images-2 {
+				top: 95px;
+				left: 325px;
+				width: 16%;
+			}
+		}
+	}
+}
+@media (max-width: 360px) {
+	.discount-image-details {
+		.discount-images {
+			.shoes-images-1 {
+				width: 100%;
+			}
+		}
+	}
+}

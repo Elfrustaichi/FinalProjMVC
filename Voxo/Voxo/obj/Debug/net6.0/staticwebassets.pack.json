@@ -1,0 +1,945 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\Voxo.bundle.scp.css",
+      "PackagePath": "staticwebassets\\Voxo.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\css\\magnific-popup.css",
+      "PackagePath": "staticwebassets\\assets\\css\\magnific-popup.css"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\css\\style.css",
+      "PackagePath": "staticwebassets\\assets\\css\\style.css"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\css\\style.css.map",
+      "PackagePath": "staticwebassets\\assets\\css\\style.css.map"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\css\\vendors\\animate.css",
+      "PackagePath": "staticwebassets\\assets\\css\\vendors\\animate.css"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\css\\vendors\\bootstrap.css",
+      "PackagePath": "staticwebassets\\assets\\css\\vendors\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\css\\vendors\\feather-icon.css",
+      "PackagePath": "staticwebassets\\assets\\css\\vendors\\feather-icon.css"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\css\\vendors\\font-awesome.css",
+      "PackagePath": "staticwebassets\\assets\\css\\vendors\\font-awesome.css"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\css\\vendors\\ion.rangeSlider.min.css",
+      "PackagePath": "staticwebassets\\assets\\css\\vendors\\ion.rangeSlider.min.css"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\css\\vendors\\slick\\slick-theme.css",
+      "PackagePath": "staticwebassets\\assets\\css\\vendors\\slick\\slick-theme.css"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\css\\vendors\\slick\\slick.css",
+      "PackagePath": "staticwebassets\\assets\\css\\vendors\\slick\\slick.css"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\fonts\\fa-brands-400.eot",
+      "PackagePath": "staticwebassets\\assets\\fonts\\fa-brands-400.eot"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\fonts\\fa-brands-400.svg",
+      "PackagePath": "staticwebassets\\assets\\fonts\\fa-brands-400.svg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\fonts\\fa-brands-400.ttf",
+      "PackagePath": "staticwebassets\\assets\\fonts\\fa-brands-400.ttf"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\fonts\\fa-brands-400.woff",
+      "PackagePath": "staticwebassets\\assets\\fonts\\fa-brands-400.woff"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\fonts\\fa-brands-400.woff2",
+      "PackagePath": "staticwebassets\\assets\\fonts\\fa-brands-400.woff2"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\fonts\\fa-brands-400d41d.eot",
+      "PackagePath": "staticwebassets\\assets\\fonts\\fa-brands-400d41d.eot"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\fonts\\fa-regular-400.eot",
+      "PackagePath": "staticwebassets\\assets\\fonts\\fa-regular-400.eot"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\fonts\\fa-regular-400.svg",
+      "PackagePath": "staticwebassets\\assets\\fonts\\fa-regular-400.svg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\fonts\\fa-regular-400.ttf",
+      "PackagePath": "staticwebassets\\assets\\fonts\\fa-regular-400.ttf"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\fonts\\fa-regular-400.woff",
+      "PackagePath": "staticwebassets\\assets\\fonts\\fa-regular-400.woff"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\fonts\\fa-regular-400.woff2",
+      "PackagePath": "staticwebassets\\assets\\fonts\\fa-regular-400.woff2"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\fonts\\fa-regular-400d41d.eot",
+      "PackagePath": "staticwebassets\\assets\\fonts\\fa-regular-400d41d.eot"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\fonts\\fa-solid-900.eot",
+      "PackagePath": "staticwebassets\\assets\\fonts\\fa-solid-900.eot"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\fonts\\fa-solid-900.svg",
+      "PackagePath": "staticwebassets\\assets\\fonts\\fa-solid-900.svg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\fonts\\fa-solid-900.ttf",
+      "PackagePath": "staticwebassets\\assets\\fonts\\fa-solid-900.ttf"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\fonts\\fa-solid-900.woff",
+      "PackagePath": "staticwebassets\\assets\\fonts\\fa-solid-900.woff"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\fonts\\fa-solid-900.woff2",
+      "PackagePath": "staticwebassets\\assets\\fonts\\fa-solid-900.woff2"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\fonts\\fa-solid-900d41d.eot",
+      "PackagePath": "staticwebassets\\assets\\fonts\\fa-solid-900d41d.eot"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\fonts\\slick.eot",
+      "PackagePath": "staticwebassets\\assets\\fonts\\slick.eot"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\fonts\\slick.svg",
+      "PackagePath": "staticwebassets\\assets\\fonts\\slick.svg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\fonts\\slick.ttf",
+      "PackagePath": "staticwebassets\\assets\\fonts\\slick.ttf"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\fonts\\slick.woff",
+      "PackagePath": "staticwebassets\\assets\\fonts\\slick.woff"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\fonts\\slickd41d.eot",
+      "PackagePath": "staticwebassets\\assets\\fonts\\slickd41d.eot"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\banner\\1.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\banner\\1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\check.svg",
+      "PackagePath": "staticwebassets\\assets\\images\\check.svg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\cookie.png",
+      "PackagePath": "staticwebassets\\assets\\images\\cookie.png"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\fashion\\1.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\fashion\\1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\fashion\\2.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\fashion\\2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\fashion\\3.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\fashion\\3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\fashion\\4.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\fashion\\4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\fashion\\5.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\fashion\\5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\fashion\\6.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\fashion\\6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\fashion\\7.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\fashion\\7.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\fashion\\banner.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\fashion\\banner.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\fashion\\banner\\1.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\fashion\\banner\\1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\fashion\\banner\\2.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\fashion\\banner\\2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\fashion\\banner\\3.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\fashion\\banner\\3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\fashion\\banner\\4.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\fashion\\banner\\4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\fashion\\banner\\5.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\fashion\\banner\\5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\fashion\\banner\\6.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\fashion\\banner\\6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\fashion\\banner\\7.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\fashion\\banner\\7.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\fashion\\banner\\8.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\fashion\\banner\\8.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\fashion\\category\\1.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\fashion\\category\\1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\fashion\\category\\10.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\fashion\\category\\10.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\fashion\\category\\11.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\fashion\\category\\11.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\fashion\\category\\12.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\fashion\\category\\12.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\fashion\\category\\2.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\fashion\\category\\2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\fashion\\category\\3.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\fashion\\category\\3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\fashion\\category\\4.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\fashion\\category\\4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\fashion\\category\\5.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\fashion\\category\\5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\fashion\\category\\6.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\fashion\\category\\6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\fashion\\category\\7.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\fashion\\category\\7.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\fashion\\category\\8.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\fashion\\category\\8.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\fashion\\category\\9.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\fashion\\category\\9.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\fashion\\instagram\\1.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\fashion\\instagram\\1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\fashion\\instagram\\2.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\fashion\\instagram\\2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\fashion\\instagram\\3.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\fashion\\instagram\\3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\fashion\\instagram\\4.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\fashion\\instagram\\4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\fashion\\instagram\\5.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\fashion\\instagram\\5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\fashion\\product\\back\\1.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\fashion\\product\\back\\1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\fashion\\product\\back\\2.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\fashion\\product\\back\\2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\fashion\\product\\back\\3.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\fashion\\product\\back\\3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\fashion\\product\\back\\4.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\fashion\\product\\back\\4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\fashion\\product\\back\\5.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\fashion\\product\\back\\5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\fashion\\product\\back\\6.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\fashion\\product\\back\\6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\fashion\\product\\back\\7.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\fashion\\product\\back\\7.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\fashion\\product\\back\\8.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\fashion\\product\\back\\8.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\fashion\\product\\front\\1.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\fashion\\product\\front\\1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\fashion\\product\\front\\2.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\fashion\\product\\front\\2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\fashion\\product\\front\\3.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\fashion\\product\\front\\3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\fashion\\product\\front\\4.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\fashion\\product\\front\\4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\fashion\\product\\front\\5.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\fashion\\product\\front\\5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\fashion\\product\\front\\6.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\fashion\\product\\front\\6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\fashion\\product\\front\\7.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\fashion\\product\\front\\7.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\fashion\\product\\front\\8.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\fashion\\product\\front\\8.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\fashion\\slider\\1.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\fashion\\slider\\1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\fashion\\slider\\2.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\fashion\\slider\\2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\favicon\\1.png",
+      "PackagePath": "staticwebassets\\assets\\images\\favicon\\1.png"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\favicon\\2.png",
+      "PackagePath": "staticwebassets\\assets\\images\\favicon\\2.png"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\favicon\\3.png",
+      "PackagePath": "staticwebassets\\assets\\images\\favicon\\3.png"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\favicon\\4.png",
+      "PackagePath": "staticwebassets\\assets\\images\\favicon\\4.png"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\favicon\\5.png",
+      "PackagePath": "staticwebassets\\assets\\images\\favicon\\5.png"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\favicon\\6.png",
+      "PackagePath": "staticwebassets\\assets\\images\\favicon\\6.png"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\gif\\fire.gif",
+      "PackagePath": "staticwebassets\\assets\\images\\gif\\fire.gif"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\gif\\person.gif",
+      "PackagePath": "staticwebassets\\assets\\images\\gif\\person.gif"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\gif\\truck.png",
+      "PackagePath": "staticwebassets\\assets\\images\\gif\\truck.png"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\inner-page\\404.png",
+      "PackagePath": "staticwebassets\\assets\\images\\inner-page\\404.png"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\inner-page\\facebook.png",
+      "PackagePath": "staticwebassets\\assets\\images\\inner-page\\facebook.png"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\inner-page\\faq\\community.png",
+      "PackagePath": "staticwebassets\\assets\\images\\inner-page\\faq\\community.png"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\inner-page\\faq\\faq.png",
+      "PackagePath": "staticwebassets\\assets\\images\\inner-page\\faq\\faq.png"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\inner-page\\faq\\guides.png",
+      "PackagePath": "staticwebassets\\assets\\images\\inner-page\\faq\\guides.png"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\inner-page\\google.png",
+      "PackagePath": "staticwebassets\\assets\\images\\inner-page\\google.png"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\inner-page\\product\\1.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\inner-page\\product\\1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\inner-page\\product\\10.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\inner-page\\product\\10.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\inner-page\\product\\11.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\inner-page\\product\\11.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\inner-page\\product\\12.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\inner-page\\product\\12.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\inner-page\\product\\13.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\inner-page\\product\\13.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\inner-page\\product\\14.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\inner-page\\product\\14.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\inner-page\\product\\15.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\inner-page\\product\\15.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\inner-page\\product\\16.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\inner-page\\product\\16.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\inner-page\\product\\2.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\inner-page\\product\\2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\inner-page\\product\\3.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\inner-page\\product\\3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\inner-page\\product\\4.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\inner-page\\product\\4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\inner-page\\product\\5.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\inner-page\\product\\5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\inner-page\\product\\6.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\inner-page\\product\\6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\inner-page\\product\\7.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\inner-page\\product\\7.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\inner-page\\product\\8.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\inner-page\\product\\8.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\inner-page\\product\\9.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\inner-page\\product\\9.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\inner-page\\quote.png",
+      "PackagePath": "staticwebassets\\assets\\images\\inner-page\\quote.png"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\inner-page\\review-image\\1.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\inner-page\\review-image\\1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\inner-page\\review-image\\2.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\inner-page\\review-image\\2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\inner-page\\review-image\\3.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\inner-page\\review-image\\3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\inner-page\\review-image\\4.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\inner-page\\review-image\\4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\inner-page\\review-image\\5.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\inner-page\\review-image\\5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\inner-page\\review-image\\6.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\inner-page\\review-image\\6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\inner-page\\review-image\\7.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\inner-page\\review-image\\7.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\inner-page\\review-image\\8.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\inner-page\\review-image\\8.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\logo.png",
+      "PackagePath": "staticwebassets\\assets\\images\\logo.png"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\minus.svg",
+      "PackagePath": "staticwebassets\\assets\\images\\minus.svg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\newletter-icon.png",
+      "PackagePath": "staticwebassets\\assets\\images\\newletter-icon.png"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\payment-icon\\1.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\payment-icon\\1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\payment-icon\\2.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\payment-icon\\2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\payment-icon\\3.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\payment-icon\\3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\payment-icon\\4.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\payment-icon\\4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\plus.svg",
+      "PackagePath": "staticwebassets\\assets\\images\\plus.svg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\size-chart.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\size-chart.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\social-icon\\1.png",
+      "PackagePath": "staticwebassets\\assets\\images\\social-icon\\1.png"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\social-icon\\2.png",
+      "PackagePath": "staticwebassets\\assets\\images\\social-icon\\2.png"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\social-icon\\3.png",
+      "PackagePath": "staticwebassets\\assets\\images\\social-icon\\3.png"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\social-icon\\4.png",
+      "PackagePath": "staticwebassets\\assets\\images\\social-icon\\4.png"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\social-icon\\5.png",
+      "PackagePath": "staticwebassets\\assets\\images\\social-icon\\5.png"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\social-icon\\6.png",
+      "PackagePath": "staticwebassets\\assets\\images\\social-icon\\6.png"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\svg\\box.png",
+      "PackagePath": "staticwebassets\\assets\\images\\svg\\box.png"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\svg\\box1.png",
+      "PackagePath": "staticwebassets\\assets\\images\\svg\\box1.png"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\svg\\sent.png",
+      "PackagePath": "staticwebassets\\assets\\images\\svg\\sent.png"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\svg\\sent1.png",
+      "PackagePath": "staticwebassets\\assets\\images\\svg\\sent1.png"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\svg\\wishlist.png",
+      "PackagePath": "staticwebassets\\assets\\images\\svg\\wishlist.png"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\images\\svg\\wishlist1.png",
+      "PackagePath": "staticwebassets\\assets\\images\\svg\\wishlist1.png"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\js\\bootstrap\\bootstrap-notify.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\bootstrap\\bootstrap-notify.min.js"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\js\\bootstrap\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\bootstrap\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\js\\cart_modal_resize.js",
+      "PackagePath": "staticwebassets\\assets\\js\\cart_modal_resize.js"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\js\\feather\\feather.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\feather\\feather.min.js"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\js\\filter.js",
+      "PackagePath": "staticwebassets\\assets\\js\\filter.js"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\js\\home-script.js",
+      "PackagePath": "staticwebassets\\assets\\js\\home-script.js"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\js\\ion.rangeSlider.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\ion.rangeSlider.min.js"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\js\\jquery-3.5.1.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\jquery-3.5.1.min.js"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\js\\jquery.elevatezoom.js",
+      "PackagePath": "staticwebassets\\assets\\js\\jquery.elevatezoom.js"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\js\\lazysizes.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\lazysizes.min.js"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\js\\price-filter.js",
+      "PackagePath": "staticwebassets\\assets\\js\\price-filter.js"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\js\\script.js",
+      "PackagePath": "staticwebassets\\assets\\js\\script.js"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\js\\slick\\custom_slick.js",
+      "PackagePath": "staticwebassets\\assets\\js\\slick\\custom_slick.js"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\js\\slick\\slick-animation.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\slick\\slick-animation.min.js"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\js\\slick\\slick.js",
+      "PackagePath": "staticwebassets\\assets\\js\\slick\\slick.js"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\js\\timer.js",
+      "PackagePath": "staticwebassets\\assets\\js\\timer.js"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\js\\timer1.js",
+      "PackagePath": "staticwebassets\\assets\\js\\timer1.js"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\js\\zoom-filter.js",
+      "PackagePath": "staticwebassets\\assets\\js\\zoom-filter.js"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\scss\\404\\_404.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\404\\_404.scss"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\scss\\About-Us\\_about-us.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\About-Us\\_about-us.scss"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\scss\\Cart-Wishlist\\_cart-wishlist.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\Cart-Wishlist\\_cart-wishlist.scss"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\scss\\Checkout\\_checkout.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\Checkout\\_checkout.scss"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\scss\\Contact-Us\\_contact-us.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\Contact-Us\\_contact-us.scss"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\scss\\FAQ\\_faq.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\FAQ\\_faq.scss"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\scss\\Home\\_home.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\Home\\_home.scss"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\scss\\Login-Register-Forgot\\_login-register-forgot.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\Login-Register-Forgot\\_login-register-forgot.scss"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\scss\\Order-successful\\_order-successful.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\Order-successful\\_order-successful.scss"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\scss\\Product-Detail\\_product-detail.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\Product-Detail\\_product-detail.scss"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\scss\\Search\\_search.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\Search\\_search.scss"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\scss\\Shared\\_alert.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\Shared\\_alert.scss"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\scss\\Shared\\_banner.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\Shared\\_banner.scss"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\scss\\Shared\\_breadcrum.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\Shared\\_breadcrum.scss"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\scss\\Shared\\_breakpoint-mixins.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\Shared\\_breakpoint-mixins.scss"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\scss\\Shared\\_buttons.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\Shared\\_buttons.scss"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\scss\\Shared\\_category.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\Shared\\_category.scss"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\scss\\Shared\\_color.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\Shared\\_color.scss"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\scss\\Shared\\_common-mixins.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\Shared\\_common-mixins.scss"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\scss\\Shared\\_cookie-section.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\Shared\\_cookie-section.scss"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\scss\\Shared\\_dropdown.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\Shared\\_dropdown.scss"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\scss\\Shared\\_footer.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\Shared\\_footer.scss"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\scss\\Shared\\_form.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\Shared\\_form.scss"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\scss\\Shared\\_header.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\Shared\\_header.scss"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\scss\\Shared\\_label.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\Shared\\_label.scss"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\scss\\Shared\\_lazy-load.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\Shared\\_lazy-load.scss"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\scss\\Shared\\_load-more.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\Shared\\_load-more.scss"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\scss\\Shared\\_navbar.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\Shared\\_navbar.scss"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\scss\\Shared\\_offer-section.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\Shared\\_offer-section.scss"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\scss\\Shared\\_pagination.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\Shared\\_pagination.scss"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\scss\\Shared\\_product.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\Shared\\_product.scss"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\scss\\Shared\\_ratio.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\Shared\\_ratio.scss"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\scss\\Shared\\_reset.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\Shared\\_reset.scss"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\scss\\Shared\\_responsive.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\Shared\\_responsive.scss"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\scss\\Shared\\_service-section.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\Shared\\_service-section.scss"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\scss\\Shared\\_shared.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\Shared\\_shared.scss"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\scss\\Shared\\_slick-slider.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\Shared\\_slick-slider.scss"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\scss\\Shared\\_slider.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\Shared\\_slider.scss"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\scss\\Shared\\_social-media.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\Shared\\_social-media.scss"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\scss\\Shared\\_subscribe-section.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\Shared\\_subscribe-section.scss"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\scss\\Shared\\_tab.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\Shared\\_tab.scss"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\scss\\Shared\\_tap-to-top.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\Shared\\_tap-to-top.scss"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\scss\\Shared\\_timer.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\Shared\\_timer.scss"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\scss\\Shared\\_titles.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\Shared\\_titles.scss"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\scss\\Shared\\_tyography.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\Shared\\_tyography.scss"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\scss\\Shared\\modal\\_add-address-modal.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\Shared\\modal\\_add-address-modal.scss"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\scss\\Shared\\modal\\_cart-modal.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\Shared\\modal\\_cart-modal.scss"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\scss\\Shared\\modal\\_delete-account-modal.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\Shared\\modal\\_delete-account-modal.scss"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\scss\\Shared\\modal\\_header-modal.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\Shared\\modal\\_header-modal.scss"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\scss\\Shared\\modal\\_modal-size.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\Shared\\modal\\_modal-size.scss"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\scss\\Shared\\modal\\_modal.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\Shared\\modal\\_modal.scss"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\scss\\Shared\\modal\\_newletter-modal.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\Shared\\modal\\_newletter-modal.scss"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\scss\\Shared\\modal\\_payment-modal.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\Shared\\modal\\_payment-modal.scss"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\scss\\Shared\\modal\\_quick-view-modal.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\Shared\\modal\\_quick-view-modal.scss"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\scss\\Shared\\modal\\_reset-email-modal.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\Shared\\modal\\_reset-email-modal.scss"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\scss\\Shop\\_shop.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\Shop\\_shop.scss"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\scss\\User-Dashboard\\_user-dashboard.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\User-Dashboard\\_user-dashboard.scss"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\scss\\style.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\style.scss"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\svg\\grid-2.svg",
+      "PackagePath": "staticwebassets\\assets\\svg\\grid-2.svg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\svg\\grid-3.svg",
+      "PackagePath": "staticwebassets\\assets\\svg\\grid-3.svg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\svg\\grid-5.svg",
+      "PackagePath": "staticwebassets\\assets\\svg\\grid-5.svg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\svg\\grid.svg",
+      "PackagePath": "staticwebassets\\assets\\svg\\grid.svg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\svg\\icons.svg",
+      "PackagePath": "staticwebassets\\assets\\svg\\icons.svg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\svg\\list.svg",
+      "PackagePath": "staticwebassets\\assets\\svg\\list.svg"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.Voxo.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.Voxo.props",
+      "PackagePath": "build\\Voxo.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.Voxo.props",
+      "PackagePath": "buildMultiTargeting\\Voxo.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.Voxo.props",
+      "PackagePath": "buildTransitive\\Voxo.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

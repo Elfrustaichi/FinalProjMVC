@@ -1,0 +1,91 @@
+$color_1: #fff;
+$font-family_1: "Font Awesome 5 Free";
+
+.delete-account-modal {
+	.modal-content {
+		border: none;
+		.modal-header {
+			padding: 0;
+			border: none;
+			.btn-close {
+				width: 54px;
+				height: 54px;
+				top: -50px;
+				right: -50px;
+				line-height: 54px;
+				position: absolute;
+				text-decoration: none;
+				text-align: center;
+				color: $color_1;
+				background: 0 0;
+				border: none;
+				cursor: pointer;
+				-webkit-transition: all 0.2s linear;
+				transition: all 0.2s linear;
+				opacity: 1;
+				&:before {
+					content: "\f00d";
+					font-family: $font-family_1;
+					font-weight: 900;
+					font-size: 22px;
+				}
+			}
+		}
+		.modal-body {
+			padding: calc(15px + (30 - 15) * ((100vw - 320px) / (1920 - 320)));
+			h4 {
+				font-weight: 500;
+			}
+		}
+		.modal-footer {
+			padding: calc(15px + (30 - 15) * ((100vw - 320px) / (1920 - 320)));
+			border-top: none;
+			padding-top: 0;
+			-webkit-box-pack: start;
+			-ms-flex-pack: start;
+			justify-content: flex-start;
+			button {
+				margin: 0;
+			}
+			button.modal-close-button {
+				color: $color_1;
+				margin-right: 10px;
+			}
+		}
+	}
+}
+[dir="rtl"] {
+	.delete-account-modal {
+		.modal-content {
+			.modal-footer {
+				button.modal-close-button {
+					margin-right: 0;
+					margin-left: 10px;
+				}
+			}
+		}
+	}
+}
+@media (max-width: 575px) {
+	.delete-account-modal {
+		.modal-content {
+			.modal-header {
+				.btn-close {
+					right: -14px;
+				}
+			}
+		}
+	}
+	[dir="rtl"] {
+		.delete-account-modal {
+			.modal-content {
+				.modal-header {
+					.btn-close {
+						right: unset;
+						left: -14px;
+					}
+				}
+			}
+		}
+	}
+}

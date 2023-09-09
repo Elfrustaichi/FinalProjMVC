@@ -1,0 +1,29 @@
+$color_1: #fff;
+$background-color_1: var(--theme-color);
+$border-color_1: #ced4da;
+
+.search-section {
+	.search-bar {
+		.input-group {
+			width: 50%;
+			margin: 26px auto 110px;
+		}
+		button {
+			padding: 15px 35px;
+			background-color: $background-color_1;
+			color: $color_1;
+			border: 1px solid var(--theme-colors);
+			i {
+				color: $color_1;
+			}
+		}
+		button.search-button {
+			padding: 15px;
+		}
+		input {
+			&:focus {
+				border-color: $border-color_1;
+			}
+		}
+	}
+}
