@@ -2,10 +2,12 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Voxo.DAL;
 using Voxo.Models;
+using Voxo.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
+builder.Services.AddHttpContextAccessor();
 
 //Sql database start
 builder.Services.AddDbContext<VoxoContext>(opt =>
@@ -22,6 +24,31 @@ builder.Services.AddIdentity<AppUser, IdentityRole>(opt =>
 }).AddDefaultTokenProviders().AddEntityFrameworkStores<VoxoContext>();
 //Sql database end
 
+//Added services start
+builder.Services.AddScoped<LayoutService>();
+//Added services end
+
+//Login cookie config start
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    options.Events.OnRedirectToLogin = options.Events.OnRedirectToAccessDenied = context =>
+    {
+        if (context.HttpContext.Request.Path.Value.StartsWith("/manage"))
+        {
+            var redirectUri = new Uri(context.RedirectUri);
+            context.Response.Redirect("/manage/account/login" + redirectUri.Query);
+        }
+        else
+        {
+            var redirectUri = new Uri(context.RedirectUri);
+            context.Response.Redirect("/account/login" + redirectUri.Query);
+        }
+
+        return Task.CompletedTask;
+    };
+});
+//Login cookie config end
+
 var app = builder.Build();
 
 if (!app.Environment.IsDevelopment())
@@ -34,6 +61,7 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
+
 app.UseRouting();
 
 app.UseAuthentication();
@@ -41,12 +69,12 @@ app.UseAuthorization();
 
 //Route control start
 app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
-
-app.MapControllerRoute(
     name: "areas",
     pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
+
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Home}/{action=Index}/{id?}");
 //Route control end
 
 
