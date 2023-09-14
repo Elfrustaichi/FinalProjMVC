@@ -20,6 +20,22 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXEFjY291bnRcTG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/umid_/Desktop/VoxoMVC/Voxo/Voxo/Areas/Manage/Views/Banner/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXEJhbm5lclxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/umid_/Desktop/VoxoMVC/Voxo/Voxo/Areas/Manage/Views/Banner/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXEJhbm5lclxEZXRhaWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/umid_/Desktop/VoxoMVC/Voxo/Voxo/Areas/Manage/Views/Banner/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXEJhbm5lclxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/umid_/Desktop/VoxoMVC/Voxo/Voxo/Areas/Manage/Views/Banner/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXEJhbm5lclxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/umid_/Desktop/VoxoMVC/Voxo/Voxo/Areas/Manage/Views/Brand/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXEJyYW5kXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -48,6 +64,42 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXERhc2hib2FyZFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/umid_/Desktop/VoxoMVC/Voxo/Voxo/Areas/Manage/Views/FAQ/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXEZBUVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/umid_/Desktop/VoxoMVC/Voxo/Voxo/Areas/Manage/Views/FAQ/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXEZBUVxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/umid_/Desktop/VoxoMVC/Voxo/Voxo/Areas/Manage/Views/FAQ/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXEZBUVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/umid_/Desktop/VoxoMVC/Voxo/Voxo/Areas/Manage/Views/Service/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXFNlcnZpY2VcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/umid_/Desktop/VoxoMVC/Voxo/Voxo/Areas/Manage/Views/Service/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXFNlcnZpY2VcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/umid_/Desktop/VoxoMVC/Voxo/Voxo/Areas/Manage/Views/Service/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXFNlcnZpY2VcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/umid_/Desktop/VoxoMVC/Voxo/Voxo/Areas/Manage/Views/Setting/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXFNldHRpbmdcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/umid_/Desktop/VoxoMVC/Voxo/Voxo/Areas/Manage/Views/Setting/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXFNldHRpbmdcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/umid_/Desktop/VoxoMVC/Voxo/Voxo/Areas/Manage/Views/Setting/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXFNldHRpbmdcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/umid_/Desktop/VoxoMVC/Voxo/Voxo/Areas/Manage/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXFNoYXJlZFxFcnJvci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -60,6 +112,18 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXFNoYXJlZFxfTG9naW5MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/umid_/Desktop/VoxoMVC/Voxo/Voxo/Areas/Manage/Views/Size/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXFNpemVcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/umid_/Desktop/VoxoMVC/Voxo/Voxo/Areas/Manage/Views/Size/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXFNpemVcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/umid_/Desktop/VoxoMVC/Voxo/Voxo/Areas/Manage/Views/Size/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXFNpemVcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/umid_/Desktop/VoxoMVC/Voxo/Voxo/Areas/Manage/Views/Tag/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXFRhZ1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -70,6 +134,22 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/umid_/Desktop/VoxoMVC/Voxo/Voxo/Areas/Manage/Views/Tag/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXFRhZ1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/umid_/Desktop/VoxoMVC/Voxo/Voxo/Areas/Manage/Views/TeamMember/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXFRlYW1NZW1iZXJcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/umid_/Desktop/VoxoMVC/Voxo/Voxo/Areas/Manage/Views/TeamMember/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXFRlYW1NZW1iZXJcRGV0YWlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/umid_/Desktop/VoxoMVC/Voxo/Voxo/Areas/Manage/Views/TeamMember/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXFRlYW1NZW1iZXJcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/umid_/Desktop/VoxoMVC/Voxo/Voxo/Areas/Manage/Views/TeamMember/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXFRlYW1NZW1iZXJcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/umid_/Desktop/VoxoMVC/Voxo/Voxo/Areas/Manage/Views/User/Create.cshtml]

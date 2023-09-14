@@ -1377,6 +1377,18 @@
       "PackagePath": "staticwebassets\\manage\\assets\\js\\tooltip-init.js"
     },
     {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\uploads\\BannerImages\\0631d40f-5287-41c0-bc56-99daf816933010.jpg",
+      "PackagePath": "staticwebassets\\uploads\\BannerImages\\0631d40f-5287-41c0-bc56-99daf816933010.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\uploads\\BannerImages\\367836d7-98cc-4969-a21d-9057ee53567d10.jpg",
+      "PackagePath": "staticwebassets\\uploads\\BannerImages\\367836d7-98cc-4969-a21d-9057ee53567d10.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\uploads\\BannerImages\\a27731a3-5f91-4094-9cfc-5caf6b4c4a0e11.jpg",
+      "PackagePath": "staticwebassets\\uploads\\BannerImages\\a27731a3-5f91-4094-9cfc-5caf6b4c4a0e11.jpg"
+    },
+    {
       "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\uploads\\CategoryImages\\5ca9d394-6429-4568-a22e-3da6ebf324263.jpg",
       "PackagePath": "staticwebassets\\uploads\\CategoryImages\\5ca9d394-6429-4568-a22e-3da6ebf324263.jpg"
     },

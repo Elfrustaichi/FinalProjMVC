@@ -1,0 +1,508 @@
+﻿@model Banner
+<div class="page-body">
+    <div class="title-header">
+        <h5>Add New Banner</h5>
+    </div>
+
+    <!-- New User start -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link active" id="pills-home-tab"
+                                                data-bs-toggle="pill" data-bs-target="#pills-instagram"
+                                                type="button">
+                                            Instagram banner
+                                        </button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="pills-profile-tab"
+                                                data-bs-toggle="pill" data-bs-target="#pills-DealOfTheDay"
+                                                type="button">
+                                            Deal of The day banner
+                                        </button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="pills-profile-tab"
+                                                data-bs-toggle="pill" data-bs-target="#pills-NewOffer"
+                                                type="button">
+                                            New Offer banner
+                                        </button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="pills-profile-tab"
+                                                data-bs-toggle="pill" data-bs-target="#pills-NewArrival"
+                                                type="button">
+                                            New Arrival banner
+                                        </button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="pills-profile-tab"
+                                                data-bs-toggle="pill" data-bs-target="#pills-Shop"
+                                                type="button">
+                                            Shop banner
+                                        </button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="pills-profile-tab"
+                                                data-bs-toggle="pill" data-bs-target="#pills-AboutUs"
+                                                type="button">
+                                            About Us banner
+                                        </button>
+                                    </li>
+                                </ul>
+
+                                <div class="tab-content" id="pills-tabContent">
+                                    <div class="tab-pane fade show active" id="pills-instagram" role="tabpanel">
+                                        <form enctype="multipart/form-data" method="post" id="instagramBanner" class="theme-form theme-form-2 mega-form">
+                                            <div class="card-header-1">
+                                                <h5>Instagram banner</h5>
+                                            </div>
+                                            <input asp-for="Type" value="InstagramBanner" hidden />
+
+                                            <div class="row">
+                                                <div class="mb-4 row align-items-center">
+                                                    <label class="form-label-title col-lg-2 col-md-3 mb-0">
+                                                        Header
+                                                    </label>
+                                                    <div class="col-md-9 col-lg-10">
+                                                        <input asp-for="Header" class="form-control" type="text">
+                                                        <span class="text-danger" asp-validation-for="Header"></span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="mb-4 row align-items-center">
+                                                    <label class="col-lg-2 col-md-3 col-form-label form-label-title">
+                                                        Price
+                                                    </label>
+                                                    <div class="col-md-9 col-lg-10">
+                                                        <input asp-for="Price" class="form-control" type="text">
+                                                        <span class="text-danger" asp-validation-for="Price"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-4 row align-items-center">
+                                                    <label class="col-lg-2 col-md-3 col-form-label form-label-title">
+                                                        DiscountText
+                                                    </label>
+                                                    <div class="col-md-9 col-lg-10">
+                                                        <input asp-for="DiscountText" class="form-control" type="text">
+                                                        <span class="text-danger" asp-validation-for="DiscountText"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-4 row align-items-center">
+                                                    <label class="col-lg-2 col-md-3 col-form-label form-label-title">
+                                                        Button Url
+                                                    </label>
+                                                    <div class="col-md-9 col-lg-10">
+                                                        <input asp-for="ButtonUrl" class="form-control" type="text">
+                                                        <span class="text-danger" asp-validation-for="ButtonUrl"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-4 row align-items-center">
+                                                    <label class="col-lg-2 col-md-3 col-form-label form-label-title">
+                                                        Button Text
+                                                    </label>
+                                                    <div class="col-md-9 col-lg-10">
+                                                        <input asp-for="ButtonText" class="form-control" type="text">
+                                                        <span class="text-danger" asp-validation-for="ButtonText"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-4 row align-items-center">
+                                                    <label class="col-sm-2 col-form-label form-label-title">Photo</label>
+                                                    <div class="col-sm-10">
+                                                        <input asp-for="BackgroundImage" class="form-control form-choose" type="file"
+                                                               id="formFileMultiple">
+                                                        <span class="text-danger" asp-validation-for="BackgroundImage"></span>
+
+                                                    </div>
+                                                </div>
+                                                <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+                                            </div>
+                                        </form>
+                                        <button type="submit" form="instagramBanner" class="align-items-center btn btn-theme">
+                                            <i data-feather="plus-square"></i>Add New Banner
+                                        </button>
+                                    </div>
+                                    <div class="tab-pane fade show " id="pills-DealOfTheDay" role="tabpanel">
+                                        <form enctype="multipart/form-data" method="post" id="dealofthedayBanner" class="theme-form theme-form-2 mega-form">
+                                            <div class="card-header-1">
+                                                <h5>Deal of the Day banner</h5>
+                                            </div>
+                                            <input asp-for="Type" value="DealOfTheDayBanner" hidden />
+
+                                            <div class="row">
+                                                <div class="mb-4 row align-items-center">
+                                                    <label class="form-label-title col-lg-2 col-md-3 mb-0">
+                                                        Header
+                                                    </label>
+                                                    <div class="col-md-9 col-lg-10">
+                                                        <input asp-for="Header" class="form-control" type="text">
+                                                        <span class="text-danger" asp-validation-for="Header"></span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="mb-4 row align-items-center">
+                                                    <label class="col-lg-2 col-md-3 col-form-label form-label-title">
+                                                        Price
+                                                    </label>
+                                                    <div class="col-md-9 col-lg-10">
+                                                        <input asp-for="Price" class="form-control" type="text">
+                                                        <span class="text-danger" asp-validation-for="Price"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-4 row align-items-center">
+                                                    <label class="col-lg-2 col-md-3 col-form-label form-label-title">
+                                                        Discount text
+                                                    </label>
+                                                    <div class="col-md-9 col-lg-10">
+                                                        <input asp-for="DiscountText" class="form-control" type="text">
+                                                        <span class="text-danger" asp-validation-for="DiscountText"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-4 row align-items-center">
+                                                    <label class="col-lg-2 col-md-3 col-form-label form-label-title">
+                                                        Offer text
+                                                    </label>
+                                                    <div class="col-md-9 col-lg-10">
+                                                        <input asp-for="Offer" class="form-control" type="text">
+                                                        <span class="text-danger" asp-validation-for="Offer"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-4 row align-items-center">
+                                                    <label class="col-lg-2 col-md-3 col-form-label form-label-title">
+                                                        Ultra banner second header
+                                                    </label>
+                                                    <div class="col-md-9 col-lg-10">
+                                                        <input asp-for="UltraBannerSecondHeader" class="form-control" type="text">
+                                                        <span class="text-danger" asp-validation-for="UltraBannerSecondHeader"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-4 row align-items-center">
+                                                    <label class="col-lg-2 col-md-3 col-form-label form-label-title">
+                                                        Button Url
+                                                    </label>
+                                                    <div class="col-md-9 col-lg-10">
+                                                        <input asp-for="ButtonUrl" class="form-control" type="text">
+                                                        <span class="text-danger" asp-validation-for="ButtonUrl"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-4 row align-items-center">
+                                                    <label class="col-lg-2 col-md-3 col-form-label form-label-title">
+                                                        Button Text
+                                                    </label>
+                                                    <div class="col-md-9 col-lg-10">
+                                                        <input asp-for="ButtonText" class="form-control" type="text">
+                                                        <span class="text-danger" asp-validation-for="ButtonText"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-4 row align-items-center">
+                                                    <label class="col-lg-2 col-md-3 col-form-label form-label-title">
+                                                        Offer time
+                                                    </label>
+                                                    <div class="col-md-9 col-lg-10">
+                                                        <input asp-for="OfferTime" class="form-control" type="date">
+                                                        <span class="text-danger" asp-validation-for="OfferTime"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-4 row align-items-center">
+                                                    <label class="col-sm-2 col-form-label form-label-title">Photo</label>
+                                                    <div class="col-sm-10">
+                                                        <input asp-for="BackgroundImage" class="form-control form-choose" type="file"
+                                                               id="formFileMultiple">
+                                                        <span class="text-danger" asp-validation-for="BackgroundImage"></span>
+
+                                                    </div>
+                                                </div>
+                                                <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+                                            </div>
+                                        </form>
+                                        <button type="submit" form="dealofthedayBanner" class="align-items-center btn btn-theme">
+                                            <i data-feather="plus-square"></i>Add New Banner
+                                        </button>
+                                    </div>
+                                    <div class="tab-pane fade show " id="pills-NewOffer" role="tabpanel">
+                                        <form enctype="multipart/form-data" method="post" id="newofferBanner" class="theme-form theme-form-2 mega-form">
+                                            <div class="card-header-1">
+                                                <h5>New Offer banner</h5>
+                                            </div>
+                                            <input asp-for="Type" value="NewOfferBanner" hidden />
+
+                                            <div class="row">
+                                                <div class="mb-4 row align-items-center">
+                                                    <label class="form-label-title col-lg-2 col-md-3 mb-0">
+                                                        Header
+                                                    </label>
+                                                    <div class="col-md-9 col-lg-10">
+                                                        <input asp-for="Header" class="form-control" type="text">
+                                                        <span class="text-danger" asp-validation-for="Header"></span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="mb-4 row align-items-center">
+                                                    <label class="col-lg-2 col-md-3 col-form-label form-label-title">
+                                                        Price
+                                                    </label>
+                                                    <div class="col-md-9 col-lg-10">
+                                                        <input asp-for="Price" class="form-control" type="text">
+                                                        <span class="text-danger" asp-validation-for="Price"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-4 row align-items-center">
+                                                    <label class="col-lg-2 col-md-3 col-form-label form-label-title">
+                                                        Offer text
+                                                    </label>
+                                                    <div class="col-md-9 col-lg-10">
+                                                        <input asp-for="Offer" class="form-control" type="text">
+                                                        <span class="text-danger" asp-validation-for="Offer"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-4 row align-items-center">
+                                                    <label class="col-lg-2 col-md-3 col-form-label form-label-title">
+                                                        Button Url
+                                                    </label>
+                                                    <div class="col-md-9 col-lg-10">
+                                                        <input asp-for="ButtonUrl" class="form-control" type="text">
+                                                        <span class="text-danger" asp-validation-for="ButtonUrl"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-4 row align-items-center">
+                                                    <label class="col-lg-2 col-md-3 col-form-label form-label-title">
+                                                        Button Text
+                                                    </label>
+                                                    <div class="col-md-9 col-lg-10">
+                                                        <input asp-for="ButtonText" class="form-control" type="text">
+                                                        <span class="text-danger" asp-validation-for="ButtonText"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-4 row align-items-center">
+                                                    <label class="col-sm-2 col-form-label form-label-title">
+                                                        Banner Size
+                                                    </label>
+                                                    <div class="col-sm-10">
+                                                        <select asp-for="Size" class="js-example-basic-single w-100">
+                                                            <option value="small">small</option>
+                                                            <option value="medium">Medium</option>
+                                                            <option value="big">Big</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-4 row align-items-center">
+                                                    <label class="col-sm-2 col-form-label form-label-title">Photo</label>
+                                                    <div class="col-sm-10">
+                                                        <input asp-for="BackgroundImage" class="form-control form-choose" type="file"
+                                                               id="formFileMultiple">
+                                                        <span class="text-danger" asp-validation-for="BackgroundImage"></span>
+
+                                                    </div>
+                                                </div>
+                                                <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+                                            </div>
+                                        </form>
+                                        <button type="submit" form="newofferBanner" class="align-items-center btn btn-theme">
+                                            <i data-feather="plus-square"></i>Add New Banner
+                                        </button>
+                                    </div>
+                                    <div class="tab-pane fade show " id="pills-NewArrival" role="tabpanel">
+                                        <form enctype="multipart/form-data" method="post" id="newarrivalBanner" class="theme-form theme-form-2 mega-form">
+                                            <div class="card-header-1">
+                                                <h5>New Arrival banner</h5>
+                                            </div>
+                                            <input asp-for="Type" value="NewOfferBanner" hidden />
+
+                                            <div class="row">
+                                                <div class="mb-4 row align-items-center">
+                                                    <label class="form-label-title col-lg-2 col-md-3 mb-0">
+                                                        Header
+                                                    </label>
+                                                    <div class="col-md-9 col-lg-10">
+                                                        <input asp-for="Header" class="form-control" type="text">
+                                                        <span class="text-danger" asp-validation-for="Header"></span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="mb-4 row align-items-center">
+                                                    <label class="col-lg-2 col-md-3 col-form-label form-label-title">
+                                                        Offer
+                                                    </label>
+                                                    <div class="col-md-9 col-lg-10">
+                                                        <input asp-for="Offer" class="form-control" type="text">
+                                                        <span class="text-danger" asp-validation-for="Offer"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-4 row align-items-center">
+                                                    <label class="col-lg-2 col-md-3 col-form-label form-label-title">
+                                                        DiscountText
+                                                    </label>
+                                                    <div class="col-md-9 col-lg-10">
+                                                        <input asp-for="DiscountText" class="form-control" type="text">
+                                                        <span class="text-danger" asp-validation-for="DiscountText"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-4 row align-items-center">
+                                                    <label class="col-lg-2 col-md-3 col-form-label form-label-title">
+                                                        Button Url
+                                                    </label>
+                                                    <div class="col-md-9 col-lg-10">
+                                                        <input asp-for="ButtonUrl" class="form-control" type="text">
+                                                        <span class="text-danger" asp-validation-for="ButtonUrl"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-4 row align-items-center">
+                                                    <label class="col-sm-2 col-form-label form-label-title">Photo</label>
+                                                    <div class="col-sm-10">
+                                                        <input asp-for="BackgroundImage" class="form-control form-choose" type="file"
+                                                               id="formFileMultiple">
+                                                        <span class="text-danger" asp-validation-for="BackgroundImage"></span>
+
+                                                    </div>
+                                                </div>
+                                                <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+                                            </div>
+                                        </form>
+                                        <button type="submit" form="newarrivalBanner" class="align-items-center btn btn-theme">
+                                            <i data-feather="plus-square"></i>Add New Banner
+                                        </button>
+                                    </div>
+                                    <div class="tab-pane fade show " id="pills-Shop" role="tabpanel">
+                                        <form enctype="multipart/form-data" method="post" id="shopBanner" class="theme-form theme-form-2 mega-form">
+                                            <div class="card-header-1">
+                                                <h5>Shop banner</h5>
+                                            </div>
+                                            <input asp-for="Type" value="ShopBanner" hidden />
+
+                                            <div class="row">
+                                                <div class="mb-4 row align-items-center">
+                                                    <label class="form-label-title col-lg-2 col-md-3 mb-0">
+                                                        Header
+                                                    </label>
+                                                    <div class="col-md-9 col-lg-10">
+                                                        <input asp-for="Header" class="form-control">
+                                                        <span class="text-danger" asp-validation-for="Header"></span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="mb-4 row align-items-center">
+                                                    <label class="col-lg-2 col-md-3 col-form-label form-label-title">
+                                                        Offer text
+                                                    </label>
+                                                    <div class="col-md-9 col-lg-10">
+                                                        <input asp-for="Offer" class="form-control">
+                                                        <span class="text-danger" asp-validation-for="Offer"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-4 row align-items-center">
+                                                    <label class="col-sm-2 col-form-label form-label-title">Photo</label>
+                                                    <div class="col-sm-10">
+                                                        <input asp-for="BackgroundImage" class="form-control form-choose" type="file"
+                                                               id="formFileMultiple">
+                                                        <span class="text-danger" asp-validation-for="BackgroundImage"></span>
+
+                                                    </div>
+                                                </div>
+                                                <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+                                            </div>
+                                        </form>
+                                        <button type="submit" form="shopBanner" class="align-items-center btn btn-theme">
+                                            <i data-feather="plus-square"></i>Add New Banner
+                                        </button>
+                                    </div>
+                                    <div class="tab-pane fade show" id="pills-AboutUs" role="tabpanel">
+                                        <form enctype="multipart/form-data" method="post" id="aboutusBanner" class="theme-form theme-form-2 mega-form">
+                                            <div class="card-header-1">
+                                                <h5>About Us banner</h5>
+                                            </div>
+                                            <input asp-for="Type" value="AboutUsBanner" hidden />
+
+                                            <div class="row">
+                                                <div class="mb-4 row align-items-center">
+                                                    <label class="form-label-title col-lg-2 col-md-3 mb-0">
+                                                        Header
+                                                    </label>
+                                                    <div class="col-md-9 col-lg-10">
+                                                        <input asp-for="Header" class="form-control">
+                                                        <span class="text-danger" asp-validation-for="Header"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-4 row align-items-center">
+                                                    <label class="form-label-title col-lg-2 col-md-3 mb-0">
+                                                        Button Text
+                                                    </label>
+                                                    <div class="col-md-9 col-lg-10">
+                                                        <input asp-for="ButtonText" class="form-control">
+                                                        <span class="text-danger" asp-validation-for="ButtonText"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-4 row align-items-center">
+                                                    <label class="form-label-title col-lg-2 col-md-3 mb-0">
+                                                        Button Url
+                                                    </label>
+                                                    <div class="col-md-9 col-lg-10">
+                                                        <input asp-for="ButtonUrl" class="form-control">
+                                                        <span class="text-danger" asp-validation-for="ButtonUrl"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-4 row align-items-center">
+                                                    <label class="form-label-title col-lg-2 col-md-3 mb-0">
+                                                        Description
+                                                    </label>
+                                                    <div class="col-md-9 col-lg-10">
+                                                        <textarea rows="2" asp-for="Description" class="form-control"></textarea>
+                                                        <span class="text-danger" asp-validation-for="Description"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-4 row align-items-center">
+                                                    <label class="col-sm-2 col-form-label form-label-title">
+                                                        Banner Size
+                                                    </label>
+                                                    <div class="col-sm-10">
+                                                        <select asp-for="Size" class="js-example-basic-single w-100">
+                                                            <option value="small">small</option>
+                                                            <option value="medium">Medium</option>
+                                                            <option value="big">Big</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-4 row align-items-center">
+                                                    <label class="col-sm-2 col-form-label form-label-title">Photo</label>
+                                                    <div class="col-sm-10">
+                                                        <input asp-for="BackgroundImage" class="form-control form-choose" type="file"
+                                                               id="formFileMultiple">
+                                                        <span class="text-danger" asp-validation-for="BackgroundImage"></span>
+
+                                                    </div>
+                                                </div>
+                                                <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+                                            </div>
+                                        </form>
+                                        <button type="submit" form="aboutusBanner" class="align-items-center btn btn-theme">
+                                            <i data-feather="plus-square"></i>Add New Banner
+                                        </button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- New User End -->
+    <!-- footer start -->
+    <div class="container-fluid">
+        <footer class="footer">
+            <div class="row">
+                <div class="col-md-12 footer-copyright text-center">
+                    <p class="mb-0">Copyright 2021 © Voxo theme by pixelstrap</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- footer end -->
+</div>
+<!-- Page Sidebar End -->

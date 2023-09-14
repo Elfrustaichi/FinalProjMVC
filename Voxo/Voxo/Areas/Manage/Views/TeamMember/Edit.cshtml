@@ -1,0 +1,123 @@
+﻿@model TeamMember
+<div class="page-body">
+    <div class="title-header">
+        <h5>Add New TeamMember</h5>
+    </div>
+
+    <!-- New User start -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link active" id="pills-home-tab"
+                                                data-bs-toggle="pill" data-bs-target="#pills-home"
+                                                type="button">
+                                            TeamMember
+                                        </button>
+                                    </li>
+                                </ul>
+                                <form enctype="multipart/form-data" method="post" id="userCreate" class="theme-form theme-form-2 mega-form">
+                                    <div class="tab-content" id="pills-tabContent">
+                                        <div class="tab-pane fade show active" id="pills-home" role="tabpanel">
+
+                                            <div class="card-header-1">
+                                                <h5>TeamMember Information</h5>
+                                            </div>
+
+                                            <div class="row">
+
+                                                <div class="mb-4 row align-items-center">
+                                                    <label class="form-label-title col-lg-2 col-md-3 mb-0">
+                                                        TeamMember Fullname
+                                                    </label>
+                                                    <div class="col-md-9 col-lg-10">
+                                                        <input asp-for="Fullname" class="form-control">
+                                                        <span class="text-danger" asp-validation-for="Fullname"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-4 row align-items-center">
+                                                    <label class="form-label-title col-lg-2 col-md-3 mb-0">
+                                                        TeamMember Comment
+                                                    </label>
+                                                    <div class="col-md-9 col-lg-10">
+                                                        <input asp-for="Comment" class="form-control">
+                                                        <span class="text-danger" asp-validation-for="Comment"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-4 row align-items-center">
+                                                    <label class="form-label-title col-lg-2 col-md-3 mb-0">
+                                                        TeamMember Own website
+                                                    </label>
+                                                    <div class="col-md-9 col-lg-10">
+                                                        <input asp-for="OwnWebsite" class="form-control">
+                                                        <span class="text-danger" asp-validation-for="OwnWebsite"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-4 row align-items-center">
+                                                    <label class="form-label-title col-lg-2 col-md-3 mb-0">
+                                                        TeamMember Rate
+                                                    </label>
+                                                    <div class="col-md-9 col-lg-10">
+                                                        <input asp-for="Rate" class="form-control">
+                                                        <span class="text-danger" asp-validation-for="Rate"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-4 row align-items-center">
+                                                    <label class="col-sm-2 col-form-label form-label-title">
+                                                        TeamMember Tag
+                                                    </label>
+                                                    <div class="col-sm-10">
+                                                        <select asp-for="Profession" class="js-example-basic-single w-100">
+                                                            <option disabled>Static Menu</option>
+                                                            <option value="Quality assurance">Quality assurance</option>
+                                                            <option value="Front-end developer">Front-end developer</option>
+                                                            <option value="Back-end developer">Back-end developer</option>
+                                                            <option value="Designer">Designer</option>
+                                                            <option value="Project manager">Project manager</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-4 row align-items-center">
+                                                    <label class="col-sm-2 col-form-label form-label-title">Photo</label>
+                                                    <div class="col-sm-10">
+                                                        <input asp-for="ImageFile" class="form-control form-choose" type="file"
+                                                               id="formFileMultiple">
+                                                        <span class="text-danger" asp-validation-for="ImageFile"></span>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+                                </form>
+                                <button type="submit" form="userCreate" class="align-items-center btn btn-theme">
+                                    <i data-feather="plus-square"></i>Add New TeamMember
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- New User End -->
+    <!-- footer start -->
+    <div class="container-fluid">
+        <footer class="footer">
+            <div class="row">
+                <div class="col-md-12 footer-copyright text-center">
+                    <p class="mb-0">Copyright 2021 © Voxo theme by pixelstrap</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- footer end -->
+</div>
+<!-- Page Sidebar End -->

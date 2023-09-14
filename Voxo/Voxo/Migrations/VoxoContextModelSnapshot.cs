@@ -268,7 +268,6 @@ namespace Voxo.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("BackgroundImageName")
-                        .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
@@ -293,12 +292,6 @@ namespace Voxo.Migrations
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
 
-                    b.Property<bool>("IsLarge")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("IsNewOffer")
-                        .HasColumnType("bit");
-
                     b.Property<string>("Offer")
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
@@ -308,6 +301,9 @@ namespace Voxo.Migrations
 
                     b.Property<decimal>("Price")
                         .HasColumnType("money");
+
+                    b.Property<string>("Size")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Type")
                         .IsRequired()
@@ -714,7 +710,6 @@ namespace Voxo.Migrations
                         .HasColumnType("nvarchar(20)");
 
                     b.Property<string>("Icon")
-                        .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
@@ -851,7 +846,6 @@ namespace Voxo.Migrations
                         .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("ImageName")
-                        .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 

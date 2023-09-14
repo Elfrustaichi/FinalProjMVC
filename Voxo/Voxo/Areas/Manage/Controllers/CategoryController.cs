@@ -67,8 +67,15 @@ namespace Voxo.Areas.Manage.Controllers
                 return StatusCode(404);
             }
 
+            string oldImage=category.BackgroundImageName;
+
             _context.Categories.Remove(category);
             _context.SaveChanges();
+            if (oldImage != null)
+            {
+                FileManager.Delete(_env.WebRootPath, "uploads/CategoryImages", oldImage);
+            }
+            
             return StatusCode(200);
         }
         //Category delete end

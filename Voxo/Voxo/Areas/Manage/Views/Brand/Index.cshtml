@@ -70,7 +70,7 @@
                                 }
 
                                 <li class="page-item @(Model.HasNext==true?"":"disabled")">
-                                    <a class="page-link" asp-controller="category" asp-action="index" asp-route-page="@(Model.PageIndex+1)">Next</a>
+                                    <a class="page-link" asp-action="index" asp-route-page="@(Model.PageIndex+1)">Next</a>
                                 </li>
                             </ul>
                         </nav>

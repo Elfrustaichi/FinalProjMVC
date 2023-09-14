@@ -1,5 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using Voxo.Attributes.ValidationAttributes;
 
 namespace Voxo.Models
 {
@@ -9,7 +11,6 @@ namespace Voxo.Models
         [Required]
         [MaxLength(50)]
         public string Fullname { get; set; }
-        [Required]
         [MaxLength(100)]
         public string ImageName { get; set; }
         [Required]
@@ -22,5 +23,9 @@ namespace Voxo.Models
         public string Comment { get; set; }
         [MaxLength(20)]
         public string OwnWebsite { get; set; }
+        [NotMapped]
+        [MaxFileSizeValidation(31457280)]
+        [RequiredFileTypeValidation("image/jpeg", "image/png", "image/jpg")]
+        public IFormFile ImageFile { get; set; }
     }
 }
