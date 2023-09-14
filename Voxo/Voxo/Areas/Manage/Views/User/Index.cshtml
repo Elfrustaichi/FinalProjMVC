@@ -1,11 +1,11 @@
-﻿ @model List<AppUser>        
+﻿ @model PaginatedList<AppUser>       
   <!-- Container-fluid starts-->
 <div class="page-body">
     <div class="title-header title-header-1">
         <h5>All Users</h5>
         <form class="d-inline-flex">
-            <a href="add-new-user.html" class="align-items-center btn btn-theme">
-                <i data-feather="plus-square"></i>Add New
+            <a asp-controller="user" asp-action="create" class="align-items-center btn btn-theme">
+                <i data-feather="plus-square"></i>Add New User
             </a>
         </form>
     </div>
@@ -34,7 +34,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach (var user in Model)
+                                        @foreach (var user in Model.Items)
                                         {
                                             <tr>
                                                 <td>
@@ -63,19 +63,13 @@
                                                 <td>
                                                     <ul>
                                                         <li>
-                                                            <a href="order-detail.html">
+                                                            <a asp-controller="user" asp-action="detail" asp-route-id="@user.Id">
                                                                 <span class="lnr lnr-eye"></span>
                                                             </a>
                                                         </li>
 
                                                         <li>
-                                                            <a href="javascript:void(0)">
-                                                                <span class="lnr lnr-pencil"></span>
-                                                            </a>
-                                                        </li>
-
-                                                        <li>
-                                                            <a href="javascript:void(0)">
+                                                            <a class="delete-btn-alert" asp-controller="user" asp-action="delete" asp-route-id="@user.Id">
                                                                 <span class="lnr lnr-trash"></span>
                                                             </a>
                                                         </li>
@@ -92,20 +86,19 @@
                     <div class="pagination-box">
                         <nav class="ms-auto me-auto " aria-label="...">
                             <ul class="pagination pagination-primary">
-                                <li class="page-item disabled">
-                                    <a class="page-link" href="javascript:void(0)">Previous</a>
+                                <li class="page-item @(Model.HasPrev==true?"":"disabled")">
+                                    <a class="page-link" asp-action="index" asp-route-page="@(Model.PageIndex-1)">Previous</a>
                                 </li>
-                                <li class="page-item active">
-                                    <a class="page-link" href="javascript:void(0)">1 </a>
-                                </li>
-                                <li class="page-item">
-                                    <a class="page-link" href="javascript:void(0)">2</a>
-                                </li>
-                                <li class="page-item">
-                                    <a class="page-link" href="javascript:void(0)">3</a>
-                                </li>
-                                <li class="page-item">
-                                    <a class="page-link" href="javascript:void(0)">Next</a>
+
+                                @for (int i = 1; i <= Model.TotalPage; i++)
+                                {
+                                    <li class="page-item @(i==Model.PageIndex?"active":"")">
+                                        <a class="page-link" asp-action="index" asp-route-page="@i">@i</a>
+                                    </li>
+                                }
+
+                                <li class="page-item @(Model.HasNext==true?"":"disabled")">
+                                    <a class="page-link" asp-controller="category" asp-action="index" asp-route-page="@(Model.PageIndex+1)">Next</a>
                                 </li>
                             </ul>
                         </nav>

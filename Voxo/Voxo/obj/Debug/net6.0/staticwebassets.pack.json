@@ -1149,6 +1149,10 @@
       "PackagePath": "staticwebassets\\manage\\assets\\images\\hour.html"
     },
     {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\manage\\assets\\images\\icon\\UserIcon.png",
+      "PackagePath": "staticwebassets\\manage\\assets\\images\\icon\\UserIcon.png"
+    },
+    {
       "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\manage\\assets\\images\\icon\\down-.html",
       "PackagePath": "staticwebassets\\manage\\assets\\images\\icon\\down-.html"
     },
@@ -1329,6 +1333,10 @@
       "PackagePath": "staticwebassets\\manage\\assets\\js\\jquery-3.6.0.min.js"
     },
     {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\manage\\assets\\js\\main.js",
+      "PackagePath": "staticwebassets\\manage\\assets\\js\\main.js"
+    },
+    {
       "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\manage\\assets\\js\\notify\\bootstrap-notify.min.js",
       "PackagePath": "staticwebassets\\manage\\assets\\js\\notify\\bootstrap-notify.min.js"
     },
@@ -1367,6 +1375,14 @@
     {
       "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\manage\\assets\\js\\tooltip-init.js",
       "PackagePath": "staticwebassets\\manage\\assets\\js\\tooltip-init.js"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\uploads\\CategoryImages\\5ca9d394-6429-4568-a22e-3da6ebf324263.jpg",
+      "PackagePath": "staticwebassets\\uploads\\CategoryImages\\5ca9d394-6429-4568-a22e-3da6ebf324263.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\uploads\\CategoryImages\\98931469-451f-4430-822c-863e6b0061734.jpg",
+      "PackagePath": "staticwebassets\\uploads\\CategoryImages\\98931469-451f-4430-822c-863e6b0061734.jpg"
     },
     {
       "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.Voxo.Microsoft.AspNetCore.StaticWebAssets.props",

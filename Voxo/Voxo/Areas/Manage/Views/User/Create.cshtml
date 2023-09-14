@@ -1,0 +1,140 @@
+﻿@model AppUserCreateViewModel
+<div class="page-body">
+    <div class="title-header">
+        <h5>Add New User</h5>
+    </div>
+    
+    <!-- New User start -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link active" id="pills-home-tab"
+                                                data-bs-toggle="pill" data-bs-target="#pills-home"
+                                                type="button">
+                                            Account
+                                        </button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="pills-profile-tab"
+                                                data-bs-toggle="pill" data-bs-target="#pills-profile"
+                                                type="button">
+                                            Permission
+                                        </button>
+                                    </li>
+                                </ul>
+                                <form method="post" id="userCreate" class="theme-form theme-form-2 mega-form">
+                                <div class="tab-content" id="pills-tabContent"> 
+                                    <div class="tab-pane fade show active" id="pills-home" role="tabpanel">
+                                        
+                                            <div class="card-header-1">
+                                                <h5>User Information</h5>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="mb-4 row align-items-center">
+                                                    <label class="form-label-title col-lg-2 col-md-3 mb-0">
+                                                        Username
+                                                    </label>
+                                                    <div class="col-md-9 col-lg-10">
+                                                        <input asp-for="UserName" class="form-control" type="text">
+                                                        <span class="text-danger" asp-validation-for="UserName"></span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="mb-4 row align-items-center">
+                                                    <label class="col-lg-2 col-md-3 col-form-label form-label-title">
+                                                        Fullname
+                                                    </label>
+                                                    <div class="col-md-9 col-lg-10">
+                                                        <input asp-for="Fullname" class="form-control" type="text">
+                                                        <span class="text-danger" asp-validation-for="Fullname"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-4 row align-items-center">
+                                                    <label class="col-lg-2 col-md-3 col-form-label form-label-title">
+                                                        Email
+                                                    </label>
+                                                    <div class="col-md-9 col-lg-10">
+                                                        <input asp-for="Email" class="form-control" type="email">
+                                                        <span class="text-danger" asp-validation-for="Email"></span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="mb-4 row align-items-center">
+                                                    <label class="col-lg-2 col-md-3 col-form-label form-label-title">Password</label>
+                                                    <div class="col-md-9 col-lg-10">
+                                                        <input asp-for="Password"  class="form-control" type="password">
+                                                        <span class="text-danger" asp-validation-for="Password"></span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row align-items-center">
+                                                    <label class="col-lg-2 col-md-3 col-form-label form-label-title">
+                                                        Confirm
+                                                        Password
+                                                    </label>
+                                                    <div class="col-md-9 col-lg-10">
+                                                        <input asp-for="ConfirmPassword" class="form-control" type="password">
+                                                        <span class="text-danger" asp-validation-for="ConfirmPassword"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        
+                                    </div>
+                                    <div class="tab-pane fade" id="pills-profile" role="tabpanel">
+                                        <div class="card-header-1">
+                                            <h5>User Related Permission</h5>
+                                        </div>
+                                        <div class="mb-4 row align-items-center">
+                                            <label class="col-md-2 mb-0">Admin</label>
+                                            <div class="col-md-9">
+                                                <div class="radio-section">
+                                                    <label>
+                                                        <input asp-for="IsAdmin" value="@true" type="radio" >
+                                                        <i></i>
+                                                        <span>Allow</span>
+                                                    </label>
+
+                                                    <label>
+                                                        <input asp-for="IsAdmin" value="@false" type="radio" />
+                                                        <i></i>
+                                                        <span>Deny</span>
+                                                    </label>
+                                                        <span class="text-danger" asp-validation-for="IsAdmin"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> 
+                                </div>
+                                <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+                                </form>
+                                <button type="submit" form="userCreate" class="align-items-center btn btn-theme">
+                                    <i data-feather="plus-square"></i>Add New User
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- New User End -->
+    <!-- footer start -->
+    <div class="container-fluid">
+        <footer class="footer">
+            <div class="row">
+                <div class="col-md-12 footer-copyright text-center">
+                    <p class="mb-0">Copyright 2021 © Voxo theme by pixelstrap</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- footer end -->
+</div>
+<!-- Page Sidebar End -->

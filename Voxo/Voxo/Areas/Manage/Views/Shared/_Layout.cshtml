@@ -126,6 +126,12 @@
 
     <!-- all checkbox select js -->
     <script src="~/assets/js/checkbox-all-check.js" defer></script>
+
+    @* Sweet Alert js *@
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+
+    @* Main js *@
+    <script src="~/manage/assets/js/main.js" defer></script>
 </head>
 
 <body>
@@ -282,7 +288,7 @@
                             </div>
                             <ul class="profile-dropdown onhover-show-div">
                                 <li>
-                                    <a href="all-users.html">
+                                    <a asp-controller="user" asp-action="index">
                                         <i data-feather="users"></i>
                                         <span>Users</span>
                                     </a>
@@ -296,7 +302,7 @@
                                 <li>
                                     <a href="support-ticket.html">
                                         <i data-feather="phone"></i>
-                                        <span>Spports Tickets</span>
+                                        <span>Supports Tickets</span>
                                     </a>
                                 </li>
                                 <li>
@@ -369,10 +375,10 @@
                                     </a>
                                     <ul class="sidebar-submenu">
                                         <li>
-                                            <a href="all-users.html">All users</a>
+                                            <a asp-action="index" asp-controller="user">All users</a>
                                         </li>
                                         <li>
-                                            <a href="add-new-user.html">Add new user</a>
+                                            <a asp-controller="user" asp-action="create">Add new user</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -383,7 +389,51 @@
                                         <p class="lan-2">Ready To Use Apps</p>
                                     </div>
                                 </li>
+                                <li class="sidebar-list">
+                                    <a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
+                                        <i data-feather="align-left"></i>
+                                        <span>Tags</span>
+                                    </a>
+                                    <ul class="sidebar-submenu">
+                                        <li>
+                                            <a asp-controller="tag" asp-action="index">Tags table</a>
+                                        </li>
 
+                                        <li>
+                                            <a asp-controller="tag" asp-action="create">Create Tag</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="sidebar-list">
+                                    <a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
+                                        <i data-feather="align-left"></i>
+                                        <span>Brands</span>
+                                    </a>
+                                    <ul class="sidebar-submenu">
+                                        <li>
+                                            <a asp-controller="brand" asp-action="index">Brands table</a>
+                                        </li>
+
+                                        <li>
+                                            <a asp-controller="brand" asp-action="create">Create Brand</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="sidebar-list">
+                                    <a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
+                                        <i data-feather="align-left"></i>
+                                        <span>Categories</span>
+                                    </a>
+                                    <ul class="sidebar-submenu">
+                                        <li>
+                                            <a asp-controller="category" asp-action="index">Categories table</a>
+                                        </li>
+
+                                        <li>
+                                            <a asp-controller="category" asp-action="create">Create Category</a>
+                                        </li>
+                                    </ul>
+                                </li>
                                 <li class="sidebar-list">
                                     <a class="sidebar-link sidebar-title" href="javascript:void(0)">
                                         <i data-feather="archive"></i>

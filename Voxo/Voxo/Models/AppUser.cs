@@ -11,6 +11,8 @@ namespace Voxo.Models
         public bool IsAdmin { get; set; }
         public string ConnectionId { get; set; }
 
+        public DateTime CreationTime { get; set; }
+
         public List<Order> Orders { get; set; } = new List<Order>();
 
         public List<Adress> Adresses { get; set; }=new List<Adress>();

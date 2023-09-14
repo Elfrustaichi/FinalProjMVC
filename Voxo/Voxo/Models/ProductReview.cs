@@ -9,8 +9,12 @@ namespace Voxo.Models
         public string ReviewText { get; set; }
         [Required,Range(0,5)]
         public int Rate { get; set; }
+        [MaxLength(500)]
+        public string AdminResponse { get; set; }
 
         public DateTime CreateTime { get; set; }
+
+         
 
         public int ProductId { get; set; }
 

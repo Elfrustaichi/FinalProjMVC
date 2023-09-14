@@ -1,0 +1,94 @@
+﻿@model PaginatedList<Brand>
+<!-- Container-fluid starts-->
+<div class="page-body">
+    <div class="title-header">
+        <h5>Brands List</h5>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div>
+                            <div class="table-responsive table-desi table-product">
+                                <table class="table table-1d all-package">
+                                    <thead>
+                                        <tr>
+                                            <th>Brand Id</th>
+                                            <th>Brand Name</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        @foreach (var item in Model.Items)
+                                        {
+                                            <tr>
+                                                <td>
+                                                    <a href="javascript:void(0)">@item.Id</a>
+                                                </td>
+                                                <td>
+                                                    <a href="javascript:void(0)">@item.Name</a>
+                                                </td>
+                                                <td>
+                                                    <ul>
+
+                                                        <li>
+                                                            <a class="edit-btn-alert" asp-action="edit" asp-route-id="@item.Id">
+                                                                <span class="lnr lnr-pencil"></span>
+                                                            </a>
+                                                        </li>
+
+                                                        <li>
+                                                            <a class="delete-btn-alert" asp-action="delete" asp-route-id="@item.Id">
+                                                                <i class="far fa-trash-alt theme-color"></i>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pagination-box">
+                        <nav class="ms-auto me-auto " aria-label="...">
+                            <ul class="pagination pagination-primary">
+                                <li class="page-item @(Model.HasPrev==true?"":"disabled")">
+                                    <a class="page-link" asp-action="index" asp-route-page="@(Model.PageIndex-1)">Previous</a>
+                                </li>
+
+                                @for (int i = 1; i <= Model.TotalPage; i++)
+                                {
+                                    <li class="page-item @(i==Model.PageIndex?"active":"")">
+                                        <a class="page-link" asp-action="index" asp-route-page="@i">@i</a>
+                                    </li>
+                                }
+
+                                <li class="page-item @(Model.HasNext==true?"":"disabled")">
+                                    <a class="page-link" asp-controller="category" asp-action="index" asp-route-page="@(Model.PageIndex+1)">Next</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Container-fluid Ends-->
+
+    <div class="container-fluid">
+        <!-- footer start-->
+        <footer class="footer">
+            <div class="row">
+                <div class="col-md-12 footer-copyright text-center">
+                    <p class="mb-0">Copyright 2021 © Voxo theme by pixelstrap</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</div>
