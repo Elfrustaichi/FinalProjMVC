@@ -29,12 +29,11 @@
                     })
                 }
             });
-
-
         }
     })
 
 })
+
 $(document).on("click", ".edit-btn-alert", function (e) {
     e.preventDefault();
     let url = $(this).attr("href");
@@ -53,3 +52,5 @@ $(document).on("click", ".edit-btn-alert", function (e) {
     });
 
 })
+
+

@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Voxo.Attributes.ValidationAttributes;
 
 namespace Voxo.Models
 {
@@ -31,20 +32,42 @@ namespace Voxo.Models
 
         public Slider Slider { get; set; }
 
-        public List<ProductTag> ProductTags { get; set; }
+        public List<ProductTag> ProductTags { get; set; }=new List<ProductTag>();
 
-        public List<ProductImage> ProductImages { get; set; }
+        public List<ProductImage> ProductImages { get; set; }= new List<ProductImage>();
 
-        public List<ProductSize> ProductSizes { get; set; }   
-        
-        public List<OrderItem> OrderItems { get; set; }
+        public List<ProductSize> ProductSizes { get; set; } = new List<ProductSize>();
 
-        public List<ProductReview> ProductReviews { get; set; }
+        public List<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
 
-        public List<UserWishlistItem> UserWishListItems { get; set;}
+        public List<ProductReview> ProductReviews { get; set; } = new List<ProductReview>();
 
-        public List<UserCartItem> UserCartItemListItems { get; set;}
+        public List<UserWishlistItem> UserWishListItems { get; set; } = new List<UserWishlistItem>();
 
-       
+        public List<UserCartItem> UserCartItemListItems { get; set;}=new List<UserCartItem>();
+
+        [NotMapped]
+        [MaxFileSizeValidation(10485760)]
+        [RequiredFileTypeValidation("image/png", "image/jpeg", "image/jpg")]
+        public IFormFile PosterImage { get; set; }
+        [NotMapped]
+        [MaxFileSizeValidation(10485760)]
+        [RequiredFileTypeValidation("image/png", "image/jpeg", "image/jpg")]
+        public IFormFile HoverImage { get; set; }
+        [NotMapped]
+        [MaxFileSizeValidation(10485760)]
+        [RequiredFileTypeValidation("image/png", "image/jpeg", "image/jpg")]
+        public List<IFormFile> DetailImages { get; set; }=new List<IFormFile>();
+        [NotMapped]
+        [Required]
+        public List<int> SizeIds { get; set; }=new List<int>();
+        [NotMapped]
+        [Required]
+        public List<int> TagIds { get; set; }=new List<int>();
+        [NotMapped]
+        public List<int> DetailImageIds { get;set; }=new List<int>();
+
+
+
     }
 }

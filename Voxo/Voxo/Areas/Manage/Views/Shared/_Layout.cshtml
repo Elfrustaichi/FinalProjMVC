@@ -28,13 +28,13 @@
     <link rel="stylesheet" type="text/css" href="~/manage/assets/css/vendors/themify.css">
 
     <!--Dropzon css -->
-    <link rel="stylesheet" type="text/css" href="~/assets/css/vendors/dropzone.css">
+    <link rel="stylesheet" type="text/css" href="~/manage/assets/css/vendors/dropzone.css">
 
     <!-- ratio css -->
     <link rel="stylesheet" type="text/css" href="~/manage/assets/css/ratio.css">
 
     <!-- Select2 css -->
-    <link rel="stylesheet" type="text/css" href="~/assets/css/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="~/manage/assets/css/select2.min.css">
 
     <!-- Feather icon css-->
     <link rel="stylesheet" type="text/css" href="~/manage/assets/css/vendors/feather-icon.css">
@@ -42,8 +42,8 @@
     <!-- Plugins css -->
     <link rel="stylesheet" type="text/css" href="~/manage/assets/css/vendors/scrollbar.css">
     <link rel="stylesheet" type="text/css" href="~/manage/assets/css/vendors/animate.css">
-    <link rel="stylesheet" type="text/css" href="~/assets/css/vendors/chartist.css">
-    <link rel="stylesheet" type="text/css" href="~/assets/css/vendors/date-picker.css">
+    <link rel="stylesheet" type="text/css" href="~/manage/assets/css/vendors/chartist.css">
+    <link rel="stylesheet" type="text/css" href="~/manage/assets/css/vendors/date-picker.css">
 
     <!-- Bootstrap css-->
     <link rel="stylesheet" type="text/css" href="~/manage/assets/css/vendors/bootstrap.css">
@@ -62,7 +62,7 @@
     <link rel="stylesheet" type="text/css" href="~/manage/assets/css/responsive.css">
 
     <!-- Bootstrap-tag input css -->
-    <link rel="stylesheet" type="text/css" href="~/assets/css/vendors/bootstrap-tagsinput.css">
+    <link rel="stylesheet" type="text/css" href="~/manage/assets/css/vendors/bootstrap-tagsinput.css">
 
 
 
@@ -109,29 +109,30 @@
     <script src="~/manage/assets/js/script.js" defer></script>
 
     <!-- bootstrap tag-input js -->
-    <script src="~/assets/js/bootstrap-tagsinput.min.js" defer></script>
-    <script src="~/assets/js/sidebar-menu.js" defer></script>
+    <script src="~/manage/assets/js/bootstrap-tagsinput.min.js" defer></script>
+    <script src="~/manage/assets/js/sidebar-menu.js" defer></script>
 
     <!--Dropzon js -->
-    <script src="~/assets/js/dropzone/dropzone.js" defer></script>
-    <script src="~/assets/js/dropzone/dropzone-script.js" defer></script>
+    <script src="~/manage/assets/js/dropzone/dropzone.js" defer></script>
+    <script src="~/manage/assets/js/dropzone/dropzone-script.js" defer></script>
 
     <!-- ck editor js -->
-    <script src="~/assets/js/ckeditor.js" defer></script>
-    <script src="~/assets/js/ckeditor-custom.js" defer></script>
+    <script src="~/manage/assets/js/ckeditor.js" defer></script>
+    <script src="~/manage/assets/js/ckeditor-custom.js" defer></script>
 
     <!-- select2 js -->
-    <script src="~/assets/js/select2.min.js" defer></script>
-    <script src="~/assets/js/select2-custom.js" defer></script>
+    <script src="~/manage/assets/js/select2.min.js" defer></script>
+    <script src="~/manage/assets/js/select2-custom.js" defer></script>
 
     <!-- all checkbox select js -->
-    <script src="~/assets/js/checkbox-all-check.js" defer></script>
+    <script src="~/manage/assets/js/checkbox-all-check.js" defer></script>
 
     @* Sweet Alert js *@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
 
     @* Main js *@
     <script src="~/manage/assets/js/main.js" defer></script>
+    <script src="~/manage/assets/js/image-delete.js" defer></script>
 </head>
 
 <body>
@@ -525,6 +526,27 @@
                                     </ul>
                                 </li>
                                 <li class="sidebar-list">
+                                    <a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
+                                        <i data-feather="box"></i>
+                                        <span>Products</span>
+                                    </a>
+                                    <ul class="sidebar-submenu">
+                                        <li>
+                                            <a asp-controller="product" asp-action="index">Products table</a>
+                                        </li>
+
+                                        <li>
+                                            <a asp-controller="product" asp-action="create">Add New Product</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="sidebar-list">
+                                    <a class="sidebar-link sidebar-title link-nav" asp-controller="contactusrequest" asp-action="index">
+                                        <i data-feather="phone"></i>
+                                        <span>Support Ticket</span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-list">
                                     <a class="sidebar-link sidebar-title" href="javascript:void(0)">
                                         <i data-feather="archive"></i>
                                         <span>Orders</span>
@@ -539,21 +561,7 @@
                                     </ul>
                                 </li>
 
-                                <li class="sidebar-list">
-                                    <a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
-                                        <i data-feather="box"></i>
-                                        <span>Product</span>
-                                    </a>
-                                    <ul class="sidebar-submenu">
-                                        <li>
-                                            <a href="products.html">Prodcts</a>
-                                        </li>
 
-                                        <li>
-                                            <a href="add-new-product.html">Add New Products</a>
-                                        </li>
-                                    </ul>
-                                </li>
 
                                 <li class="sidebar-list">
                                     <a class="sidebar-link sidebar-title link-nav" href="product-review.html">
@@ -562,12 +570,7 @@
                                     </a>
                                 </li>
 
-                                <li class="sidebar-list">
-                                    <a class="sidebar-link sidebar-title link-nav" href="support-ticket.html">
-                                        <i data-feather="phone"></i>
-                                        <span>Support Ticket</span>
-                                    </a>
-                                </li>
+
 
                                 <li class="sidebar-list">
                                     <a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">

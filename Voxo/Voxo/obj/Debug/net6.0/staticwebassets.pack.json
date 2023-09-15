@@ -1329,6 +1329,10 @@
       "PackagePath": "staticwebassets\\manage\\assets\\js\\icons\\feather-icon\\feather.min.js"
     },
     {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\manage\\assets\\js\\image-delete.js",
+      "PackagePath": "staticwebassets\\manage\\assets\\js\\image-delete.js"
+    },
+    {
       "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\manage\\assets\\js\\jquery-3.6.0.min.js",
       "PackagePath": "staticwebassets\\manage\\assets\\js\\jquery-3.6.0.min.js"
     },
@@ -1395,6 +1399,18 @@
     {
       "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\uploads\\CategoryImages\\98931469-451f-4430-822c-863e6b0061734.jpg",
       "PackagePath": "staticwebassets\\uploads\\CategoryImages\\98931469-451f-4430-822c-863e6b0061734.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\uploads\\ProductImages\\5a984716-732b-4144-b526-1442438e12c910.jpg",
+      "PackagePath": "staticwebassets\\uploads\\ProductImages\\5a984716-732b-4144-b526-1442438e12c910.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\uploads\\ProductImages\\a900aed2-a9f5-43d4-a1f6-577a6035b07912.jpg",
+      "PackagePath": "staticwebassets\\uploads\\ProductImages\\a900aed2-a9f5-43d4-a1f6-577a6035b07912.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\uploads\\ProductImages\\f4444e59-152b-4834-9d86-7259bd1aadf712.jpg",
+      "PackagePath": "staticwebassets\\uploads\\ProductImages\\f4444e59-152b-4834-9d86-7259bd1aadf712.jpg"
     },
     {
       "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.Voxo.Microsoft.AspNetCore.StaticWebAssets.props",

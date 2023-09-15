@@ -1,0 +1,247 @@
+﻿@model Product
+<div class="page-body">
+    <div class="title-header">
+        <h5>Add New Product</h5>
+    </div>
+
+    <!-- New Product Add Start -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <form enctype="multipart/form-data" method="post" class="theme-form theme-form-2 mega-form">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="card-header-2">
+                                        <h5>Product Information</h5>
+                                    </div>
+                                    <div class="row">
+                                        <div class="mb-4 row align-items-center">
+                                            <label class="form-label-title col-sm-2 mb-0">
+                                                Product
+                                                Name
+                                            </label>
+                                            <div class="col-sm-10">
+                                                <input asp-for="Name" class="form-control"
+                                                       placeholder="Product Name">
+                                                <span class="text-danger" asp-validation-for="Name"></span>
+                                            </div>
+                                        </div>
+                                        <div class="mb-4 row align-items-center">
+                                            <label class="form-label-title col-sm-2 mb-0">
+                                                Product
+                                                CostPrice
+                                            </label>
+                                            <div class="col-sm-10">
+                                                <input asp-for="CostPrice" class="form-control"
+                                                       placeholder="Product CostPrice">
+                                                <span class="text-danger" asp-validation-for="CostPrice"></span>
+                                            </div>
+                                        </div>
+                                        <div class="mb-4 row align-items-center">
+                                            <label class="form-label-title col-sm-2 mb-0">
+                                                Product
+                                                SalePrice
+                                            </label>
+                                            <div class="col-sm-10">
+                                                <input asp-for="SalePrice" class="form-control"
+                                                       placeholder="Product SalePrice">
+                                                <span class="text-danger" asp-validation-for="SalePrice"></span>
+                                            </div>
+                                        </div>
+                                        <div class="mb-4 row align-items-center">
+                                            <label class="form-label-title col-sm-2 mb-0">
+                                                Product
+                                                DiscountPercent
+                                            </label>
+                                            <div class="col-sm-10">
+                                                <input asp-for="DiscountPercent" class="form-control"
+                                                       placeholder="Product DiscountPercent">
+                                                <span class="text-danger" asp-validation-for="DiscountPercent"></span>
+                                            </div>
+                                        </div>
+                                        <div class="mb-4 row align-items-center">
+                                            <label class="form-label-title col-sm-2 mb-0">
+                                                Product
+                                                Description
+                                            </label>
+                                            <div class="col-sm-10">
+                                                <textarea rows="4" asp-for="Description" class="form-control"
+                                                          placeholder="Product Description"></textarea>
+                                                <span class="text-danger" asp-validation-for="Description"></span>
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-4 row align-items-center">
+                                            <label class="col-sm-2 col-form-label form-label-title">
+                                                Stock Status
+                                            </label>
+                                            <div class="col-sm-10">
+                                                <select asp-for="StockStatus" class="js-example-basic-single w-100">
+                                                    <option value="@true">In stock</option>
+                                                    <option value="@false">Out of stock</option>
+                                                </select>
+                                            </div>
+                                            <span class="text-danger" asp-validation-for="StockStatus"></span>
+                                        </div>
+
+                                        <div class="mb-4 row align-items-center">
+                                            <label class="col-sm-2 col-form-label form-label-title">Category</label>
+                                            <div class="col-sm-10">
+                                                <select asp-for="CategoryId" class="js-example-basic-single w-100">
+                                                    <option disabled>Category Menu</option>
+                                                    @foreach (var item in ViewBag.Categories)
+                                                    {
+                                                        <option value="@item.Id">@item.Name</option>
+                                                    }
+                                                </select>
+                                            </div>
+                                            <span class="text-danger" asp-validation-for="CategoryId"></span>
+                                        </div>
+                                        <div class="mb-4 row align-items-center">
+                                            <label class="col-sm-2 col-form-label form-label-title">Tag</label>
+                                            <div class="col-sm-10">
+                                                <select multiple asp-for="TagIds" class="js-example-basic-single w-100">
+                                                    <option disabled>Tags Menu</option>
+                                                    @foreach (var item in ViewBag.Tags)
+                                                    {
+                                                        <option value="@item.Id">@item.Name</option>
+                                                    }
+                                                </select>
+                                            </div>
+                                            <span class="text-danger" asp-validation-for="TagIds"></span>
+                                        </div>
+                                        <div class="mb-4 row align-items-center">
+                                            <label class="col-sm-2 col-form-label form-label-title">Size</label>
+                                            <div class="col-sm-10">
+                                                <select multiple asp-for="SizeIds" class="js-example-basic-single w-100">
+                                                    <option disabled>Sizes Menu</option>
+                                                    @foreach (var item in ViewBag.Sizes)
+                                                    {
+                                                        <option value="@item.Id">@item.Name</option>
+                                                    }
+                                                </select>
+                                            </div>
+                                            <span class="text-danger" asp-validation-for="SizeIds"></span>
+                                        </div>
+                                        <div class="mb-4 row align-items-center">
+                                            <label class="col-sm-2 col-form-label form-label-title">Brand</label>
+                                            <div class="col-sm-10">
+                                                <select asp-for="BrandId" class="js-example-basic-single w-100">
+                                                    <option disabled>Brand Menu</option>
+                                                    @foreach (var item in ViewBag.Brands)
+                                                    {
+                                                        <option value="@item.Id">@item.Name</option>
+                                                    }
+                                                </select>
+                                            </div>
+                                            <span class="text-danger" asp-validation-for="BrandId"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="card-header-2">
+                                        <h5>Product Images</h5>
+                                    </div>
+                                    <div class="row">
+                                        <div class="mb-4 row align-items-center">
+                                            <label class="col-sm-2 col-form-label form-label-title">Poster Image</label>
+                                            <div class="col-sm-10">
+                                                <input asp-for="PosterImage" class="form-control form-choose"
+                                                       id="formFileMultiple">
+                                                <span class="text-danger" asp-validation-for="PosterImage"></span>
+                                            </div>
+                                        </div>
+                                        <div style="margin-bottom:50px;" class="row align-items-center">
+                                            <label class="col-sm-12 col-form-label form-label-title">
+                                                Poster Image preview
+                                            </label>
+                                            <div class="d-flex col-sm-10">
+                                                <div style="margin-right:50px;" class="img-content-box">
+                                                    <img src="~/uploads/ProductImages/@Model.ProductImages.FirstOrDefault(x=>x.PosterStatus==true).ImageName" />
+                                                </div>
+                                            </div>
+                                           
+                                        </div>
+
+                                        <div class="mb-4 row align-items-center">
+                                            <label class="col-sm-2 col-form-label form-label-title">Hover Image</label>
+                                            <div class="col-sm-10">
+                                                <input asp-for="HoverImage" class="form-control form-choose"
+                                                       id="formFileMultiple">
+                                                <span class="text-danger" asp-validation-for="HoverImage"></span>
+                                            </div>
+                                        </div>
+                                        <div style="margin-bottom:50px;" class="row align-items-center">
+                                            <label class="col-sm-12 col-form-label form-label-title">
+                                                Hover Image preview
+                                            </label>
+                                            <div class="d-flex col-sm-10">
+                                                    <div style="margin-right:50px;" class="img-content-box">
+                                                        <img src="~/uploads/ProductImages/@Model.ProductImages.FirstOrDefault(x=>x.PosterStatus==false).ImageName" />
+                                                    </div>
+                                            </div>
+                                            
+                                        </div>
+
+                                        <div class="row align-items-center">
+                                            <label class="col-sm-2 col-form-label form-label-title">
+                                                Detail Images
+                                            </label>
+                                            <div class="col-sm-10">
+                                                <input asp-for="DetailImages" class="form-control form-choose"
+                                                       id="formFileMultiple1" multiple>
+                                                <span class="text-danger" asp-validation-for="DetailImages"></span>
+                                            </div>
+                                        </div>
+                                        <div class="row align-items-center">
+                                            <label class="col-sm-12 col-form-label form-label-title">
+                                                Detail Images preview
+                                            </label>
+                                            <div class="d-flex col-sm-10">
+                                                @foreach(var item in Model.ProductImages.Where(x => x.DetailPicture == true))
+                                                {
+                                                    <div style="margin-right:50px;" class="img-content-box">
+                                                        <img src="~/uploads/ProductImages/@item.ImageName" />
+                                                        <span class="btn remove-image-icon" style="font-size:40px;">x</span>
+                                                        <input hidden value="@item.Id" asp-for="DetailImageIds">
+                                                    </div>
+                                                }
+
+                                            </div>
+                                            <span class="text-danger" asp-validation-for="DetailImageIds"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+                            </div>
+                            <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+                            <div class="card">
+                                <div class="card-body">
+                                    <button type="submit" class="align-items-center btn btn-theme">
+                                        <i data-feather="plus-square"></i>Edit Product
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- New Product Add End -->
+    <!-- footer Start -->
+    <div class="container-fluid">
+        <footer class="footer">
+            <div class="row">
+                <div class="col-md-12 footer-copyright text-center">
+                    <p class="mb-0">Copyright 2021 © Voxo theme by pixelstrap</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- footer En -->
+</div>

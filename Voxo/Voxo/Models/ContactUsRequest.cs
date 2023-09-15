@@ -15,5 +15,11 @@ namespace Voxo.Models
         public string RequestText { get; set; }
         [MaxLength(500)]
         public string ReplyText { get; set; }
+        [MaxLength (50)]
+        [Required]  
+        public string Subject { get; set; }
+        
+        public DateTime CreationTime { get; set; }
+
     }
 }

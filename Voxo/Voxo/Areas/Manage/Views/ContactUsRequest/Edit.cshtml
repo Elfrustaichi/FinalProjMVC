@@ -1,0 +1,116 @@
+﻿@model ContactUsRequest
+<div class="page-body">
+    <div class="title-header">
+        <h5>Edit Contact us request</h5>
+    </div>
+
+    <!-- New User start -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link active" id="pills-home-tab"
+                                                data-bs-toggle="pill" data-bs-target="#pills-home"
+                                                type="button">
+                                            Contact us request Edit
+                                        </button>
+                                    </li>
+                                </ul>
+                                <form enctype="multipart/form-data" method="post" id="userCreate" class="theme-form theme-form-2 mega-form">
+                                    <div class="tab-content" id="pills-tabContent">
+                                        <div class="tab-pane fade show active" id="pills-home" role="tabpanel">
+
+                                            <div class="card-header-1">
+                                                <h5>Subject: @Model.Subject</h5>
+                                                <input hidden asp-for="Subject" class="form-control">
+
+                                                <h5>Created: @Model.CreationTime</h5>
+                                                <input hidden asp-for="CreationTime" class="form-control">
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="mb-4 row align-items-center">
+                                                    <label class="form-label-title col-lg-2 col-md-3 mb-0">
+                                                        Requester's name
+                                                    </label>
+                                                    <div class="col-md-9 col-lg-10">
+                                                        <input disabled asp-for="Name" class="form-control disabled" >
+                                                        <input hidden asp-for="Name" class="form-control" >
+                                                        
+                                                        <span class="text-danger" asp-validation-for="Name"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-4 row align-items-center">
+                                                    <label class="form-label-title col-lg-2 col-md-3 mb-0">
+                                                        Requester's Surname
+                                                    </label>
+                                                    <div class="col-md-9 col-lg-10">
+                                                        <input disabled asp-for="Surname" class="form-control disabled" >
+                                                        <input hidden asp-for="Surname" class="form-control" >
+                                                        <span class="text-danger" asp-validation-for="Surname"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-4 row align-items-center">
+                                                    <label class="form-label-title col-lg-2 col-md-3 mb-0">
+                                                        Requester's email
+                                                    </label>
+                                                    <div class="col-md-9 col-lg-10">
+                                                        <input disabled asp-for="Email" class="form-control disabled">
+                                                        <input hidden asp-for="Email" class="form-control">
+                                                        <span class="text-danger" asp-validation-for="Email"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-4 row align-items-center">
+                                                    <label class="form-label-title col-lg-2 col-md-3 mb-0">
+                                                        Requester's Request text
+                                                    </label>
+                                                    <div class="col-md-9 col-lg-10">
+                                                        <input disabled asp-for="RequestText" class="form-control disabled">
+                                                        <input hidden asp-for="RequestText" class="form-control">
+                                                        <span class="text-danger" asp-validation-for="RequestText"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-4 row align-items-center">
+                                                    <label class="form-label-title col-lg-2 col-md-3 mb-0">
+                                                        Admin reply
+                                                    </label>
+                                                    <div class="col-md-9 col-lg-10">
+                                                        <input asp-for="ReplyText" class="form-control">
+                                                        <span class="text-danger" asp-validation-for="ReplyText"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+                                </form>
+                                <button type="submit" form="userCreate" class="align-items-center btn btn-theme">
+                                    <i data-feather="plus-square"></i>Edit Contact us request
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- New User End -->
+    <!-- footer start -->
+    <div class="container-fluid">
+        <footer class="footer">
+            <div class="row">
+                <div class="col-md-12 footer-copyright text-center">
+                    <p class="mb-0">Copyright 2021 © Voxo theme by pixelstrap</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- footer end -->
+</div>
+<!-- Page Sidebar End -->

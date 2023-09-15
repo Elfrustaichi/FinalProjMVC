@@ -1,0 +1,103 @@
+﻿@model PaginatedList<ContactUsRequest>
+<!-- Ticket Section Start -->
+<div class="page-body">
+    <div class="title-header">
+        <div>
+            <h5>Contact Us request Tickets</h5>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card">
+                    <!-- Table Start -->
+                    <div class="card-body">
+                        <div class="table-responsive table-desi">
+                            <table class="user-table ticket-table table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Request Number</th>
+                                        <th>Date</th>
+                                        <th>Subject</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                        @foreach (var item in Model.Items)
+                                        {
+                                        <tr>
+                                            <td>#@item.Id</td>
+
+                                            <td>@item.CreationTime</td>
+
+                                            <td>@item.Subject</td>
+
+                                            <td class="@(item.ReplyText==null?"status-danger":"status-close")">
+                                                <span>@(item.ReplyText == null ? "Not replied" : "Replied")</span>
+                                            </td>
+
+                                            <td>
+                                                <ul>
+                                                    <li>
+                                                        <a style="pointer-events: @(item.ReplyText!=null?"none":"")" asp-action="edit" asp-route-id="@item.Id" class="edit-btn-alert @(item.ReplyText!=null?"disabled":"")">
+                                                            <span class="lnr lnr-pencil"></span>
+                                                        </a>
+                                                    </li>
+
+                                                    <li>
+                                                        <a asp-action="delete" asp-route-id="@item.Id" class="delete-btn-alert">
+                                                            <span class="lnr lnr-trash"></span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                          </tr>
+                                        }
+                                   
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- Table End -->
+                    <!-- Pagination Start -->
+                    <div class="pagination-box">
+                        <nav class="ms-auto me-auto " aria-label="...">
+                            <ul class="pagination pagination-primary">
+                                <li class="page-item @(Model.HasPrev==true?"":"disabled")">
+                                    <a class="page-link" asp-action="index" asp-route-page="@(Model.PageIndex-1)">Previous</a>
+                                </li>
+
+                                @for (int i = 1; i <= Model.TotalPage; i++)
+                                {
+                                    <li class="page-item @(i==Model.PageIndex?"active":"")">
+                                        <a class="page-link" asp-action="index" asp-route-page="@i">@i</a>
+                                    </li>
+                                }
+
+                                <li class="page-item @(Model.HasNext==true?"":"disabled")">
+                                    <a class="page-link" asp-action="index" asp-route-page="@(Model.PageIndex+1)">Next</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <!-- Pagination End -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Start -->
+    <div class="container-fluid">
+        <footer class="footer">
+            <div class="row">
+                <div class="col-md-12 footer-copyright text-center">
+                    <p class="mb-0">Copyright 2021 © Voxo theme by pixelstrap</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- Footer End -->
+</div>
