@@ -13,8 +13,8 @@ namespace Voxo.Models
         public string AdminResponse { get; set; }
 
         public DateTime CreateTime { get; set; }
-
-         
+        [Required]
+        public bool IsPublised { get; set; }
 
         public int ProductId { get; set; }
 

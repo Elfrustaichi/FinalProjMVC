@@ -407,6 +407,24 @@ namespace Voxo.Areas.Manage.Controllers
 
             return RedirectToAction("index");
         }
+        //Product edit end
+        public IActionResult Detail(int id)
+        {
+            var existProduct = _context.Products
+                .Include(x=>x.ProductImages)
+                .Include(x=>x.ProductReviews)
+                .Include(x=>x.ProductSizes).ThenInclude(x=>x.Size)
+                .Include(x=>x.ProductTags).ThenInclude(x=>x.Tag)
+                .Include(x=>x.Category)
+                .Include(x=>x.Brand)
+                .FirstOrDefault(x=>x.Id==id);
+            if (existProduct == null)
+            {
+                return StatusCode(404);
+            }
+
+            return View(existProduct);
+        }
 
         public void GetPageDetails()
         {

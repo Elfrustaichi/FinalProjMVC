@@ -88,7 +88,6 @@
     <script src="~/manage/assets/js/tooltip-init.js" defer></script>
 
     <!-- Plugins JS -->
-    <script src="~/manage/assets/js/sidebar-menu.js" defer></script>
     <script src="~/manage/assets/js/notify/bootstrap-notify.min.js" defer></script>
     <script src="~/manage/assets/js/notify/index.js" defer></script>
 
@@ -109,8 +108,8 @@
     <script src="~/manage/assets/js/script.js" defer></script>
 
     <!-- bootstrap tag-input js -->
+    <script src="~/manage/assets/js/sidebar.js" defer ></script>
     <script src="~/manage/assets/js/bootstrap-tagsinput.min.js" defer></script>
-    <script src="~/manage/assets/js/sidebar-menu.js" defer></script>
 
     <!--Dropzon js -->
     <script src="~/manage/assets/js/dropzone/dropzone.js" defer></script>
@@ -408,6 +407,21 @@
                                 <li class="sidebar-list">
                                     <a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
                                         <i data-feather="align-left"></i>
+                                        <span>Sliders</span>
+                                    </a>
+                                    <ul class="sidebar-submenu">
+                                        <li>
+                                            <a asp-controller="slider" asp-action="index">Sliders table</a>
+                                        </li>
+
+                                        <li>
+                                            <a asp-controller="slider" asp-action="create">Create slider</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="sidebar-list">
+                                    <a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
+                                        <i data-feather="align-left"></i>
                                         <span>TeamMembers</span>
                                     </a>
                                     <ul class="sidebar-submenu">
@@ -422,7 +436,7 @@
                                 </li>
                                 <li class="sidebar-list">
                                     <a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
-                                        <i data-feather="align-left"></i>
+                                        <i data-feather="settings"></i>
                                         <span>Settings</span>
                                     </a>
                                     <ul class="sidebar-submenu">
@@ -547,45 +561,22 @@
                                     </a>
                                 </li>
                                 <li class="sidebar-list">
-                                    <a class="sidebar-link sidebar-title" href="javascript:void(0)">
+                                    <a class="sidebar-link sidebar-title link-nav" asp-controller="order" asp-action="index">
                                         <i data-feather="archive"></i>
                                         <span>Orders</span>
                                     </a>
-                                    <ul class="sidebar-submenu">
-                                        <li>
-                                            <a href="order-list.html">Order List</a>
-                                        </li>
-                                        <li>
-                                            <a href="order-detail.html">Order Detail</a>
-                                        </li>
-                                    </ul>
                                 </li>
 
 
 
                                 <li class="sidebar-list">
-                                    <a class="sidebar-link sidebar-title link-nav" href="product-review.html">
+                                    <a class="sidebar-link sidebar-title link-nav" asp-controller="productreview" asp-action="index">
                                         <i data-feather="star"></i>
                                         <span>Product Review</span>
                                     </a>
                                 </li>
-
-
-
                                 <li class="sidebar-list">
-                                    <a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
-                                        <i data-feather="settings"></i>
-                                        <span>Settings</span>
-                                    </a>
-                                    <ul class="sidebar-submenu">
-                                        <li>
-                                            <a href="profile-setting.html">Profile Setting</a>
-                                        </li>
-                                    </ul>
-                                </li>
-
-                                <li class="sidebar-list">
-                                    <a class="sidebar-link sidebar-title link-nav" href="login.html">
+                                    <a class="sidebar-link sidebar-title link-nav" asp-controller="account" asp-action="logout">
                                         <i data-feather="log-in"></i>
                                         <span>Log Out</span>
                                     </a>

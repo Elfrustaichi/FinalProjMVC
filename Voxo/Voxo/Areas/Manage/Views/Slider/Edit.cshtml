@@ -1,0 +1,142 @@
+﻿@model Slider
+<div class="page-body">
+    <div class="title-header">
+        <h5>Edit Slider</h5>
+    </div>
+
+    <!-- New User start -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link active" id="pills-home-tab"
+                                                data-bs-toggle="pill" data-bs-target="#pills-home"
+                                                type="button">
+                                            Slider
+                                        </button>
+                                    </li>
+                                </ul>
+                                <form enctype="multipart/form-data" method="post" id="userCreate" class="theme-form theme-form-2 mega-form">
+                                    <div class="tab-content" id="pills-tabContent">
+                                        <div class="tab-pane fade show active" id="pills-home" role="tabpanel">
+
+                                            <div class="card-header-1">
+                                                <h5>Slider Information</h5>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="mb-4 row align-items-center">
+                                                    <label class="form-label-title col-lg-2 col-md-3 mb-0">
+                                                        Title text
+                                                    </label>
+                                                    <div class="col-md-9 col-lg-10">
+                                                        <input asp-for="TitleText" class="form-control">
+                                                        <span class="text-danger" asp-validation-for="TitleText"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-4 row align-items-center">
+                                                    <label class="form-label-title col-lg-2 col-md-3 mb-0">
+                                                        Sale text
+                                                    </label>
+                                                    <div class="col-md-9 col-lg-10">
+                                                        <input asp-for="SaleText" class="form-control">
+                                                        <span class="text-danger" asp-validation-for="SaleText"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-4 row align-items-center">
+                                                    <label class="form-label-title col-lg-2 col-md-3 mb-0">
+                                                        Offer text
+                                                    </label>
+                                                    <div class="col-md-9 col-lg-10">
+                                                        <input asp-for="OfferText" class="form-control">
+                                                        <span class="text-danger" asp-validation-for="OfferText"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-4 row align-items-center">
+                                                    <label class="form-label-title col-lg-2 col-md-3 mb-0">
+                                                        Button text
+                                                    </label>
+                                                    <div class="col-md-9 col-lg-10">
+                                                        <input asp-for="ButtonText" class="form-control">
+                                                        <span class="text-danger" asp-validation-for="ButtonText"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-4 row align-items-center">
+                                                    <label class="form-label-title col-lg-2 col-md-3 mb-0">
+                                                        Button Url
+                                                    </label>
+                                                    <div class="col-md-9 col-lg-10">
+                                                        <input asp-for="ButtonUrl" class="form-control">
+                                                        <span class="text-danger" asp-validation-for="ButtonUrl"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-4 row align-items-center">
+                                                    <label class="form-label-title col-lg-2 col-md-3 mb-0">
+                                                        Button Header text
+                                                    </label>
+                                                    <div class="col-md-9 col-lg-10">
+                                                        <input asp-for="ButtonHeaderText" class="form-control">
+                                                        <span class="text-danger" asp-validation-for="ButtonHeaderText"></span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="mb-4 row align-items-center">
+                                                    <label class="col-sm-2 col-form-label form-label-title">
+                                                        Product Id
+                                                    </label>
+                                                    <div class="col-sm-10">
+                                                        <select asp-for="ProductId" class="js-example-basic-single w-100">
+                                                            <option disabled>Static Menu</option>
+                                                            @foreach (var item in ViewBag.Products)
+                                                            {
+                                                                <option value="@item.Id">@item.Name</option>
+                                                            }
+
+                                                        </select>
+                                                        <span asp-validation-for="ProductId" class="text-danger"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-4 row align-items-center">
+                                                    <label class="col-sm-2 col-form-label form-label-title">Background Image</label>
+                                                    <div class="col-sm-10">
+                                                        <input asp-for="SliderImage" class="form-control form-choose"
+                                                               id="formFileMultiple">
+                                                        <span class="text-danger" asp-validation-for="SliderImage"></span>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+                                </form>
+                                <button type="submit" form="userCreate" class="align-items-center btn btn-theme">
+                                    <i data-feather="plus-square"></i>Edit Slider
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- New User End -->
+    <!-- footer start -->
+    <div class="container-fluid">
+        <footer class="footer">
+            <div class="row">
+                <div class="col-md-12 footer-copyright text-center">
+                    <p class="mb-0">Copyright 2021 © Voxo theme by pixelstrap</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- footer end -->
+</div>
+<!-- Page Sidebar End -->

@@ -1,0 +1,137 @@
+﻿@model ProductReview
+
+ <!-- tracking section start -->
+<div class="page-body">
+    <div class="title-header title-header-block package-card">
+        <div>
+            <h5>Review #@Model.Id</h5>
+        </div>
+        <div class="card-order-section">
+            <ul>
+                <li>@Model.CreateTime</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- tracking table start -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="bg-inner cart-section order-details-table">
+                            <div class="row g-4">
+                                <div class="col-xl-8">
+                                    <div class="table-responsive table-details">
+                                        <table class="table cart-table table-borderless">
+                                            <thead>
+                                                <tr>
+                                                    <th colspan="2">Items</th>
+                                                    <th class="text-end" colspan="2">
+                                                        <a asp-action="edit" 
+                                                           class="theme-color edit-btn-alert">
+                                                            Edit
+                                                            Review
+                                                        </a>
+                                                    </th>
+                                                </tr>
+                                            </thead>
+
+                                            <tbody>
+                                                <tr class="table-order">
+                                                    <td>
+                                                        <p>Product Image</p>
+                                                        <a href="javascript:void(0)">
+                                                            <img src="assets/images/profile/1.jpg"
+                                                                 class="img-fluid blur-up lazyload" alt="">
+                                                        </a>
+                                                    </td>
+                                                    <td>
+                                                        <p>Product Name</p>
+                                                        <h5>@Model.Product.Name</h5>
+                                                    </td>
+                                                    <td>
+                                                        <p>Username</p>
+                                                        <h5>@Model.AppUser.UserName</h5>
+                                                    </td>
+                                                    <td>
+                                                        <p>Fullname</p>
+                                                        <h5>@Model.AppUser.Fullname</h5>
+                                                    </td>
+                                                </tr>
+
+                                                <tr class="table-order">
+                                                    
+                                                    <td>
+                                                        <p>Review Rate</p>
+                                                        <ul class="rating">
+                                                            @for (int i = 1; i <= 5; i++)
+                                                            {
+                                                                <li>
+                                                                    <i class="fas fa-star @(Model.Rate<=i?"theme-color":"")"></i>
+                                                                </li>
+                                                            }
+                                                        </ul>
+                                                    </td>
+                                                    <td>
+                                                        <p>Product Id</p>
+                                                        <h5>@Model.Product.Id</h5>
+                                                    </td>
+                                                    <td>
+                                                        <p>User Id</p>
+                                                        <h5>@Model.AppUser.Id</h5>
+                                                    </td>
+                                                    <td>
+                                                        <p>Created time</p>
+                                                        <h5>@Model.CreateTime</h5>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <div class="col-xl-4">
+                                    <div class="order-success">
+                                        <div class="row g-4">
+
+
+                                            <div class="payment-mode">
+                                                <h4>Review text</h4>
+                                                <p>
+                                                    @Model.ReviewText
+                                                </p>
+                                            </div>
+                                            <div class="payment-mode">
+                                                <h4>Admin response</h4>
+                                                <p>
+                                                    @(Model.AdminResponse == null ? "null":Model.AdminResponse )
+                                                </p>
+                                            </div>
+
+                                          
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- section end -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- tracking table end -->
+
+    <div class="container-fluid">
+        <!-- footer start-->
+        <footer class="footer">
+            <div class="row">
+                <div class="col-md-12 footer-copyright text-center">
+                    <p class="mb-0">Copyright 2021 © Voxo theme by pixelstrap</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</div>
+<!-- tracking section End -->
