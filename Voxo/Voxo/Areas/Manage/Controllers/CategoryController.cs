@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using NuGet.Protocol.Plugins;
 using Voxo.DAL;
 using Voxo.Helpers;
 using Voxo.Models;
@@ -24,7 +25,7 @@ namespace Voxo.Areas.Manage.Controllers
         {
             var query=_context.Categories.AsQueryable();
             
-            return View(PaginatedList<Category>.Create(query,page,1));
+            return View(PaginatedList<Category>.Create(query,page,7));
         }
         //Category index end
 
@@ -47,8 +48,11 @@ namespace Voxo.Areas.Manage.Controllers
                 ModelState.AddModelError("Name", "Category already exists");
                 return View();
             }
-
-            category.BackgroundImageName=FileManager.Save(_env.WebRootPath,"uploads/CategoryImages", category.CategoryImage);
+            if (category.CategoryImage != null)
+            {
+                category.BackgroundImageName = FileManager.Save(_env.WebRootPath, "uploads/CategoryImages", category.CategoryImage);
+            }
+            
 
             _context.Categories.Add(category);
             _context.SaveChanges();
@@ -94,13 +98,14 @@ namespace Voxo.Areas.Manage.Controllers
         [AutoValidateAntiforgeryToken]
         public IActionResult Edit(Category category)
         {
-            if(!ModelState.IsValid)
-            {
-                return View(category);
-            }
+           
             var existCategory=_context.Categories.Find(category.Id);
-            
-            if(existCategory==null)
+
+            if (!ModelState.IsValid)
+            {
+                return View(existCategory);
+            }
+            if (existCategory==null)
             {
                 return View("Error");
             }
@@ -108,7 +113,7 @@ namespace Voxo.Areas.Manage.Controllers
             if(category.Name!=existCategory.Name&&_context.Categories.Any(x=>x.Name==category.Name))
             {
                 ModelState.AddModelError("Name","Category already exist");
-                return View(category);
+                return View(existCategory);
             }
 
             existCategory.Name= category.Name;

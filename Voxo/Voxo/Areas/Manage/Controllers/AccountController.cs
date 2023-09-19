@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Voxo.Areas.Manage.ViewModels;
 using Voxo.Models;
@@ -64,7 +65,7 @@ namespace Voxo.Areas.Manage.Controllers
 
             return RedirectToAction("index","dashboard");
         }
-
+        [Authorize(Roles ="Admin")]
         public async Task<IActionResult> Logout()
         {
             await _signInManager.SignOutAsync();

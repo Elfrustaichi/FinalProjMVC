@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Voxo.DAL;
 using Voxo.Models;
 using Voxo.ViewModels;
@@ -6,6 +7,7 @@ using Voxo.ViewModels;
 namespace Voxo.Areas.Manage.Controllers
 {
     [Area("manage")]
+    [Authorize(Roles = "Admin")]
     public class SettingController : Controller
     {
         private readonly VoxoContext _context;
@@ -19,7 +21,7 @@ namespace Voxo.Areas.Manage.Controllers
         {
             var query=_context.Settings.AsQueryable();
 
-            return View(PaginatedList<Setting>.Create(query,page,1));
+            return View(PaginatedList<Setting>.Create(query,page,7));
         }
         //Settings index end
         //Setting create start
@@ -31,13 +33,19 @@ namespace Voxo.Areas.Manage.Controllers
         [AutoValidateAntiforgeryToken]
         public IActionResult Create(Setting setting)
         {
-            if(!ModelState.IsValid)
+            if (setting.Key == null)
             {
+                ModelState.AddModelError("Key", "Must have key data");
                 return View();
             }
             if(_context.Settings.Any(x=>x.Key==setting.Key))
             {
                 ModelState.AddModelError("Key","Setting with this key already exists");
+                return View();
+            }
+            if (setting.Value == null)
+            {
+                ModelState.AddModelError("Value", "Must have value data");
                 return View();
             }
 
@@ -80,16 +88,26 @@ namespace Voxo.Areas.Manage.Controllers
         [AutoValidateAntiforgeryToken]
         public IActionResult Edit(Setting setting)
         {
+            if (setting.Key == null)
+            {
+                ModelState.AddModelError("Key", "Must have key data");
+                return View();
+            }
             var existSetting=_context.Settings?.FirstOrDefault(x=>x.Key == setting.Key);
-
-            if(existSetting==null)
+            if (existSetting == null)
             {
                 return View("error");
             }
+            
             if(existSetting.Key!=setting.Key&&_context.Settings.Any(x=>x.Key==setting.Key))
             {
                 ModelState.AddModelError("Key", "Setting with this key already exists");
-                return View(setting);
+                return View(existSetting);
+            }
+            if (setting.Value == null)
+            {
+                ModelState.AddModelError("Value", "Must have value data");
+                return View(existSetting);
             }
 
             existSetting.Key = setting.Key;

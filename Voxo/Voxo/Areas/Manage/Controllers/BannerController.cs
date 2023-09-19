@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Voxo.DAL;
 using Voxo.Helpers;
 using Voxo.Models;
@@ -7,6 +8,7 @@ using Voxo.ViewModels;
 namespace Voxo.Areas.Manage.Controllers
 {
     [Area("manage")]
+    [Authorize(Roles = "Admin")]
     public class BannerController : Controller
     {
         private readonly VoxoContext _context;
@@ -22,7 +24,7 @@ namespace Voxo.Areas.Manage.Controllers
         {
             var query=_context.Banners.AsQueryable();
 
-            return View(PaginatedList<Banner>.Create(query,page,1));
+            return View(PaginatedList<Banner>.Create(query,page,7));
         }
         //Banner index end
 
@@ -106,13 +108,13 @@ namespace Voxo.Areas.Manage.Controllers
             }
             if(!ModelState.IsValid)
             {
-                return View(banner);
+                return View(existBanner);
             }
 
             if (existBanner.Header != banner.Header && _context.Banners.Any(x => x.Header == banner.Header))
             {
                 ModelState.AddModelError("Header", "Banner already exists");
-                return View(banner);
+                return View(existBanner);
             }
             existBanner.Header = banner.Header;
             existBanner.Offer = banner.Offer;

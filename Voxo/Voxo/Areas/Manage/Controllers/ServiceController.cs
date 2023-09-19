@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Voxo.DAL;
 using Voxo.Helpers;
 using Voxo.Models;
@@ -7,6 +8,7 @@ using Voxo.ViewModels;
 namespace Voxo.Areas.Manage.Controllers
 {
     [Area("manage")]
+    [Authorize(Roles = "Admin")]
     public class ServiceController : Controller
     {
         private readonly VoxoContext _context;
@@ -22,7 +24,7 @@ namespace Voxo.Areas.Manage.Controllers
         {
             var query = _context.Services.AsQueryable();
 
-            return View(PaginatedList<Service>.Create(query,page,1));
+            return View(PaginatedList<Service>.Create(query,page,3));
         }
         //Service index end
         //Service create start
@@ -44,8 +46,12 @@ namespace Voxo.Areas.Manage.Controllers
                 ModelState.AddModelError("Header", "Service already exists");
                 return View();
             }
+            if (service.IconImageFile != null)
+            {
+                service.Icon = FileManager.Save(_env.WebRootPath, "uploads/ServiceIcons", service.IconImageFile);
+            }
 
-            service.Icon = FileManager.Save(_env.WebRootPath,"uploads/ServiceIcons",service.IconImageFile);
+            
 
            _context.Services.Add(service);
             _context.SaveChanges();
@@ -99,13 +105,13 @@ namespace Voxo.Areas.Manage.Controllers
 
             if(!ModelState.IsValid)
             {
-                return View(service);
+                return View(existService);
             }
 
             if (existService.Header != service.Header && _context.Services.Any(x => x.Header == service.Header))
             {
                 ModelState.AddModelError("Header","Service already exists");
-                return View(service);
+                return View(existService);
             }
 
             existService.Header = service.Header;

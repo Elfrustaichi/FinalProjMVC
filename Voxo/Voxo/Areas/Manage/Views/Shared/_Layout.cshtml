@@ -147,7 +147,7 @@
             <div class="header-wrapper row m-0">
                 <div class="header-logo-wrapper col-auto p-0">
                     <div class="logo-wrapper">
-                        <a href="index.html">
+                        <a asp-action="index" asp-controller="dashboard">
                             <img class="img-fluid main-logo" src="~/manage/assets/images/logo/logo.png" alt="logo">
                             <img class="img-fluid white-logo" src="~/manage/assets/images/logo/logo-white.png" alt="logo">
                         </a>
@@ -288,24 +288,6 @@
                             </div>
                             <ul class="profile-dropdown onhover-show-div">
                                 <li>
-                                    <a asp-controller="user" asp-action="index">
-                                        <i data-feather="users"></i>
-                                        <span>Users</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="order-list.html">
-                                        <i data-feather="archive"></i>
-                                        <span>Orders</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="support-ticket.html">
-                                        <i data-feather="phone"></i>
-                                        <span>Supports Tickets</span>
-                                    </a>
-                                </li>
-                                <li>
                                     <a href="profile-setting.html">
                                         <i data-feather="settings"></i>
                                         <span>Settings</span>
@@ -313,7 +295,7 @@
                                 </li>
                                 <li>
                                     <a data-bs-toggle="modal" data-bs-target="#staticBackdrop"
-                                       href="javascript:void(0)">
+                                       asp-controller="account" asp-action="logout">
                                         <i data-feather="log-out"></i>
                                         <span>Log out</span>
                                     </a>
@@ -331,7 +313,7 @@
             <div class="sidebar-wrapper">
                 <div>
                     <div class="logo-wrapper logo-wrapper-center">
-                        <a href="index.html" data-bs-original-title="" title="">
+                        <a asp-controller="dashboard" asp-action="index" data-bs-original-title="" title="">
                             <img class="img-fluid for-dark" src="~/manage/assets/images/logo/logo-white.png" alt="">
                         </a>
                         <div class="back-btn">
@@ -436,21 +418,6 @@
                                 </li>
                                 <li class="sidebar-list">
                                     <a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
-                                        <i data-feather="settings"></i>
-                                        <span>Settings</span>
-                                    </a>
-                                    <ul class="sidebar-submenu">
-                                        <li>
-                                            <a asp-controller="setting" asp-action="index">Settings table</a>
-                                        </li>
-
-                                        <li>
-                                            <a asp-controller="setting" asp-action="create">Create Setting</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="sidebar-list">
-                                    <a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
                                         <i data-feather="align-left"></i>
                                         <span>Services</span>
                                     </a>
@@ -541,6 +508,21 @@
                                 </li>
                                 <li class="sidebar-list">
                                     <a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
+                                        <i data-feather="settings"></i>
+                                        <span>Settings</span>
+                                    </a>
+                                    <ul class="sidebar-submenu">
+                                        <li>
+                                            <a asp-controller="setting" asp-action="index">Settings table</a>
+                                        </li>
+
+                                        <li>
+                                            <a asp-controller="setting" asp-action="create">Create Setting</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="sidebar-list">
+                                    <a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
                                         <i data-feather="box"></i>
                                         <span>Products</span>
                                     </a>
@@ -575,6 +557,7 @@
                                         <span>Product Review</span>
                                     </a>
                                 </li>
+
                                 <li class="sidebar-list">
                                     <a class="sidebar-link sidebar-title link-nav" asp-controller="account" asp-action="logout">
                                         <i data-feather="log-in"></i>

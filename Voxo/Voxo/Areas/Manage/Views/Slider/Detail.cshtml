@@ -8,7 +8,7 @@
         <div class="card-order-section">
             <ul>
                 <li>Product Id @Model.ProductId</li>
-                <li>Product Name:@Model.Product.Name</li>
+                <li>Product Name: @Model.Product.Name</li>
             </ul>
         </div>
     </div>
@@ -28,7 +28,7 @@
                                                 <tr>
                                                     <th colspan="2">Items</th>
                                                     <th class="text-end" colspan="2">
-                                                        <a asp-action="edit" 
+                                                        <a asp-action="edit" asp-route-id="@Model.Id"
                                                            class="theme-color edit-btn-alert">
                                                             Edit
                                                             Slider
@@ -51,26 +51,26 @@
                                                     </td>
                                                     <td>
                                                         <p>Sale text</p>
-                                                        <h5>@Model.SaleText</h5>
+                                                        <h5>@(Model.SaleText??"null")</h5>
                                                     </td>
                                                     <td>
                                                         <p>Offer text</p>
-                                                        <h5>@Model.OfferText</h5>
+                                                        <h5>@(Model.OfferText??"null")</h5>
                                                     </td>
                                                 </tr>
 
                                                 <tr class="table-order">
                                                     <td>
                                                         <p>Button text</p>
-                                                        <h5>@Model.ButtonText</h5>
+                                                        <h5>@(Model.ButtonText??"null")</h5>
                                                     </td>
                                                     <td>
                                                         <p>Button header text</p>
-                                                        <h5>@Model.ButtonHeaderText</h5>
+                                                        <h5>@(Model.ButtonHeaderText??"null")</h5>
                                                     </td>
                                                     <td>
                                                         <p>Button Url</p>
-                                                        <h5>@Model.ButtonUrl</h5>
+                                                        <h5>@(Model.ButtonUrl??"null")</h5>
                                                     </td>
                                                     <td>
                                                         <p>Product Id</p>
@@ -96,7 +96,7 @@
         <footer class="footer">
             <div class="row">
                 <div class="col-md-12 footer-copyright text-center">
-                    <p class="mb-0">Copyright 2021 © Voxo theme by pixelstrap</p>
+                    <p class="mb-0">Copyright 2021 © Voxo E-commerce website by Elfrustaichi.All rights reserved.</p>
                 </div>
             </div>
         </footer>

@@ -1,7 +1,7 @@
 ﻿@model TeamMember
 <div class="page-body">
     <div class="title-header">
-        <h5>Add New TeamMember</h5>
+        <h5>Edit TeamMember</h5>
     </div>
 
     <!-- New User start -->
@@ -91,6 +91,15 @@
 
                                                     </div>
                                                 </div>
+                                                <div class="mb-4 row align-items-center">
+                                                    <label class="col-sm-2 col-form-label form-label-title">Photo right now!</label>
+                                                    <div class="col-sm-10">
+
+                                                        <img src="~/uploads/TeamMemberImages/@Model.ImageName" style="width:100px" class="img-fluid"
+                                                             alt="">
+
+                                                    </div>
+                                                </div>
                                             </div>
 
                                         </div>
@@ -98,7 +107,7 @@
                                     <div class="text-danger" asp-validation-summary="ModelOnly"></div>
                                 </form>
                                 <button type="submit" form="userCreate" class="align-items-center btn btn-theme">
-                                    <i data-feather="plus-square"></i>Add New TeamMember
+                                    <i data-feather="edit-2"></i>Edit TeamMember
                                 </button>
                             </div>
                         </div>
@@ -113,7 +122,7 @@
         <footer class="footer">
             <div class="row">
                 <div class="col-md-12 footer-copyright text-center">
-                    <p class="mb-0">Copyright 2021 © Voxo theme by pixelstrap</p>
+                    <p class="mb-0">Copyright 2021 © Voxo E-commerce website by Elfrustaichi.All rights reserved.</p>
                 </div>
             </div>
         </footer>

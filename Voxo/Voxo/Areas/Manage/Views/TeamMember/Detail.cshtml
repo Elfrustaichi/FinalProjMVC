@@ -27,7 +27,7 @@
                                                 <tr>
                                                     <th colspan="2">Member Information</th>
                                                     <th class="text-end" colspan="2">
-                                                        <a asp-action="edit"
+                                                        <a asp-action="edit" asp-route-id="@Model.Id"
                                                            class="theme-color">
                                                             Edit
                                                             Team Member
@@ -61,7 +61,7 @@
                                                 <tr class="table-order">
                                                     <td>
                                                         <p>Own website</p>
-                                                        <h5>@Model.OwnWebsite</h5>
+                                                        <h5>@(Model.OwnWebsite??"null")</h5>
                                                     </td>
 
                                                 </tr>
@@ -77,7 +77,7 @@
                                             <div class="payment-mode">
                                                 <h4>Comment</h4>
                                                 <p>
-                                                    @Model.Comment
+                                                    @(Model.Comment??"null")
                                                 </p>
                                             </div>
                                         </div>
@@ -98,7 +98,7 @@
         <footer class="footer">
             <div class="row">
                 <div class="col-md-12 footer-copyright text-center">
-                    <p class="mb-0">Copyright 2021 © Voxo theme by pixelstrap</p>
+                    <p class="mb-0">Copyright 2021 © Voxo E-commerce website by Elfrustaichi.All rights reserved.</p>
                 </div>
             </div>
         </footer>

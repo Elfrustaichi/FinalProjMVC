@@ -2,7 +2,7 @@
 <!-- Container-fluid starts-->
 <div class="page-body">
     <div class="title-header">
-        <h5>Products List</h5>
+        <h5>Orders List</h5>
     </div>
 
     <div class="container-fluid">
@@ -12,7 +12,7 @@
                     <div class="card-body">
                         <div>
                             <div class="table-responsive table-desi table-product">
-                                <table class="table ticket-table table-1d all-package">
+                                <table class="table ticket-table  table-1d all-package">
                                     <thead>
                                         <tr>
                                             <th>Order Id</th>
@@ -44,10 +44,10 @@
                                                     <a href="javascript:void(0)">@item.Email</a>
                                                 </td>
                                                 <td>
-                                                    <a href="javascript:void(0)">@item.OrderItems.Sum(x=>x.UnitPrice).ToString("0.00")</a>
+                                                    <a href="javascript:void(0)">@item.TotalPrice.ToString("0.00")</a>
                                                 </td>
-                                                <td class="@(item.Status==Voxo.Enums.OrderStatus.Rejected?"status-danger":"status-close")@(item.Status==Voxo.Enums.OrderStatus.Pending?"status-warning":"")">
-                                                    <span>@(item.Status == Voxo.Enums.OrderStatus.Rejected ? "Rejected" : "Accepted")@(item.Status == Voxo.Enums.OrderStatus.Pending ? "Pending" : "")</span>
+                                                <td class="@(item.Status==Voxo.Enums.OrderStatus.Pending?"text-warning":item.Status==Voxo.Enums.OrderStatus.Rejected?"text-danger":"text-success")">
+                                                    <span>@(item.Status == Voxo.Enums.OrderStatus.Pending ? "Pending" : item.Status == Voxo.Enums.OrderStatus.Rejected ? "Rejected" : "Accepted")</span>
                                                 </td>
                                                 <td>
                                                     <ul>
@@ -57,7 +57,7 @@
                                                             </a>
                                                         </li>
 
-                                                        <li>
+                                                        <li @(item.Status == Voxo.Enums.OrderStatus.Pending ? "" : "hidden")>
                                                             <a class="edit-btn-alert" asp-action="edit" asp-route-id="@item.Id">
                                                                 <span class="lnr lnr-pencil"></span>
                                                             </a>
@@ -109,7 +109,7 @@
         <footer class="footer">
             <div class="row">
                 <div class="col-md-12 footer-copyright text-center">
-                    <p class="mb-0">Copyright 2021 © Voxo theme by pixelstrap</p>
+                    <p class="mb-0">Copyright 2021 © Voxo E-commerce website by Elfrustaichi.All rights reserved.</p>
                 </div>
             </div>
         </footer>

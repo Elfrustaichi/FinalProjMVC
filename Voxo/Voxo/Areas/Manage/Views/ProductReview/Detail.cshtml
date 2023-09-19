@@ -28,7 +28,7 @@
                                                 <tr>
                                                     <th colspan="2">Items</th>
                                                     <th class="text-end" colspan="2">
-                                                        <a asp-action="edit" 
+                                                        <a asp-action="edit" asp-route-id="@Model.Id" 
                                                            class="theme-color edit-btn-alert">
                                                             Edit
                                                             Review
@@ -42,7 +42,7 @@
                                                     <td>
                                                         <p>Product Image</p>
                                                         <a href="javascript:void(0)">
-                                                            <img src="assets/images/profile/1.jpg"
+                                                            <img src="~/uploads/ProductImages/@Model.Product.ProductImages.FirstOrDefault(x=>x.PosterStatus==true).ImageName"
                                                                  class="img-fluid blur-up lazyload" alt="">
                                                         </a>
                                                     </td>
@@ -65,7 +65,7 @@
                                                     <td>
                                                         <p>Review Rate</p>
                                                         <ul class="rating">
-                                                            @for (int i = 1; i <= 5; i++)
+                                                            @for (int i = 1; i <= Model.Rate; i++)
                                                             {
                                                                 <li>
                                                                     <i class="fas fa-star @(Model.Rate<=i?"theme-color":"")"></i>
@@ -128,7 +128,7 @@
         <footer class="footer">
             <div class="row">
                 <div class="col-md-12 footer-copyright text-center">
-                    <p class="mb-0">Copyright 2021 © Voxo theme by pixelstrap</p>
+                    <p class="mb-0">Copyright 2021 © Voxo E-commerce website by Elfrustaichi.All rights reserved.</p>
                 </div>
             </div>
         </footer>

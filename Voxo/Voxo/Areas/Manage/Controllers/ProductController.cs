@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
 using Voxo.DAL;
@@ -9,6 +10,7 @@ using Voxo.ViewModels;
 namespace Voxo.Areas.Manage.Controllers
 {
     [Area("manage")]
+    [Authorize(Roles = "Admin")]
     public class ProductController : Controller
     {
         private readonly VoxoContext _context;
@@ -30,7 +32,7 @@ namespace Voxo.Areas.Manage.Controllers
                 .Include(x=>x.ProductSizes)
                 .Include(x=>x.ProductTags).AsQueryable();
 
-            return View(PaginatedList<Product>.Create(query,page,1));
+            return View(PaginatedList<Product>.Create(query,page,7));
         }
         //Product index end
 

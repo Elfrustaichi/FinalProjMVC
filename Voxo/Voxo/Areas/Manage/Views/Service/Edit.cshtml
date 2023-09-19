@@ -1,7 +1,7 @@
 ﻿@model Service
 <div class="page-body">
     <div class="title-header">
-        <h5>Add New Service</h5>
+        <h5>Edit Service</h5>
     </div>
 
     <!-- New User start -->
@@ -69,6 +69,17 @@
 
                                                     </div>
                                                 </div>
+                                                <div style="margin-bottom:50px;" class="row align-items-center">
+                                                    <label class="col-sm-12 col-form-label form-label-title">
+                                                        Service Icon preview
+                                                    </label>
+                                                    <div class="d-flex col-sm-10">
+                                                        <div style="margin-right:50px;" class="img-content-box">
+                                                            <img src="~/uploads/ServiceIcons/@Model.Icon" />
+                                                        </div>
+                                                    </div>
+
+                                                </div>
                                             </div>
 
                                         </div>
@@ -76,7 +87,7 @@
                                     <div class="text-danger" asp-validation-summary="ModelOnly"></div>
                                 </form>
                                 <button type="submit" form="userCreate" class="align-items-center btn btn-theme">
-                                    <i data-feather="plus-square"></i>Add New Service
+                                    <i data-feather="edit-2"></i>Edit Service
                                 </button>
                             </div>
                         </div>
@@ -91,7 +102,7 @@
         <footer class="footer">
             <div class="row">
                 <div class="col-md-12 footer-copyright text-center">
-                    <p class="mb-0">Copyright 2021 © Voxo theme by pixelstrap</p>
+                    <p class="mb-0">Copyright 2021 © Voxo E-commerce website by Elfrustaichi.All rights reserved.</p>
                 </div>
             </div>
         </footer>

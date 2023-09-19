@@ -1,8 +1,13 @@
 ﻿@model PaginatedList<TeamMember>
 <!-- Container-fluid starts-->
 <div class="page-body">
-    <div class="title-header">
+    <div class="title-header title-header-1">
         <h5>TeamMembers List</h5>
+        <form class="d-inline-flex">
+            <a asp-controller="teammember" asp-action="create" class="align-items-center btn btn-theme">
+                <i data-feather="plus-square"></i>Add New TeamMember
+            </a>
+        </form>
     </div>
 
     <div class="container-fluid">
@@ -103,7 +108,7 @@
         <footer class="footer">
             <div class="row">
                 <div class="col-md-12 footer-copyright text-center">
-                    <p class="mb-0">Copyright 2021 © Voxo theme by pixelstrap</p>
+                    <p class="mb-0">Copyright 2021 © Voxo E-commerce website by Elfrustaichi.All rights reserved.</p>
                 </div>
             </div>
         </footer>

@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
 using Voxo.DAL;
 using Voxo.Helpers;
 using Voxo.Models;
@@ -8,6 +10,7 @@ using Voxo.ViewModels;
 namespace Voxo.Areas.Manage.Controllers
 {
     [Area("manage")]
+    [Authorize(Roles = "Admin")]
     public class SliderController : Controller
     {
         private readonly VoxoContext _context;
@@ -55,6 +58,12 @@ namespace Voxo.Areas.Manage.Controllers
             if (_context.Products.Any(x => x.Id != slider.ProductId))
             {
                 ModelState.AddModelError("ProductId", "Product not found");
+                return View();
+            }
+            var existProductId = _context.Sliders.FirstOrDefault(x => x.ProductId == slider.ProductId);
+            if (existProductId != null)
+            {
+                ModelState.AddModelError("ProductId", "Product have been used in another slider");
                 return View();
             }
 
@@ -121,7 +130,13 @@ namespace Voxo.Areas.Manage.Controllers
             {
                 ModelState.AddModelError("TitleText", "Slider already exist");
             }
-            
+            var existProductId = _context.Sliders.FirstOrDefault(x => x.ProductId == slider.ProductId);
+            if (existProductId != null)
+            {
+                ModelState.AddModelError("ProductId", "Product have been used in another slider");
+                return View();
+            }
+
             exitsSlider.TitleText = slider.TitleText;
             exitsSlider.SaleText = slider.SaleText;
             exitsSlider.OfferText = slider.OfferText;
@@ -162,7 +177,7 @@ namespace Voxo.Areas.Manage.Controllers
 
         public void GetProducts()
         {
-            ViewBag.Products = _context.Products.ToList();
+            ViewBag.Products = _context.Products.Where(x=>x.Slider==null);
         }
 
     }

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Voxo.Areas.Manage.ViewModels;
 using Voxo.DAL;
@@ -8,6 +9,7 @@ using Voxo.ViewModels;
 namespace Voxo.Areas.Manage.Controllers
 {
     [Area("manage")]
+    [Authorize(Roles = "Admin")]
     public class UserController : Controller
     {
         private readonly VoxoContext _context;
@@ -23,7 +25,7 @@ namespace Voxo.Areas.Manage.Controllers
         {
             var query=_context.AppUsers.AsQueryable();
 
-            return View(PaginatedList<AppUser>.Create(query,page,1));
+            return View(PaginatedList<AppUser>.Create(query,page,7));
         }
         //User Index
 
@@ -92,6 +94,22 @@ namespace Voxo.Areas.Manage.Controllers
             {
                 return StatusCode(404);
             }
+
+            var userAdress=_context.Adresses.Where(x=>x.AppUserId == User.Id).ToList();
+            var userPaymentCards=_context.PaymentCards.Where(x=>x.AppUserId== User.Id).ToList();
+            var userOrders=_context.Orders.Where(x=>x.AppUserId== User.Id).ToList();
+            var userWishlist=_context.Wishlists.Where(x=>x.AppUserId== User.Id).ToList();
+            var userCart=_context.UserCartItems.Where(x=>x.AppUserId== User.Id).ToList();
+            var userReview=_context.ProductReviews.Where(x=>x.AppUserId==User.Id).ToList();
+
+            _context.Adresses.RemoveRange(userAdress);
+            _context.PaymentCards.RemoveRange(userPaymentCards);
+            _context.RemoveRange(userOrders);
+            _context.RemoveRange(userWishlist);
+            _context.RemoveRange(userCart);
+            _context.RemoveRange(userReview);
+
+            
             _context.AppUsers.Remove(User);
             _context.SaveChanges();
 

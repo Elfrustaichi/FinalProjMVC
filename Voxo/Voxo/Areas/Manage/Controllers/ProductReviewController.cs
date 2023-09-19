@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Voxo.DAL;
 using Voxo.Models;
@@ -7,6 +8,7 @@ using Voxo.ViewModels;
 namespace Voxo.Areas.Manage.Controllers
 {
     [Area("manage")]
+    [Authorize(Roles = "Admin")]
     public class ProductReviewController : Controller
     {
         private readonly VoxoContext _context;
@@ -51,7 +53,8 @@ namespace Voxo.Areas.Manage.Controllers
 
             return View(existReview);
         }
-
+        [HttpPost]
+        [AutoValidateAntiforgeryToken]
         public IActionResult Edit(ProductReview review)
         {
             var existReview=_context.ProductReviews.Find(review.Id);
@@ -61,7 +64,7 @@ namespace Voxo.Areas.Manage.Controllers
                 return View("error");
             }
 
-            if(review.IsPublised!=true||review.IsPublised!=false)
+            if(review.IsPublised!=true&&review.IsPublised!=false)
             {
                 ModelState.AddModelError("IsPublished", "Publish value is wrong");
                 return View(existReview);
@@ -72,6 +75,7 @@ namespace Voxo.Areas.Manage.Controllers
                 existReview.AdminResponse=review.AdminResponse;
             }
 
+            existReview.IsPublised=review.IsPublised;
             _context.SaveChanges();
 
             return RedirectToAction("index");

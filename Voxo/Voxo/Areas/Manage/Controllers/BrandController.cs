@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Voxo.DAL;
 using Voxo.Models;
 using Voxo.ViewModels;
@@ -6,6 +7,7 @@ using Voxo.ViewModels;
 namespace Voxo.Areas.Manage.Controllers
 {
     [Area("manage")]
+    [Authorize(Roles = "Admin")]
     public class BrandController : Controller
     {
         private readonly VoxoContext _context;
@@ -19,7 +21,7 @@ namespace Voxo.Areas.Manage.Controllers
         {
             var query=_context.Brands.AsQueryable();
 
-            return View(PaginatedList<Brand>.Create(query,page,1));
+            return View(PaginatedList<Brand>.Create(query,page,7));
         }
         //Brand index end
 
@@ -89,13 +91,13 @@ namespace Voxo.Areas.Manage.Controllers
 
             if(!ModelState.IsValid)
             {
-                return View(brand);
+                return View(existBrand);
             }
 
             if(existBrand.Name!=brand.Name&&_context.Brands.Any(x=>x.Name==brand.Name))
             {
                 ModelState.AddModelError("Name","Brand already exists");
-                return View(brand);
+                return View(existBrand);
             }
 
             existBrand.Name=brand.Name;

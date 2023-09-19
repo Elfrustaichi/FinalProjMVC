@@ -36,19 +36,20 @@
                                                         Admin Response
                                                     </label>
                                                     <div class="col-md-9 col-lg-10">
-                                                        <input asp-for="AdminResponse" class="form-control" >
+                                                        <textarea rows="3" asp-for="AdminResponse" class="form-control" ></textarea>
                                                         <span class="text-danger" asp-validation-for="AdminResponse"></span>
                                                     </div>
                                                 </div>
                                                 <div class="mb-4 row align-items-center">
                                                     <label class="col-sm-2 col-form-label form-label-title">
-                                                        Category Tag
+                                                        Publish
                                                     </label>
                                                     <div class="col-sm-10">
                                                         <select asp-for="IsPublised" class="js-example-basic-single w-100">
                                                             <option value="@true">Publish</option>
                                                             <option value="@false">Reject</option>
                                                         </select>
+                                                        <span class="text-danger" asp-validation-for="IsPublised"></span>
                                                     </div>
                                                 </div>
 
@@ -59,7 +60,7 @@
                                     <div class="text-danger" asp-validation-summary="ModelOnly"></div>
                                 </form>
                                 <button type="submit" form="userCreate" class="align-items-center btn btn-theme">
-                                    <i data-feather="plus-square"></i>Edit Review
+                                    <i data-feather="edit-2"></i>Edit Review
                                 </button>
                             </div>
                         </div>
@@ -74,7 +75,7 @@
         <footer class="footer">
             <div class="row">
                 <div class="col-md-12 footer-copyright text-center">
-                    <p class="mb-0">Copyright 2021 © Voxo theme by pixelstrap</p>
+                    <p class="mb-0">Copyright 2021 © Voxo E-commerce website by Elfrustaichi.All rights reserved.</p>
                 </div>
             </div>
         </footer>

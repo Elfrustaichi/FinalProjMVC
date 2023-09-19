@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Voxo.DAL;
 using Voxo.Helpers;
 using Voxo.Models;
@@ -7,6 +8,7 @@ using Voxo.ViewModels;
 namespace Voxo.Areas.Manage.Controllers
 {
     [Area("manage")]
+    [Authorize(Roles = "Admin")]
     public class TeamMemberController : Controller
     {
         private readonly VoxoContext _context;
@@ -22,7 +24,7 @@ namespace Voxo.Areas.Manage.Controllers
         {
             var query = _context.TeamMembers.AsQueryable();
 
-            return View(PaginatedList<TeamMember>.Create(query,page,1));
+            return View(PaginatedList<TeamMember>.Create(query,page,7));
         }
         //TeamMember index end
 
@@ -39,7 +41,7 @@ namespace Voxo.Areas.Manage.Controllers
             {
                 return View();
             }
-            if(_context.TeamMembers.Any(x=>x.Fullname==x.Fullname))
+            if(_context.TeamMembers.Any(x=>x.Fullname==member.Fullname))
             {
                 ModelState.AddModelError("Fullname","TeamMember already exists");
                 return View();
@@ -48,8 +50,13 @@ namespace Voxo.Areas.Manage.Controllers
             {
                 ModelState.AddModelError("ImageFile","Team member must have photo");
             }
-
+            if (member.ImageFile == null)
+            {
+                ModelState.AddModelError("ImageFile","Image is required");
+                return View();
+            }
             member.ImageName = FileManager.Save(_env.WebRootPath, "uploads/TeamMemberImages", member.ImageFile);
+
             _context.TeamMembers.Add(member);
             _context.SaveChanges();
             return RedirectToAction("index");

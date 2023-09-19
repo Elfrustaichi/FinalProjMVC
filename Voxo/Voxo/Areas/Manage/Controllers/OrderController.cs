@@ -1,12 +1,16 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.EntityFrameworkCore;
 using Voxo.DAL;
+using Voxo.Enums;
 using Voxo.Models;
 using Voxo.ViewModels;
 
 namespace Voxo.Areas.Manage.Controllers
 {
     [Area("manage")]
+    [Authorize(Roles = "Admin")]
     public class OrderController : Controller
     {
         private readonly VoxoContext _context;
@@ -33,6 +37,9 @@ namespace Voxo.Areas.Manage.Controllers
                 return StatusCode(404);
             }
 
+            var orderItems=_context.OrderItems.Where(x=>x.OrderId == existOrder.Id).ToList();
+
+            _context.OrderItems.RemoveRange(orderItems);
             _context.Orders.Remove(existOrder);
             _context.SaveChanges();
             return StatusCode(200);
@@ -62,7 +69,7 @@ namespace Voxo.Areas.Manage.Controllers
             }
             
 
-            if(order.Status!=Enums.OrderStatus.Accepted||order.Status!=Enums.OrderStatus.Rejected||order.Status!=Enums.OrderStatus.Pending)
+            if(!Enum.IsDefined(typeof(OrderStatus),order.Status))
             {
                 return View("error");
             }
