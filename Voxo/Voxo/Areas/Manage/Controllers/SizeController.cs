@@ -21,7 +21,7 @@ namespace Voxo.Areas.Manage.Controllers
         {
             var query=_context.Sizes.AsQueryable();
 
-            return View(PaginatedList<Size>.Create(query,page,3));
+            return View(PaginatedList<Size>.Create(query,page,7));
         }
         //Size index end
 

@@ -26,7 +26,7 @@ namespace Voxo.Areas.Manage.Controllers
         {
             var query=_context.Sliders.Include(x=>x.Product).AsQueryable();
 
-            return View(PaginatedList<Slider>.Create(query,page,1));
+            return View(PaginatedList<Slider>.Create(query,page,7));
         }
         //Slider index end
         //Slider create start

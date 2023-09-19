@@ -24,7 +24,7 @@ namespace Voxo.Areas.Manage.Controllers
         {
             var query=_context.Orders.Include(x=>x.AppUser).Include(x=>x.OrderItems).AsQueryable();
 
-            return View(PaginatedList<Order>.Create(query,page,1));
+            return View(PaginatedList<Order>.Create(query,page,7));
         }
         //Order index end
         //Order delete start

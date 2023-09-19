@@ -24,7 +24,7 @@ namespace Voxo.Areas.Manage.Controllers
         {
             var query = _context.Services.AsQueryable();
 
-            return View(PaginatedList<Service>.Create(query,page,3));
+            return View(PaginatedList<Service>.Create(query,page,7));
         }
         //Service index end
         //Service create start

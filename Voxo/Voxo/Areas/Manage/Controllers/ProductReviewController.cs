@@ -22,7 +22,7 @@ namespace Voxo.Areas.Manage.Controllers
         {
             var query=_context.ProductReviews.Include(x=>x.Product).Include(x=>x.AppUser).AsQueryable();
 
-            return View(PaginatedList<ProductReview>.Create(query,page,1));
+            return View(PaginatedList<ProductReview>.Create(query,page,7));
         }
         //ProductReview index end
         //Product delete start

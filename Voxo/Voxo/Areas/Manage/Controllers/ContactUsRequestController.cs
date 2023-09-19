@@ -21,7 +21,7 @@ namespace Voxo.Areas.Manage.Controllers
         {
             var query=_context.ContactUsRequests.AsQueryable();
 
-            return View(PaginatedList<ContactUsRequest>.Create(query,page,1));
+            return View(PaginatedList<ContactUsRequest>.Create(query,page,7));
         }
         //Contact us request index end
 
