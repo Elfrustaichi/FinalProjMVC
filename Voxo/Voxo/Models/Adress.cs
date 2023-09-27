@@ -11,9 +11,6 @@ namespace Voxo.Models
         [Required]
         [MaxLength(255)]
         public string FullAdress { get; set; }
-        [Required,MaxLength(20)]
-        public string Phone { get; set; }
-
         public string AppUserId { get; set; }
 
         public AppUser AppUser { get; set; }

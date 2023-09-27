@@ -391,6 +391,7 @@ namespace Voxo.Areas.Manage.Controllers
             existProduct.CostPrice= product.CostPrice;
             existProduct.DiscountPercent= product.DiscountPercent;
             existProduct.StockStatus= product.StockStatus;
+            existProduct.IsNewArrival= product.IsNewArrival;
 
             _context.SaveChanges();
 

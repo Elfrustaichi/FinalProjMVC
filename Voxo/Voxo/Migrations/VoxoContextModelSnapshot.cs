@@ -247,11 +247,6 @@ namespace Voxo.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<string>("Phone")
-                        .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
-
                     b.HasKey("Id");
 
                     b.HasIndex("AppUserId");
@@ -586,6 +581,9 @@ namespace Voxo.Migrations
 
                     b.Property<int>("DiscountPercent")
                         .HasColumnType("int");
+
+                    b.Property<bool>("IsNewArrival")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Name")
                         .IsRequired()

@@ -10,7 +10,11 @@ namespace Voxo.Areas.Manage.ViewModels
         public string Fullname { get; set;}
         [Required,MaxLength (50)]
         public string Email { get; set;}
+        [Required,DataType(DataType.PhoneNumber)]
+        public string Phone { get; set; }
         [Required,DataType(DataType.Password)]
+
+        
         public string Password { get; set;}
         [Required,DataType(DataType.Password)]
         [Compare(nameof(Password))]

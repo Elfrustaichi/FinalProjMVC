@@ -55,7 +55,7 @@ namespace Voxo.Areas.Manage.Controllers
                 ModelState.AddModelError("TitleText", "Slider already exist");
                 return View();
             }
-            if (_context.Products.Any(x => x.Id != slider.ProductId))
+            if (!_context.Products.Any(x => x.Id == slider.ProductId))
             {
                 ModelState.AddModelError("ProductId", "Product not found");
                 return View();

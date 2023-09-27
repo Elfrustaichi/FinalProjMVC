@@ -282,15 +282,21 @@
                             <div class="media profile-media">
                                 <img class="user-profile rounded-circle" src="~/manage/assets/images/users/4.jpg" alt="">
                                 <div class="user-name-hide media-body">
-                                    <span>Emay Walter</span>
+                                    <span>@User.Identity.Name</span>
                                     <p class="mb-0 font-roboto">Admin<i class="middle fa fa-angle-down"></i></p>
                                 </div>
                             </div>
                             <ul class="profile-dropdown onhover-show-div">
                                 <li>
-                                    <a href="profile-setting.html">
+                                    <a asp-controller="account" asp-action="profile">
                                         <i data-feather="settings"></i>
-                                        <span>Settings</span>
+                                        <span>Profile settings</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a asp-controller="account" asp-action="changepassword">
+                                        <i data-feather="key"></i>
+                                        <span>Change password</span>
                                     </a>
                                 </li>
                                 <li>
@@ -589,7 +595,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     <div class="button-box">
                         <button type="button" class="btn btn--no " data-bs-dismiss="modal">No</button>
-                        <button type="button" class="btn  btn--yes btn-primary">Yes</button>
+                        <a asp-action="logout" asp-controller="account" type="button" class="btn  btn--yes btn-primary">Yes</a>
                     </div>
                 </div>
             </div>

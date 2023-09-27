@@ -19,6 +19,8 @@ namespace Voxo.Models
         public int DiscountPercent { get; set; }
         [Range(0,5)]
         public int Rate { get; set; }
+        [Required] 
+        public bool IsNewArrival { get; set;}
         [Required]
         public bool StockStatus { get; set; }
 

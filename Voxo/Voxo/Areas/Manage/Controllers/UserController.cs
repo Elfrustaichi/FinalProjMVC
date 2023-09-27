@@ -61,6 +61,7 @@ namespace Voxo.Areas.Manage.Controllers
                 Email = appUserVM.Email,
                 Fullname= appUserVM.Fullname,
                 IsAdmin = appUserVM.IsAdmin,
+                PhoneNumber=appUserVM.Phone,
                 CreationTime=DateTime.Now,
             };
              
