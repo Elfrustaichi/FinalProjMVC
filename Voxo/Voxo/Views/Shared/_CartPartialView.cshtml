@@ -1,0 +1,57 @@
+﻿@model CartViewModel
+
+<div class="cart-menu">
+    <div class="cart-title">
+        <h6>
+            <i data-feather="shopping-bag"></i>
+            <span class="label label-theme rounded-pill">@Model.Items.Sum(x=>x.Count)</span>
+        </h6>
+        <span class="d-md-none d-block">
+            <i class="fas fa-arrow-right back-cart"></i>
+        </span>
+    </div>
+    <ul class="custom-scroll">
+        @foreach (var prd in Model.Items)
+        {
+            <li>
+                <div class="media">
+                    <img src="~/uploads/ProductImages/@prd.Product.ProductImages.FirstOrDefault(x=>x.PosterStatus==true).ImageName"
+                         class="img-fluid blur-up lazyload" alt="">
+                    <div class="media-body">
+                        <h6>@prd.Product.Name</h6>
+                        <div class="qty-with-price">
+                            @if (prd.Product.DiscountPercent > 0)
+                            {
+                                <span>$@((prd.Product.SalePrice - (prd.Product.SalePrice * prd.Product.DiscountPercent / 100)).ToString("0.00"))</span>
+                            }
+                            else
+                            {
+                                <span>$@prd.Product.SalePrice.ToString("0.00")</span>
+                            }
+                            <span>
+                                <input disabled type="number" class="form-control"
+                                       value="@prd.Count">
+                            </span>
+                        </div>
+                    </div>
+                    <button type="button" class="btn-close d-block d-md-none"
+                            aria-label="Close">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </li>
+        }
+
+    </ul>
+</div>
+<div class="cart-btn">
+    <h6 class="cart-total">
+        <span class="font-light">Total:</span> $
+        <span class="total-price">@Model.TotalPrice.ToString("0.00")</span>
+        
+    </h6>
+    <button onclick="location.href='@Url.Action("cart","product")'" type="button"
+            class="btn btn-solid-default btn-block">
+        Proceed to payment
+    </button>
+</div>

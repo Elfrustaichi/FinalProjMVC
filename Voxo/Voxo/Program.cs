@@ -26,6 +26,7 @@ builder.Services.AddIdentity<AppUser, IdentityRole>(opt =>
 
 //Added services start
 builder.Services.AddScoped<LayoutService>();
+builder.Services.AddScoped<IEmailSender, EmailSender>();
 //Added services end
 
 //Login cookie config start

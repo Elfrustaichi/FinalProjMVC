@@ -87,8 +87,7 @@ namespace Voxo.Areas.Manage.Controllers
             var existOrder=_context.Orders
                 .Include(x=>x.AppUser)
                 .Include(x=>x.OrderItems).ThenInclude(x=>x.Product).ThenInclude(x=>x.ProductImages)
-                .Include(x=>x.Adress)
-                .Include(x=>x.AppUser).ThenInclude(x=>x.Adresses)
+                .Include(x=>x.AppUser)
                 .FirstOrDefault(x=>x.Id==id);
 
             if(existOrder == null)

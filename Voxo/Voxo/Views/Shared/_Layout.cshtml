@@ -3,6 +3,7 @@
 @{
     var settings = _layoutService.GetSettings();
     var categories = _layoutService.GetCategories();
+    var cart = _layoutService.GetCart();
 }
 <!DOCTYPE html>
 <html lang="en">
@@ -58,7 +59,7 @@
     <link rel="stylesheet" href="~/assets/css/vendors/ion.rangeSlider.min.css" />
 
 
-
+   
 
     <!-- latest jquery-->
     <script src="~/assets/js/jquery-3.5.1.min.js" defer></script>
@@ -84,19 +85,22 @@
     <script src="~/assets/js/script.js" defer></script>
     <script src="~/assets/js/home-script.js" defer></script>
 
+    <!-- main js-->
+    <script src="~/assets/js/main.js" defer></script>
+
     @RenderSection("Timer1Script",false)
 
     @RenderSection("AddToCartModalScript",false)
-
-    @RenderSection("PriceFilterScript",false)
 
     @RenderSection("FilterHideShowScript",false)
 
     @RenderSection("PluginScript",false)
 
-    @RenderSection("TimerScript",false)
-
     @RenderSection("ZoomScript",false)
+
+    @RenderSection("PriceFilterScript",false)
+
+    
 
     
 
@@ -203,8 +207,10 @@
                             <div class="menu-right">
                                 <ul>
                                     <li>
-                                        <div class="search-box">
-                                            <i data-feather="search"></i>
+                                        <div>
+                                            <a asp-action="search" asp-controller="shop">
+                                                <i data-feather="search"></i>
+                                            </a>
                                         </div>
                                     </li>
                                     <li class="onhover-dropdown">
@@ -242,75 +248,13 @@
                                             </a>
                                         </div>
                                     </li>
-                                    <li class="onhover-dropdown cart-dropdown">
+                                    <li class="onhover-dropdown cart-dropdown cart-partial">
                                         <button type="button" class="btn btn-solid-default btn-spacing">
                                             <i data-feather="shopping-cart" class="pe-2"></i>
-                                            <span>$5686.25</span>
+                                            <span class="show-total">$@cart.TotalPrice.ToString("0.00")</span>
                                         </button>
                                         <div class="onhover-div">
-                                            <div class="cart-menu">
-                                                <div class="cart-title">
-                                                    <h6>
-                                                        <i data-feather="shopping-bag"></i>
-                                                        <span class="label label-theme rounded-pill">5</span>
-                                                    </h6>
-                                                    <span class="d-md-none d-block">
-                                                        <i class="fas fa-arrow-right back-cart"></i>
-                                                    </span>
-                                                </div>
-                                                <ul class="custom-scroll">
-                                                    <li>
-                                                        <div class="media">
-                                                            <img src="~/assets/images/fashion/product/front/1.jpg"
-                                                                 class="img-fluid blur-up lazyload" alt="">
-                                                            <div class="media-body">
-                                                                <h6>Slim Fit Plastic Coat</h6>
-                                                                <div class="qty-with-price">
-                                                                    <span>$78.00</span>
-                                                                    <span>
-                                                                        <input type="number" class="form-control"
-                                                                               value="1">
-                                                                    </span>
-                                                                </div>
-                                                            </div>
-                                                            <button type="button" class="btn-close d-block d-md-none"
-                                                                    aria-label="Close">
-                                                                <i class="fas fa-times"></i>
-                                                            </button>
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="media">
-                                                            <img src="~/assets/images/fashion/product/front/7.jpg"
-                                                                 class="img-fluid blur-up lazyload" alt="">
-                                                            <div class="media-body">
-                                                                <h6>Womens Stylish Jacket</h6>
-                                                                <div class="qty-with-price">
-                                                                    <span>$24.00</span>
-                                                                    <span>
-                                                                        <input type="number" class="form-control"
-                                                                               value="1">
-                                                                    </span>
-                                                                </div>
-                                                            </div>
-                                                            <button type="button" class="btn-close d-block d-md-none"
-                                                                    aria-label="Close">
-                                                                <i class="fas fa-times"></i>
-                                                            </button>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="cart-btn">
-                                                <h6 class="cart-total">
-                                                    <span class="font-light">Total:</span> $
-                                                    542.00
-                                                </h6>
-                                                <button onclick="location.href='@Url.Action("cart","product")'" type="button"
-                                                        class="btn btn-solid-default btn-block">
-                                                    Proceed to payment
-                                                </button>
-                                            </div>
+                                                @Html.Partial("_CartPartialView",cart);
                                         </div>
                                     </li>
                                 </ul>
@@ -604,124 +548,7 @@
         </div>
     </footer>
     <!-- footer end -->
-    <!-- Quick view modal start -->
-    <div class="modal fade quick-view-modal" id="quick-view">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content">
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                <div class="modal-body">
-                    <div class="row gy-4">
-                        <div class="col-lg-6">
-                            <div class="quick-view-image">
-                                <div class="quick-view-slider ratio_2">
-                                    <div>
-                                        <img src="~/assets/images/fashion/product/front/4.jpg"
-                                             class="img-fluid bg-img blur-up lazyload" alt="product">
-                                    </div>
-                                    <div>
-                                        <img src="~/assets/images/fashion/product/front/5.jpg"
-                                             class="img-fluid bg-img blur-up lazyload" alt="product">
-                                    </div>
-                                    <div>
-                                        <img src="~/assets/images/fashion/product/front/6.jpg"
-                                             class="img-fluid bg-img blur-up lazyload" alt="product">
-                                    </div>
-                                    <div>
-                                        <img src="~/assets/images/fashion/product/front/7.jpg"
-                                             class="img-fluid bg-img blur-up lazyload" alt="product">
-                                    </div>
-                                </div>
-                                <div class="quick-nav">
-                                    <div>
-                                        <img src="~/assets/images/fashion/product/front/4.jpg"
-                                             class="img-fluid blur-up lazyload" alt="product">
-                                    </div>
-                                    <div>
-                                        <img src="~/assets/images/fashion/product/front/5.jpg"
-                                             class="img-fluid blur-up lazyload" alt="product">
-                                    </div>
-                                    <div>
-                                        <img src="~/assets/images/fashion/product/front/6.jpg"
-                                             class="img-fluid blur-up lazyload" alt="product">
-                                    </div>
-                                    <div>
-                                        <img src="~/assets/images/fashion/product/front/7.jpg"
-                                             class="img-fluid blur-up lazyload" alt="product">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="product-right">
-                                <h2 class="mb-2">Men's Hoodie t-shirt</h2>
-                                <ul class="rating mt-1">
-                                    <li>
-                                        <i class="fas fa-star theme-color"></i>
-                                    </li>
-                                    <li>
-                                        <i class="fas fa-star theme-color"></i>
-                                    </li>
-                                    <li>
-                                        <i class="fas fa-star theme-color"></i>
-                                    </li>
-                                    <li>
-                                        <i class="fas fa-star"></i>
-                                    </li>
-                                    <li>
-                                        <i class="fas fa-star"></i>
-                                    </li>
-                                    <li class="font-light">(In stock)</li>
-                                </ul>
-                                <div class="price mt-3">
-                                    <h3>$20.00</h3>
-                                </div>
-                                <div class="color-types">
-                                    <h4>colors</h4>
-                                    <ul class="color-variant mb-0">
-                                        <li class="bg-half-light selected"></li>
-                                        <li class="bg-light1"></li>
-                                        <li class="bg-blue1"></li>
-                                        <li class="bg-black1"></li>
-                                    </ul>
-                                </div>
-                                <div class="size-detail">
-                                    <h4>size</h4>
-                                    <ul class="">
-                                        <li class="selected">S</li>
-                                        <li>M</li>
-                                        <li>L</li>
-                                        <li>XL</li>
-                                    </ul>
-                                </div>
-                                <div class="product-details">
-                                    <h4>product details</h4>
-                                    <ul>
-                                        <li>
-                                            <span class="font-light">Style :</span> Hoodie
-                                        </li>
-                                        <li>
-                                            <span class="font-light">Catgory :</span> T-shirt
-                                        </li>
-                                        <li>
-                                            <span class="font-light">Tags:</span> summer, organic
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="product-btns">
-                                    <a href="cart.html" class="btn btn-solid-default btn-sm">Add to cart</a>
-                                    <a href="product-left-sidebar.html" class="btn btn-solid-default btn-sm">
-                                        View
-                                        details
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Quick view modal end -->
+
     <!-- Cart Successful Start -->
     <div class="modal fade cart-modal" id="addtocart" tabindex="-1" role="dialog" aria-label="myModalLabel"
          aria-hidden="true">
@@ -884,7 +711,19 @@
         </a>
     </div>
     <!-- tap to top Section End -->
-
+    <!-- Quick view modal start -->
+    <div class="modal fade quick-view-modal" id="quick-view">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <button type="button" class="btn-close modal-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="modal-body">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Quick view modal end -->
+    <!-- Quick view modal end -->
 
     <!-- Add To Cart Notification -->
     <div class="added-notification">
@@ -925,120 +764,44 @@
         <a href="javascript:void(0)" class="close-popup fa fa-times"></a>
     </div>
     <!-- recently purchase product -->
-    <!-- Reset Password Modal Start -->
-    <div class="modal fade reset-email-modal" id="resetEmail">
+    <!-- Edit profile Modal Start -->
+    <div class="modal fade reset-email-modal" id="editProfile">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content ">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="exampleModalLabel">Edit Profile</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body pt-3 edit-profile-modal">
+
+                </div>
+                <div class="modal-footer pt-0">
+                    <button class="btn bg-secondary rounded-1 modal-close-button" data-bs-dismiss="modal">Close</button>
+                    <button class="btn btn-solid-default rounded-1" form="editprofile-form" type="submit">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Reset Password Modal End -->
+    <!-- Edit password Modal Start -->
+    <div class="modal fade reset-email-modal" id="editPassword">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
                     <h3 class="modal-title" id="exampleModalLabel">Comfirm Email</h3>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
-                <div class="modal-body pt-3">
-                    <form>
-                        <div class="mb-3">
-                            <label for="email" class="form-label font-light">Email address</label>
-                            <input type="email" class="form-control" id="email">
-                        </div>
-                        <div class="mb-3">
-                            <label for="comfirmEmail" class="form-label font-light">Comfirm Email address</label>
-                            <input type="email" class="form-control" id="comfirmEmail">
-                        </div>
-                        <div>
-                            <label for="exampleInputPassword1" class="form-label font-light">Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1">
-                        </div>
-                    </form>
+                <div class="modal-body pt-3 changepassword-modal">
+                   
                 </div>
                 <div class="modal-footer pt-0">
                     <button class="btn bg-secondary rounded-1 modal-close-button" data-bs-dismiss="modal">Close</button>
-                    <button class="btn btn-solid-default rounded-1" data-bs-dismiss="modal">Save changes</button>
+                    <button class="btn btn-solid-default rounded-1" type="submit" form="changepassword-form">Save changes</button>
                 </div>
             </div>
         </div>
     </div>
     <!-- Reset Password Modal End -->
-    <!-- Add Address Modal Start -->
-    <div class="modal fade add-address-modal" id="addAddress">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="mb-3">
-                            <label for="name" class="form-label font-light">Full Name</label>
-                            <input type="text" class="form-control" id="name" placeholder="full name">
-                        </div>
-                        <div class="mb-3">
-                            <label for="address" class="form-label font-light">Full Address</label>
-                            <input type="text" class="form-control" id="address" placeholder="123, abcd, xyz">
-                        </div>
-                        <div>
-                            <label for="number" class="form-label font-light">Mobile</label>
-                            <input type="number" class="form-control" id="number" placeholder="+1-123-456-7890">
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer pt-0 text-end d-block">
-                    <button type="button" class="btn bg-secondary text-white rounded-1 modal-close-button"
-                            data-bs-dismiss="modal">
-                        Close
-                    </button>
-                    <button class="btn btn-solid-default rounded-1" data-bs-dismiss="modal">Save Address</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Add Address Modal End -->
-    <!-- Add Payment Modal Start -->
-    <div class="modal fade payment-modal" id="addPayment">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <label for="name" class="form-label">Card Type</label>
-                        <select class="form-select form-select-lg mb-4">
-                            <option selected disabled>Choose Your Card</option>
-                            <option value="1">Creadit Card</option>
-                            <option value="2">Debit Card</option>
-                            <option value="3">Debit Card and ATM</option>
-                        </select>
-
-                        <div class="mb-4">
-                            <label for="card" class="form-label">Name On Card</label>
-                            <input type="text" class="form-control" id="card" placeholder="Name card">
-                        </div>
-                        <div class="mb-4">
-                            <label for="cAddress" class="form-label">Card Number</label>
-                            <input type="number" class="form-control" id="cAddress" placeholder="XXXX-XXXX-XXXX-XXXX">
-                        </div>
-                        <div class="row">
-                            <div class="col-md-8 mb-4">
-                                <label for="expiry" class="form-label">Expiry Date</label>
-                                <input type="date" class="form-control font-light" id="expiry">
-                            </div>
-                            <div class="col-md-4 mb-4">
-                                <label for="cvv" class="form-label">CVV</label>
-                                <input type="number" class="form-control" id="cvv" placeholder="XX9">
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer pt-0 text-end d-block">
-                    <button type="button" class="btn bg-secondary text-white rounded-1 modal-close-button"
-                            data-bs-dismiss="modal">
-                        Close
-                    </button>
-                    <button class="btn btn-solid-default rounded-1" data-bs-dismiss="modal">Save Card Details</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Add Payment Modal End -->
     <!-- Comfirm Delete Modal Start -->
     <div class="modal delete-account-modal fade" id="deleteModal">
         <div class="modal-dialog modal-dialog-centered">
@@ -1077,8 +840,9 @@
         </div>
     </div>
     <!-- Comfirm Delete Modal End -->
-
+    
     <div class="bg-overlay"></div>
+    
 
 </body>
 

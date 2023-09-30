@@ -42,8 +42,6 @@ namespace Voxo.DAL
 
         public DbSet<AppUser> AppUsers { get; set; }
 
-        public DbSet<Adress> Adresses { get; set; }
-
         public DbSet<UserCartItem> UserCartItems { get; set; }
 
         public DbSet<UserWishlistItem> Wishlists { get; set; }
@@ -51,8 +49,6 @@ namespace Voxo.DAL
         public DbSet<Order> Orders { get; set; }
 
         public DbSet<OrderItem> OrderItems { get; set; }
-
-        public DbSet<PaymentCard> PaymentCards { get; set; }
 
         public DbSet<ProductReview> ProductReviews { get; set; }
 

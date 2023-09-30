@@ -12,9 +12,7 @@ namespace Voxo.Models
         [Column(TypeName = "money")]
         public decimal TotalPrice { get; set; }
         [Required,MaxLength (50)]
-        public string Country { get; set; }
-        [Required,MaxLength(50)]
-        public string State { get; set; }
+         public string FullAdress { get; set; }
         [Required,MaxLength(20)]
         public string PostalCode { get; set; }
         [Required]
@@ -27,14 +25,10 @@ namespace Voxo.Models
         [Required]
         public OrderStatus Status { get; set; }
 
-        public int AdressId { get; set; }
-
         public string AppUserId { get; set; }
 
         public AppUser AppUser { get; set; }
 
-        public Adress Adress { get; set; }
-
-        public List<OrderItem> OrderItems { get; set; }
+        public List<OrderItem> OrderItems { get; set; }= new List<OrderItem>();
     }
 }

@@ -1,4 +1,12 @@
-﻿    <!-- Breadcrumb section start -->
+﻿@model ProductDetailViewModel
+@{
+    
+    ProductReviewViewModel viewModel = new ProductReviewViewModel
+            {
+                ProductId = Model.Product.Id
+            };
+}
+    <!-- Breadcrumb section start -->
 <section class="breadcrumb-section section-b-space">
     <ul class="circles">
         <li></li>
@@ -15,7 +23,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h3>Product Left Thumbnail</h3>
+                <h3>Product Detail</h3>
                 <nav>
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item">
@@ -23,7 +31,7 @@
                                 <i class="fas fa-home"></i>
                             </a>
                         </li>
-                        <li class="breadcrumb-item active" aria-current="page">Product Left Thumbnail</li>
+                        <li class="breadcrumb-item active" aria-current="page">Product Detail</li>
                     </ol>
                 </nav>
             </div>
@@ -42,46 +50,27 @@
                             <div class="row">
                                 <div class="col-lg-2">
                                     <div class="details-image-vertical black-slide rounded">
-                                        <div>
-                                            <img src="~/assets/images/fashion/1.jpg"
-                                                 class="img-fluid blur-up lazyload" alt="">
-                                        </div>
-                                        <div>
-                                            <img src="~/assets/images/fashion/2.jpg"
-                                                 class="img-fluid blur-up lazyload" alt="">
-                                        </div>
-                                        <div>
-                                            <img src="~/assets/images/fashion/3.jpg"
-                                                 class="img-fluid blur-up lazyload" alt="">
-                                        </div>
-                                        <div>
-                                            <img src="~/assets/images/fashion/4.jpg"
-                                                 class="img-fluid blur-up lazyload" alt="">
-                                        </div>
+                                        @foreach(var img in Model.Product.ProductImages)
+                                        {
+                                            <div>
+                                                <img src="~/uploads/ProductImages/@img.ImageName"
+                                                     class="img-fluid blur-up lazyload" alt="">
+                                            </div>
+                                        }
                                     </div>
                                 </div>
                                 <div class="col-lg-10">
                                     <div class="details-image-1 ratio_asos">
-                                        <div>
-                                            <img src="~/assets/images/fashion/1.jpg" id="zoom_01"
-                                                 data-zoom-image="~/assets/images/fashion/1.jpg"
-                                                 class="img-fluid w-100 image_zoom_cls-0 blur-up lazyload" alt="">
-                                        </div>
-                                        <div>
-                                            <img src="~/assets/images/fashion/2.jpg" id="zoom_02"
-                                                 data-zoom-image="~/assets/images/fashion/2.jpg"
-                                                 class="img-fluid w-100 image_zoom_cls-1 blur-up lazyload" alt="">
-                                        </div>
-                                        <div>
-                                            <img src="~/assets/images/fashion/3.jpg" id="zoom_03"
-                                                 data-zoom-image="~/assets/images/fashion/3.jpg"
-                                                 class="img-fluid w-100 image_zoom_cls-2 blur-up lazyload" alt="">
-                                        </div>
-                                        <div>
-                                            <img src="~/assets/images/fashion/4.jpg" id="zoom_04"
-                                                 data-zoom-image="~/assets/images/fashion/4.jpg"
-                                                 class="img-fluid w-100 image_zoom_cls-3 blur-up lazyload" alt="">
-                                        </div>
+                                        @foreach (var img in Model.Product.ProductImages)
+                                        {
+                                            <div>
+                                                <img src="~/uploads/ProductImages/@img.ImageName" id="zoom_04"
+                                                     data-zoom-image="~/uploads/ProductImages/@img.ImageName"
+                                                     class="img-fluid w-100 image_zoom_cls-3 blur-up lazyload" alt="">
+                                            </div>
+                                        }
+                                        
+                                       
                                     </div>
                                 </div>
                             </div>
@@ -107,42 +96,22 @@
                                 </div>
 
                                 <div class="details-image-concept">
-                                    <h2>Brand New t-Shirt</h2>
+                                    <h2>@Model.Product.Name</h2>
                                 </div>
 
                                 <div class="label-section">
-                                    <span class="badge badge-grey-color">#1 Best seller</span>
-                                    <span class="label-text">in fashion</span>
+                                    @foreach (var tag in Model.Product.ProductTags)
+                                    {
+                                        <span class="badge badge-grey-color">@tag.Tag.Name</span>
+                                    }
+                                    
                                 </div>
-
-                                <h3 class="price-detail">$32.96 <del>$459.00</del><span>55% off</span></h3>
-
-                                <div class="color-image">
-                                    <div class="image-select">
-                                        <h5>Color :</h5>
-                                        <ul class="image-section">
-                                            <li>
-                                                <a href="javascript:void(0)">
-                                                    <img src="~/assets/images/fashion/product/front/5.jpg"
-                                                         class="img-fluid blur-up lazyload" alt="">
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="javascript:void(0)">
-                                                    <img src="~/assets/images/fashion/product/front/6.jpg"
-                                                         class="img-fluid blur-up lazyload" alt="">
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="javascript:void(0)">
-                                                    <img src="~/assets/images/fashion/product/front/7.jpg"
-                                                         class="img-fluid blur-up lazyload" alt="">
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-
+                                @if(Model.Product.DiscountPercent>0){
+                                    <h3 class="price-detail">$@((Model.Product.SalePrice-(Model.Product.SalePrice*Model.Product.DiscountPercent/100)).ToString("0.00")) <del>$@Model.Product.SalePrice.ToString("0.00")</del><span>@(Model.Product.DiscountPercent)% off</span></h3>
+                                }
+                                else{
+                                    <h3 class="price-detail">$@Model.Product.SalePrice.ToString("0.00")</h3>
+                                }
                                 <div id="selectSize" class="addeffect-section product-description border-product">
                                     <h6 class="product-title size-text">
                                         select size
@@ -154,18 +123,13 @@
 
                                     <div class="size-box">
                                         <ul>
-                                            <li>
+                                            @foreach(var size in Model.Product.ProductSizes)
+                                            {
+                                                 <li>
                                                 <a href="javascript:void(0)">s</a>
                                             </li>
-                                            <li>
-                                                <a href="javascript:void(0)">m</a>
-                                            </li>
-                                            <li>
-                                                <a href="javascript:void(0)">l</a>
-                                            </li>
-                                            <li>
-                                                <a href="javascript:void(0)">xl</a>
-                                            </li>
+                                            }
+
                                         </ul>
                                     </div>
 
@@ -671,52 +635,7 @@
                                 </div>
 
                                 <div class="col-lg-8">
-                                    <p class="d-inline-block me-2">Rating</p>
-                                    <ul class="rating mb-3 d-inline-block">
-                                        <li>
-                                            <i class="fas fa-star theme-color"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-star theme-color"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-star theme-color"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-star"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-star"></i>
-                                        </li>
-                                    </ul>
-                                    <div class="review-box">
-                                        <form class="row g-4">
-                                            <div class="col-12 col-md-6">
-                                                <label class="mb-1" for="name">Name</label>
-                                                <input type="text" class="form-control" id="name"
-                                                       placeholder="Enter your name" required>
-                                            </div>
-
-                                            <div class="col-12 col-md-6">
-                                                <label class="mb-1" for="id">Email Address</label>
-                                                <input type="email" class="form-control" id="id"
-                                                       placeholder="Email Address" required>
-                                            </div>
-
-                                            <div class="col-12">
-                                                <label class="mb-1" for="comments">Comments</label>
-                                                <textarea class="form-control" placeholder="Leave a comment here"
-                                                          id="comments" style="height: 100px" required></textarea>
-                                            </div>
-
-                                            <div class="col-12">
-                                                <button type="submit"
-                                                        class="btn default-light-theme default-theme default-theme-2">
-                                                    Submit
-                                                </button>
-                                            </div>
-                                        </form>
-                                    </div>
+                                    @Html.Partial("_ProductReviewPartialView",viewModel)
                                 </div>
 
                                 <div class="col-12 mt-4">
@@ -1370,11 +1289,6 @@
     {
     <!-- Filter Hide and show Js -->
     <script src="~/assets/js/filter.js" defer></script>
-}
-@section TimerScript
-{
-    <!-- timer js -->
-    <script src="~/assets/js/timer.js" defer></script>
 }
 @section ZoomScript
 {

@@ -1,0 +1,140 @@
+﻿@model Order
+<!-- Breadcrumb section start -->
+<section class="breadcrumb-section section-b-space">
+    <ul class="circles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h3>User Dashboard</h3>
+                <nav>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="index.html">
+                                <i class="fas fa-home"></i>
+                            </a>
+                        </li>
+                        <li class="breadcrumb-item active" aria-current="page">User Dashboard</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Breadcrumb section end -->
+<!-- user dashboard section start -->
+<section class="section-b-space">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <ul class="nav nav-tabs custome-nav-tabs flex-column category-option" id="myTab">
+                    <li class="nav-item mb-2">
+                        <button class="nav-link font-light active" id="tab" data-bs-toggle="tab"
+                                data-bs-target="#dash" type="button">
+                            <i class="fas fa-angle-right"></i>Order Detail
+                        </button>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-lg-9">
+                <div class="filter-button dash-filter dashboard">
+                    <button class="btn btn-solid-default btn-sm fw-bold filter-btn">Show Menu</button>
+                </div>
+
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="dash">
+                        <div class="dashboard-right">
+                            <div class="dashboard">
+                                <div class="box-head mb-3">
+                                    <h3>Order items</h3>
+                                </div>
+                                <div class="table-responsive">
+                                    <table class="table cart-table">
+                                        <thead>
+                                            <tr class="table-head">
+                                                <th scope="col">Product Image</th>
+                                                <th scope="col">Product Name</th>
+                                                <th scope="col">Product Price</th>
+                                                <th scope="col">Product count</th>
+                                                <th scope="col">Total price</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach (var item in Model.OrderItems)
+                                            {
+                                                <tr>
+                                                    <td>
+                                                        <a href="product-left-sidebar.html">
+                                                            <img src="~/uploads/ProductImages/@item.Product.ProductImages.FirstOrDefault(x=>x.PosterStatus==true).ImageName"
+                                                                 class="blur-up lazyload" alt="">
+                                                        </a>
+                                                    </td>
+                                                    <td>
+                                                        <p class="mt-0">@item.Product.Name</p>
+                                                    </td>
+                                                    <td>
+                                                        <p class="fs-6 m-0">@item.UnitPrice.ToString("0.00")</p>
+                                                    </td>
+                                                    <td>
+                                                        <p class="success-button btn btn-sm">@item.Count</p>
+                                                    </td>
+                                                    <td>
+                                                        <p class="theme-color fs-6">$@((item.UnitPrice * item.Count).ToString("0.00"))</p>
+                                                    </td>
+                                                </tr>
+                                            }
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- user dashboard section end -->
+<!-- Subscribe Section Start -->
+<section class="subscribe-section section-b-space">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-6">
+                <div class="subscribe-details">
+                    <h2 class="mb-3">Subscribe Our News</h2>
+                    <h6 class="font-light">
+                        Subscribe and receive our newsletters to follow the news about our fresh
+                        and fantastic Products.
+                    </h6>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mt-md-0 mt-3">
+                <div class="subsribe-input">
+                    <div class="input-group">
+                        <input type="text" class="form-control subscribe-input" placeholder="Your Email Address">
+                        <button class="btn btn-solid-default" type="button">Button</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Subscribe Section End -->
+@section FilterHideShowScript
+    {
+    <!-- Filter Hide and show Js -->
+    <script src="~/assets/js/filter.js" defer></script>
+}

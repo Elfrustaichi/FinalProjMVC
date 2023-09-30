@@ -10,6 +10,7 @@ namespace Voxo.Areas.Manage.ViewModels
         [Required]
         [MaxLength (20)]
         [DataType(DataType.Password)]
+        [MinLength(8)]
         public string Password { get; set; }
 
     }

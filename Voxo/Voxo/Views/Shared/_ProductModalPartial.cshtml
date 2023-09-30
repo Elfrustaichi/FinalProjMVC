@@ -1,0 +1,74 @@
+﻿@model Product
+<div class="row gy-4 modal-body-html">
+
+    <div class="col-lg-6">
+        <div class="quick-view-image">
+            <div class="quick-view-slider ratio_2">
+                    <div>
+                        <img src="~/uploads/ProductImages/@Model.ProductImages.FirstOrDefault(x=>x.PosterStatus==true).ImageName"
+                             class="img-fluid bg-img blur-up lazyload" alt="product">
+                    </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="product-right">
+            <h2 class="mb-2">@Model.Name</h2>
+            <ul class="rating mt-1">
+                @for (int i = 1; i <= 5; i++)
+                {
+                    <li>
+                        <i class="fas fa-star @(Model.Rate>=i?"theme-color":"")"></i>
+                    </li>
+                }
+
+
+                <li class="font-light">@(Model.StockStatus == true ? "(In stock)" : "(Out of stock)")</li>
+            </ul>
+            <div class="price mt-3">
+                @if (Model.DiscountPercent > 0)
+                {
+                    <h3>$@((Model.SalePrice - (Model.SalePrice * Model.DiscountPercent / 100)).ToString("0.00"))</h3>
+                }
+                else
+                {
+                    <h3>$@Model.SalePrice.ToString("0.00")</h3>
+                }
+            </div>
+            <div class="size-detail">
+                <h4>size</h4>
+                <ul class="">
+                    <li class="selected">S</li>
+                    <li>M</li>
+                    <li>L</li>
+                    <li>XL</li>
+                </ul>
+            </div>
+            <div class="product-details">
+                <h4>product details</h4>
+                <ul>
+                    <li>
+                        <span class="font-light">Brand :</span> @Model.Brand.Name
+                    </li>
+                    <li>
+                        <span class="font-light">Category :</span> @Model.Category.Name
+                    </li>
+                    <li>
+                        <span class="font-light">Tags:</span> @foreach (var tag in Model.ProductTags)
+                        {
+                            <p>@tag.Tag.Name </p>
+                        }
+                    </li>
+                </ul>
+            </div>
+            <div class="product-btns">
+                <a href="cart.html" class="btn btn-solid-default btn-sm">Add to cart</a>
+                <a href="product-left-sidebar.html" class="btn btn-solid-default btn-sm">
+                    View
+                    details
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+

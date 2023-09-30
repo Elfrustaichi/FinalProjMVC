@@ -1,4 +1,5 @@
-﻿    <!-- Breadcrumb section start -->
+﻿@model CartViewModel
+    <!-- Breadcrumb section start -->
 <section class="breadcrumb-section section-b-space">
     <ul class="circles">
         <li></li>
@@ -48,162 +49,75 @@
                             <th scope="col">total</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td>
-                                <a href="product-left-sidebar.html">
-                                    <img src="~/assets/images/fashion/product/front/1.jpg" class=" blur-up lazyload"
-                                         alt="">
-                                </a>
-                            </td>
-                            <td>
-                                <a href="product-left-sidebar.html">Yellow Jacket</a>
-                                <div class="mobile-cart-content row">
-                                    <div class="col">
-                                        <div class="qty-box">
-                                            <div class="input-group">
-                                                <input type="text" name="quantity" class="form-control input-number"
-                                                       value="1">
+                    @foreach(var item in Model.Items)
+                    {
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <a href="product-left-sidebar.html">
+                                        <img src="~/uploads/ProductImages/@item.Product.ProductImages.FirstOrDefault(x=>x.PosterStatus==true).ImageName" class=" blur-up lazyload"
+                                             alt="">
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="product-left-sidebar.html">@item.Product.Name</a>
+                                    <div class="mobile-cart-content row">
+                                        <div class="col">
+                                            <div class="qty-box">
+                                                <div class="input-group">
+                                                    <input disabled type="text" name="quantity" class="form-control input-number"
+                                                           value="@item.Count">
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="col">
-                                        <h2>$63.00</h2>
-                                    </div>
-                                    <div class="col">
-                                        <h2 class="td-color">
-                                            <a href="javascript:void(0)">
-                                                <i class="fas fa-times"></i>
-                                            </a>
-                                        </h2>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                <h2>$63.00</h2>
-                            </td>
-                            <td>
-                                <div class="qty-box">
-                                    <div class="input-group">
-                                        <input type="number" name="quantity" class="form-control input-number"
-                                               value="1">
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                <a href="javascript:void(0)">
-                                    <i class="fas fa-times"></i>
-                                </a>
-                            </td>
-                            <td>
-                                <h2 class="td-color">$3648.00</h2>
-                            </td>
-                        </tr>
-                    </tbody>
-                    <tbody>
-                        <tr>
-                            <td>
-                                <a href="product-left-sidebar.html">
-                                    <img src="~/assets/images/fashion/product/front/2.jpg" class=" blur-up lazyload"
-                                         alt="">
-                                </a>
-                            </td>
-                            <td>
-                                <a href="product-left-sidebar.html">Blue Jeans Color Jacket</a>
-                                <div class="mobile-cart-content row">
-                                    <div class="col">
-                                        <div class="qty-box">
-                                            <div class="input-group">
-                                                <input type="number" name="quantity"
-                                                       class="form-control input-number" value="1">
-                                            </div>
+                                        <div class="col">
+                                            @if(item.Product.DiscountPercent>0){
+                                                <h2>$@((item.Product.SalePrice*(100-item.Product.DiscountPercent)/100).ToString("0.00"))</h2>
+                                            }
+                                            else
+                                            {
+                                                <h2>$@item.Product.SalePrice.ToString("0.00")</h2>
+                                            }
+                                        </div>
+                                        <div class="col">
+                                            <h2 class="td-color">
+                                                <a href="javascript:void(0)">
+                                                    <i class="fas fa-times"></i>
+                                                </a>
+                                            </h2>
                                         </div>
                                     </div>
-                                    <div class="col">
-                                        <h2>$69.00</h2>
-                                    </div>
-                                    <div class="col">
-                                        <h2 class="td-color">
-                                            <a href="javascript:void(0)">
-                                                <i class="fas fa-times"></i>
-                                            </a>
-                                        </h2>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                <h2>$69.00</h2>
-                            </td>
-                            <td>
-                                <div class="qty-box">
-                                    <div class="input-group">
-                                        <input type="number" name="quantity" class="form-control input-number"
-                                               value="1">
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                <a href="javascript:void(0)">
-                                    <i class="fas fa-times"></i>
-                                </a>
-                            </td>
-                            <td>
-                                <h2 class="td-color">$3219.00</h2>
-                            </td>
-                        </tr>
-                    </tbody>
-                    <tbody>
-                        <tr>
-                            <td>
-                                <a href="product-left-sidebar.html">
-                                    <img src="~/assets/images/fashion/product/front/3.jpg" class=" blur-up lazyload"
-                                         alt="">
-                                </a>
-                            </td>
-                            <td>
-                                <a href="product-left-sidebar.html">Dawnbreaker Jacket</a>
-                                <div class="mobile-cart-content row">
-                                    <div class="col">
-                                        <div class="qty-box">
-                                            <div class="input-group">
-                                                <input type="number" name="quantity"
-                                                       class="form-control input-number" value="1">
-                                            </div>
+                                </td>
+                                <td>
+                                    @if (item.Product.DiscountPercent > 0)
+                                    {
+                                        <h2>$@((item.Product.SalePrice * (100 - item.Product.DiscountPercent) / 100).ToString("0.00"))</h2>
+                                    }
+                                    else
+                                    {
+                                        <h2>$@item.Product.SalePrice.ToString("0.00")</h2>
+                                    }
+                                </td>
+                                <td>
+                                    <div class="qty-box">
+                                        <div class="input-group">
+                                            <input disabled type="number" name="quantity" class="form-control input-number"
+                                                   value="@item.Count">
                                         </div>
                                     </div>
-                                    <div class="col">
-                                        <h2>$69.00</h2>
-                                    </div>
-                                    <div class="col">
-                                        <h2 class="td-color">
-                                            <a href="javascript:void(0)">
-                                                <i class="fas fa-times"></i>
-                                            </a>
-                                        </h2>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                <h2>$69.00</h2>
-                            </td>
-                            <td>
-                                <div class="qty-box">
-                                    <div class="input-group">
-                                        <input type="number" name="quantity" class="form-control input-number"
-                                               value="1">
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                <a href="javascript:void(0)">
-                                    <i class="fas fa-times"></i>
-                                </a>
-                            </td>
-                            <td>
-                                <h2 class="td-color">$4215.00</h2>
-                            </td>
-                        </tr>
-                    </tbody>
+                                </td>
+                                <td>
+                                    <a href="javascript:void(0)">
+                                        <i class="fas fa-times"></i>
+                                    </a>
+                                </td>
+                                <td>
+                                    <h2 class="td-color">$@((item.Product.DiscountPercent>0?(item.Product.SalePrice*(100-item.Product.DiscountPercent)/100)*item.Count:item.Product.SalePrice*item.Count).ToString("0.00"))</h2>
+                                </td>
+                            </tr>
+                        </tbody>
+                    }
+
                 </table>
             </div>
 
@@ -245,7 +159,7 @@
 
                     <div class="col-lg-4 col-sm-6 ">
                         <div class="checkout-button">
-                            <a href="checkout.html" class="btn btn-solid-default btn fw-bold">
+                            <a asp-controller="order" asp-action="checkout" class="btn btn-solid-default btn fw-bold">
                                 Check Out <i class="fas fa-arrow-right ms-1"></i>
                             </a>
                         </div>
@@ -257,12 +171,10 @@
                                 <div class="total-details">
                                     <div class="top-details">
                                         <h3>Cart Totals</h3>
-                                        <h6>Total MRP <span>$250.00</span></h6>
-                                        <h6>Coupon Discount <span>-$25.00</span></h6>
-                                        <h6>Convenience Fee <span><del>$25.00</del></span></h6>
+                                        <h6>Total MRP <span>$@(Model.TotalPrice.ToString("0.00"))</span></h6> 
                                     </div>
                                     <div class="bottom-details">
-                                        <a href="checkout.html">Process Checkout</a>
+                                        <a asp-controller="order" asp-action="checkout">Process Checkout</a>
                                     </div>
                                 </div>
                             </div>

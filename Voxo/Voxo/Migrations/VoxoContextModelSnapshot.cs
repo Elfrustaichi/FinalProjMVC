@@ -226,34 +226,6 @@ namespace Voxo.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("Voxo.Models.Adress", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("AppUserId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("FullAdress")
-                        .IsRequired()
-                        .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)");
-
-                    b.Property<string>("Fullname")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("AppUserId");
-
-                    b.ToTable("Adresses");
-                });
-
             modelBuilder.Entity("Voxo.Models.Banner", b =>
                 {
                     b.Property<int>("Id")
@@ -311,7 +283,7 @@ namespace Voxo.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Banners");
+                    b.ToTable("Banners", (string)null);
                 });
 
             modelBuilder.Entity("Voxo.Models.Brand", b =>
@@ -329,7 +301,7 @@ namespace Voxo.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Brands");
+                    b.ToTable("Brands", (string)null);
                 });
 
             modelBuilder.Entity("Voxo.Models.Category", b =>
@@ -355,7 +327,7 @@ namespace Voxo.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categories");
+                    b.ToTable("Categories", (string)null);
                 });
 
             modelBuilder.Entity("Voxo.Models.ContactUsRequest", b =>
@@ -400,7 +372,7 @@ namespace Voxo.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("ContactUsRequests");
+                    b.ToTable("ContactUsRequests", (string)null);
                 });
 
             modelBuilder.Entity("Voxo.Models.FAQ", b =>
@@ -423,7 +395,7 @@ namespace Voxo.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("FAQs");
+                    b.ToTable("FAQs", (string)null);
                 });
 
             modelBuilder.Entity("Voxo.Models.Order", b =>
@@ -434,21 +406,18 @@ namespace Voxo.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int>("AdressId")
-                        .HasColumnType("int");
-
                     b.Property<string>("AppUserId")
                         .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("Country")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
 
                     b.Property<DateTime>("CreateTime")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("FullAdress")
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
@@ -467,11 +436,6 @@ namespace Voxo.Migrations
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
 
-                    b.Property<string>("State")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
                     b.Property<int>("Status")
                         .HasColumnType("int");
 
@@ -480,11 +444,9 @@ namespace Voxo.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AdressId");
-
                     b.HasIndex("AppUserId");
 
-                    b.ToTable("Orders");
+                    b.ToTable("Orders", (string)null);
                 });
 
             modelBuilder.Entity("Voxo.Models.OrderItem", b =>
@@ -519,43 +481,7 @@ namespace Voxo.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("OrderItems");
-                });
-
-            modelBuilder.Entity("Voxo.Models.PaymentCard", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("AppUserId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("CVC")
-                        .IsRequired()
-                        .HasMaxLength(3)
-                        .HasColumnType("nvarchar(3)");
-
-                    b.Property<string>("CardNumber")
-                        .IsRequired()
-                        .HasMaxLength(16)
-                        .HasColumnType("nvarchar(16)");
-
-                    b.Property<DateTime>("ExpireDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("NameOnCard")
-                        .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("AppUserId");
-
-                    b.ToTable("PaymentCards");
+                    b.ToTable("OrderItems", (string)null);
                 });
 
             modelBuilder.Entity("Voxo.Models.Product", b =>
@@ -605,7 +531,7 @@ namespace Voxo.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("Products");
+                    b.ToTable("Products", (string)null);
                 });
 
             modelBuilder.Entity("Voxo.Models.ProductImage", b =>
@@ -634,7 +560,7 @@ namespace Voxo.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("ProductImages");
+                    b.ToTable("ProductImages", (string)null);
                 });
 
             modelBuilder.Entity("Voxo.Models.ProductReview", b =>
@@ -675,7 +601,7 @@ namespace Voxo.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("ProductReviews");
+                    b.ToTable("ProductReviews", (string)null);
                 });
 
             modelBuilder.Entity("Voxo.Models.ProductSize", b =>
@@ -690,7 +616,7 @@ namespace Voxo.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("ProductSizes");
+                    b.ToTable("ProductSizes", (string)null);
                 });
 
             modelBuilder.Entity("Voxo.Models.ProductTag", b =>
@@ -705,7 +631,7 @@ namespace Voxo.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("ProductTags");
+                    b.ToTable("ProductTags", (string)null);
                 });
 
             modelBuilder.Entity("Voxo.Models.Service", b =>
@@ -737,7 +663,7 @@ namespace Voxo.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Services");
+                    b.ToTable("Services", (string)null);
                 });
 
             modelBuilder.Entity("Voxo.Models.Setting", b =>
@@ -752,7 +678,7 @@ namespace Voxo.Migrations
 
                     b.HasKey("Key");
 
-                    b.ToTable("Settings");
+                    b.ToTable("Settings", (string)null);
                 });
 
             modelBuilder.Entity("Voxo.Models.Size", b =>
@@ -770,7 +696,7 @@ namespace Voxo.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Sizes");
+                    b.ToTable("Sizes", (string)null);
                 });
 
             modelBuilder.Entity("Voxo.Models.Slider", b =>
@@ -818,7 +744,7 @@ namespace Voxo.Migrations
                     b.HasIndex("ProductId")
                         .IsUnique();
 
-                    b.ToTable("Sliders");
+                    b.ToTable("Sliders", (string)null);
                 });
 
             modelBuilder.Entity("Voxo.Models.Tag", b =>
@@ -836,7 +762,7 @@ namespace Voxo.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Tags");
+                    b.ToTable("Tags", (string)null);
                 });
 
             modelBuilder.Entity("Voxo.Models.TeamMember", b =>
@@ -874,7 +800,7 @@ namespace Voxo.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("TeamMembers");
+                    b.ToTable("TeamMembers", (string)null);
                 });
 
             modelBuilder.Entity("Voxo.Models.UserCartItem", b =>
@@ -900,7 +826,7 @@ namespace Voxo.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("UserCartItems");
+                    b.ToTable("UserCartItems", (string)null);
                 });
 
             modelBuilder.Entity("Voxo.Models.UserWishlistItem", b =>
@@ -923,12 +849,16 @@ namespace Voxo.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("Wishlists");
+                    b.ToTable("Wishlists", (string)null);
                 });
 
             modelBuilder.Entity("Voxo.Models.AppUser", b =>
                 {
                     b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
+
+                    b.Property<string>("Adress")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("ConnectionId")
                         .HasColumnType("nvarchar(max)");
@@ -997,28 +927,11 @@ namespace Voxo.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Voxo.Models.Adress", b =>
-                {
-                    b.HasOne("Voxo.Models.AppUser", "AppUser")
-                        .WithMany("Adresses")
-                        .HasForeignKey("AppUserId");
-
-                    b.Navigation("AppUser");
-                });
-
             modelBuilder.Entity("Voxo.Models.Order", b =>
                 {
-                    b.HasOne("Voxo.Models.Adress", "Adress")
-                        .WithMany("Orders")
-                        .HasForeignKey("AdressId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("Voxo.Models.AppUser", "AppUser")
                         .WithMany("Orders")
                         .HasForeignKey("AppUserId");
-
-                    b.Navigation("Adress");
 
                     b.Navigation("AppUser");
                 });
@@ -1040,15 +953,6 @@ namespace Voxo.Migrations
                     b.Navigation("Order");
 
                     b.Navigation("Product");
-                });
-
-            modelBuilder.Entity("Voxo.Models.PaymentCard", b =>
-                {
-                    b.HasOne("Voxo.Models.AppUser", "AppUser")
-                        .WithMany("PaymentCards")
-                        .HasForeignKey("AppUserId");
-
-                    b.Navigation("AppUser");
                 });
 
             modelBuilder.Entity("Voxo.Models.Product", b =>
@@ -1181,11 +1085,6 @@ namespace Voxo.Migrations
                     b.Navigation("Product");
                 });
 
-            modelBuilder.Entity("Voxo.Models.Adress", b =>
-                {
-                    b.Navigation("Orders");
-                });
-
             modelBuilder.Entity("Voxo.Models.Brand", b =>
                 {
                     b.Navigation("Products");
@@ -1232,13 +1131,9 @@ namespace Voxo.Migrations
 
             modelBuilder.Entity("Voxo.Models.AppUser", b =>
                 {
-                    b.Navigation("Adresses");
-
                     b.Navigation("CartItems");
 
                     b.Navigation("Orders");
-
-                    b.Navigation("PaymentCards");
 
                     b.Navigation("ProductReviews");
 

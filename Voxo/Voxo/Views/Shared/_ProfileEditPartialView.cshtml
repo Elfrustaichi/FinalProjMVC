@@ -1,0 +1,19 @@
+﻿@model ProfileEditViewModel
+<form id="editprofile-form" method="post" asp-controller="account" asp-action="editprofile">
+    <div class="mb-3">
+        <label asp-for="Username" class="form-label font-light">Username</label>
+        <input asp-for="Username" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label asp-for="Email" class="form-label font-light">Email address</label>
+        <input asp-for="Email" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label asp-for="Address" class="form-label font-light">Address</label>
+        <input asp-for="Address" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label asp-for="PhoneNumber" class="form-label font-light">Phone number</label>
+        <input asp-for="PhoneNumber" class="form-control">
+    </div>
+</form>

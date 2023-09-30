@@ -1,0 +1,50 @@
+﻿@model ProductReviewViewModel
+<p class="d-inline-block me-2">Rating</p>
+
+<div class="review-box">
+    
+    <form method="post" asp-controller="product" asp-action="PostComment" class="row g-4">
+        <ul class="rating mb-3 d-inline-block">
+            <li>
+                <i class="fas fa-star theme-color">
+                    <input asp-for="Review.Rate" value="1" type="radio" />
+                </i>
+            </li>
+            <li>
+                <i class="fas fa-star theme-color">
+                    <input asp-for="Review.Rate" value="2" type="radio" />
+                </i>
+            </li>
+            <li>
+                <i class="fas fa-star theme-color">
+                    <input asp-for="Review.Rate" value="3" type="radio" />
+                </i>
+
+            </li>
+            <li>
+                <i class="fas fa-star">
+                    <input asp-for="Review.Rate" value="4" type="radio" />
+                </i>
+            </li>
+            <li>
+                <i class="fas fa-star">
+                    <input asp-for="Review.Rate" value="5" type="radio" />
+                </i>
+            </li>
+        </ul>
+
+        <div class="col-12">
+            <label class="mb-1" asp-for="Review.ReviewText">Comments</label>
+            <textarea asp-for="Review.ReviewText" class="form-control" placeholder="Leave a comment here"
+                       style="height: 100px" required></textarea>
+        </div>
+        <input hidden asp-for="ProductId" value="@Model.ProductId" />
+
+        <div class="col-12">
+            <button type="submit"
+                    class="btn default-light-theme default-theme default-theme-2">
+                Submit
+            </button>
+        </div>
+    </form>
+</div>

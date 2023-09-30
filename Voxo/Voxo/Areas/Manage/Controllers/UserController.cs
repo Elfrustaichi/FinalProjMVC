@@ -96,15 +96,11 @@ namespace Voxo.Areas.Manage.Controllers
                 return StatusCode(404);
             }
 
-            var userAdress=_context.Adresses.Where(x=>x.AppUserId == User.Id).ToList();
-            var userPaymentCards=_context.PaymentCards.Where(x=>x.AppUserId== User.Id).ToList();
             var userOrders=_context.Orders.Where(x=>x.AppUserId== User.Id).ToList();
             var userWishlist=_context.Wishlists.Where(x=>x.AppUserId== User.Id).ToList();
             var userCart=_context.UserCartItems.Where(x=>x.AppUserId== User.Id).ToList();
             var userReview=_context.ProductReviews.Where(x=>x.AppUserId==User.Id).ToList();
 
-            _context.Adresses.RemoveRange(userAdress);
-            _context.PaymentCards.RemoveRange(userPaymentCards);
             _context.RemoveRange(userOrders);
             _context.RemoveRange(userWishlist);
             _context.RemoveRange(userCart);

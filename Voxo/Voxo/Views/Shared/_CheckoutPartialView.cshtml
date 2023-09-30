@@ -1,0 +1,34 @@
+﻿@model OrderCreateViewModel
+<form id="checkoutform" method="post" class="needs-validation" asp-action="checkoutcreate">
+    <div class="row g-4">
+        <div class="col-md-6">
+            <label for="fname" class="form-label">Fullname</label>
+            <input asp-for="Fullname" class="form-control" id="fname" placeholder="Enter Fullname" readonly="@(User.Identity.IsAuthenticated)">
+            <span asp-validation-for="Fullname" class="text-danger"></span>
+        </div>
+        <div class="col-md-6">
+            <label for="email1" class="form-label">Email</label>
+            <input asp-for="Email" class="form-control" id="email1" placeholder="Enter Email" readonly="@(User.Identity.IsAuthenticated)>
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+        <div class="col-md-6">
+            <label for="address" class="form-label">Fulladdress</label>
+            <input  asp-for="FullAddress" class="form-control" id="address" placeholder="Enter Address">
+            <span asp-validation-for="FullAddress" class="text-danger"></span>
+        </div>
+        <div class="col-md-6">
+            <label for="postal" class="form-label">PostalCode</label>
+            <input asp-for="PostalCode" class="form-control" id="postal" placeholder="Enter PostalCode">
+            <span asp-validation-for="PostalCode" class="text-danger"></span>
+        </div>
+        <div class="col-md-6">
+            <label for="note" class="form-label">Note</label>
+            <textarea rows="4" asp-for="Note" class="form-control" id="note" placeholder="Enter Your Wishes"></textarea>
+            <span asp-validation-for="Note" class="text-danger"></span>
+        </div>
+    </div>
+
+    <hr class="my-lg-5 my-4">
+
+    
+</form>

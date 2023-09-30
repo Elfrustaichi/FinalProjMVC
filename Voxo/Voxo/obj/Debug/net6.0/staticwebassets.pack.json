@@ -37,6 +37,10 @@
       "PackagePath": "staticwebassets\\assets\\css\\vendors\\ion.rangeSlider.min.css"
     },
     {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\css\\vendors\\rating.css",
+      "PackagePath": "staticwebassets\\assets\\css\\vendors\\rating.css"
+    },
+    {
       "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\css\\vendors\\slick\\slick-theme.css",
       "PackagePath": "staticwebassets\\assets\\css\\vendors\\slick\\slick-theme.css"
     },
@@ -617,6 +621,10 @@
       "PackagePath": "staticwebassets\\assets\\js\\lazysizes.min.js"
     },
     {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\js\\main.js",
+      "PackagePath": "staticwebassets\\assets\\js\\main.js"
+    },
+    {
       "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\js\\price-filter.js",
       "PackagePath": "staticwebassets\\assets\\js\\price-filter.js"
     },
@@ -635,14 +643,6 @@
     {
       "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\js\\slick\\slick.js",
       "PackagePath": "staticwebassets\\assets\\js\\slick\\slick.js"
-    },
-    {
-      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\js\\timer.js",
-      "PackagePath": "staticwebassets\\assets\\js\\timer.js"
-    },
-    {
-      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\js\\timer1.js",
-      "PackagePath": "staticwebassets\\assets\\js\\timer1.js"
     },
     {
       "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\js\\zoom-filter.js",
@@ -1381,6 +1381,10 @@
       "PackagePath": "staticwebassets\\manage\\assets\\js\\tooltip-init.js"
     },
     {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\uploads\\BannerImages\\061ed68a-cf66-4a75-b20a-aaf07baa54297.jpg",
+      "PackagePath": "staticwebassets\\uploads\\BannerImages\\061ed68a-cf66-4a75-b20a-aaf07baa54297.jpg"
+    },
+    {
       "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\uploads\\BannerImages\\1648704d-aeb0-4c96-8520-ed440964419a5.jpg",
       "PackagePath": "staticwebassets\\uploads\\BannerImages\\1648704d-aeb0-4c96-8520-ed440964419a5.jpg"
     },
@@ -1389,8 +1393,16 @@
       "PackagePath": "staticwebassets\\uploads\\BannerImages\\44c42874-d35a-461a-918e-bb54733a27492.jpg"
     },
     {
-      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\uploads\\BannerImages\\5a62bfb5-3f8c-4603-bb7e-8982d697f7671.jpg",
-      "PackagePath": "staticwebassets\\uploads\\BannerImages\\5a62bfb5-3f8c-4603-bb7e-8982d697f7671.jpg"
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\uploads\\BannerImages\\4e821abf-5359-4928-9d26-d4ccf4d50dd36.jpg",
+      "PackagePath": "staticwebassets\\uploads\\BannerImages\\4e821abf-5359-4928-9d26-d4ccf4d50dd36.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\uploads\\BannerImages\\575d8ce6-de4b-4bc9-ba44-f091e3a378e33.jpg",
+      "PackagePath": "staticwebassets\\uploads\\BannerImages\\575d8ce6-de4b-4bc9-ba44-f091e3a378e33.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\uploads\\BannerImages\\5990b0a2-d901-4488-b61b-71f8ae28d8ae2.jpg",
+      "PackagePath": "staticwebassets\\uploads\\BannerImages\\5990b0a2-d901-4488-b61b-71f8ae28d8ae2.jpg"
     },
     {
       "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\uploads\\BannerImages\\6a8ebde7-5bba-44cc-bc31-3574612b7e616.jpg",
@@ -1417,24 +1429,28 @@
       "PackagePath": "staticwebassets\\uploads\\BannerImages\\9fa4ae02-397d-4263-aacc-49cfa473b1a87.jpg"
     },
     {
-      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\uploads\\BannerImages\\a3009be1-0983-480a-a2b3-e19312142cb72.jpg",
-      "PackagePath": "staticwebassets\\uploads\\BannerImages\\a3009be1-0983-480a-a2b3-e19312142cb72.jpg"
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\uploads\\BannerImages\\cfafe995-27df-44e1-83ba-83ba129859c28.jpg",
+      "PackagePath": "staticwebassets\\uploads\\BannerImages\\cfafe995-27df-44e1-83ba-83ba129859c28.jpg"
     },
     {
       "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\uploads\\BannerImages\\d0b91cdd-9143-442a-a141-3d675150d8124.jpg",
       "PackagePath": "staticwebassets\\uploads\\BannerImages\\d0b91cdd-9143-442a-a141-3d675150d8124.jpg"
     },
     {
-      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\uploads\\BannerImages\\d317601b-7174-4b9e-b800-ea727bfd24993.jpg",
-      "PackagePath": "staticwebassets\\uploads\\BannerImages\\d317601b-7174-4b9e-b800-ea727bfd24993.jpg"
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\uploads\\BannerImages\\e6f94e7b-bcee-4418-9b75-2488f9576c661.jpg",
+      "PackagePath": "staticwebassets\\uploads\\BannerImages\\e6f94e7b-bcee-4418-9b75-2488f9576c661.jpg"
     },
     {
       "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\uploads\\BannerImages\\ee87c4a4-3fff-4e6a-b616-a2407dfbc39b5.jpg",
       "PackagePath": "staticwebassets\\uploads\\BannerImages\\ee87c4a4-3fff-4e6a-b616-a2407dfbc39b5.jpg"
     },
     {
-      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\uploads\\BannerImages\\f783897d-852a-4357-9cdf-5bca9d37f7861.jpg",
-      "PackagePath": "staticwebassets\\uploads\\BannerImages\\f783897d-852a-4357-9cdf-5bca9d37f7861.jpg"
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\uploads\\BannerImages\\fd93bb51-661b-48ce-9362-7912fbad0d0abanner.jpg",
+      "PackagePath": "staticwebassets\\uploads\\BannerImages\\fd93bb51-661b-48ce-9362-7912fbad0d0abanner.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\uploads\\CategoryImages\\29d74558-f02c-4f4d-909f-b585ca3897bb3.jpg",
+      "PackagePath": "staticwebassets\\uploads\\CategoryImages\\29d74558-f02c-4f4d-909f-b585ca3897bb3.jpg"
     },
     {
       "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\uploads\\CategoryImages\\30e592d3-8a20-413d-9f96-690b97fa6e814.jpg",
@@ -1677,6 +1693,10 @@
       "PackagePath": "staticwebassets\\uploads\\ProductImages\\fe1e4f59-33bb-40e7-9988-947b0d92ba846.jpg"
     },
     {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\uploads\\ServiceIcons\\0218701a-68f9-4069-9ee5-56b015bdb624community.png",
+      "PackagePath": "staticwebassets\\uploads\\ServiceIcons\\0218701a-68f9-4069-9ee5-56b015bdb624community.png"
+    },
+    {
       "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\uploads\\ServiceIcons\\2d44317a-33a6-47e0-9caf-d17240fbba5ccard.png",
       "PackagePath": "staticwebassets\\uploads\\ServiceIcons\\2d44317a-33a6-47e0-9caf-d17240fbba5ccard.png"
     },
@@ -1693,12 +1713,40 @@
       "PackagePath": "staticwebassets\\uploads\\ServiceIcons\\c2d966d6-e924-4ab0-9149-63f50076ab79Screenshot 2023-09-28 005606.png"
     },
     {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\uploads\\ServiceIcons\\d2af8e01-1967-4edf-9d33-dde50b606aa4faq.png",
+      "PackagePath": "staticwebassets\\uploads\\ServiceIcons\\d2af8e01-1967-4edf-9d33-dde50b606aa4faq.png"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\uploads\\ServiceIcons\\f760a12b-d224-4f40-b838-117cc7e539f5guides.png",
+      "PackagePath": "staticwebassets\\uploads\\ServiceIcons\\f760a12b-d224-4f40-b838-117cc7e539f5guides.png"
+    },
+    {
       "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\uploads\\SliderImages\\80f731a5-708d-40fe-a2d7-ef707b7711c11.jpg",
       "PackagePath": "staticwebassets\\uploads\\SliderImages\\80f731a5-708d-40fe-a2d7-ef707b7711c11.jpg"
     },
     {
       "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\uploads\\SliderImages\\f66d55bc-af00-4b6c-876d-c9d78a73dd5f2.jpg",
       "PackagePath": "staticwebassets\\uploads\\SliderImages\\f66d55bc-af00-4b6c-876d-c9d78a73dd5f2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\uploads\\TeamMemberImages\\024b6b75-8328-40aa-bd39-0d801d163e101.jpg",
+      "PackagePath": "staticwebassets\\uploads\\TeamMemberImages\\024b6b75-8328-40aa-bd39-0d801d163e101.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\uploads\\TeamMemberImages\\576fb3e9-1f8e-46ec-8fce-7a9f9ddb07595.jpg",
+      "PackagePath": "staticwebassets\\uploads\\TeamMemberImages\\576fb3e9-1f8e-46ec-8fce-7a9f9ddb07595.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\uploads\\TeamMemberImages\\8573f7d7-04fc-46a4-a1de-cd254c5fbf6e4.jpg",
+      "PackagePath": "staticwebassets\\uploads\\TeamMemberImages\\8573f7d7-04fc-46a4-a1de-cd254c5fbf6e4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\uploads\\TeamMemberImages\\c4fce9d2-c935-4a83-a545-962e3ed3a04d3.jpg",
+      "PackagePath": "staticwebassets\\uploads\\TeamMemberImages\\c4fce9d2-c935-4a83-a545-962e3ed3a04d3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\uploads\\TeamMemberImages\\ff23dc85-b502-427d-a907-b27e9e55e54d2.jpg",
+      "PackagePath": "staticwebassets\\uploads\\TeamMemberImages\\ff23dc85-b502-427d-a907-b27e9e55e54d2.jpg"
     },
     {
       "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.Voxo.Microsoft.AspNetCore.StaticWebAssets.props",
