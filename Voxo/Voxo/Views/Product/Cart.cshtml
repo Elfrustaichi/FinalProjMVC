@@ -20,11 +20,11 @@
                 <nav>
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item">
-                            <a href="index.html">
+                            <a asp-action="index" asp-controller="home">
                                 <i class="fas fa-home"></i>
                             </a>
                         </li>
-                        <li class="breadcrumb-item active" aria-current="page">Cart</li>
+                        
                     </ol>
                 </nav>
             </div>
@@ -81,7 +81,7 @@
                                         </div>
                                         <div class="col">
                                             <h2 class="td-color">
-                                                <a href="javascript:void(0)">
+                                                <a class="removefromcart" asp-action="removeCart" asp-controller="product" asp-route-id="@item.Product.Id">
                                                     <i class="fas fa-times"></i>
                                                 </a>
                                             </h2>

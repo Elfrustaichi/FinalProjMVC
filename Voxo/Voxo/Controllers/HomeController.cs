@@ -96,9 +96,6 @@ namespace Voxo.Controllers
 
             return View(viewModel);
         }
-        public IActionResult Error()
-        {
-            return View("Error");
-        }
+        
     }
 }

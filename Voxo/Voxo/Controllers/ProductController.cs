@@ -32,7 +32,8 @@ namespace Voxo.Controllers
 
             if (viewModel.Review.ReviewText == null||viewModel.Review.Rate==0)
             {
-                return View("error");
+                TempData["Error"] = "Comment is wrong";
+                return RedirectToAction("index", "home");
             }
 
             if (user == null)
@@ -214,7 +215,11 @@ namespace Voxo.Controllers
             {
                 var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
                 var cartItems = _context.UserCartItems.Include(x=>x.Product).ThenInclude(x=>x.ProductImages).Where(x => x.AppUserId == userId).ToList();
-
+                if (!cartItems.Any())
+                {
+                    TempData["Error"] = "There is no item in cart";
+                    return RedirectToAction("index", "home");
+                }
                 return View(GenerateCart(cartItems));
                 
             }
@@ -223,12 +228,69 @@ namespace Voxo.Controllers
                 var cookieItems = Request.Cookies["Cart"];
 
                 var cartItems = JsonConvert.DeserializeObject<List<CartItemCookieViewModel>>(cookieItems);
-
+                if (!cartItems.Any())
+                {
+                    TempData["Error"] = "There is no item in cart";
+                    return RedirectToAction("index", "home");
+                }
                 return View(GenerateCart(cartItems));
             }
             
         }
         //Product cart end
+        public IActionResult RemoveCart(int id)
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+
+                string userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                var cartItem = _context.UserCartItems.FirstOrDefault(x => x.ProductId == id && x.AppUserId == userId);
+
+                if (cartItem != null)
+                {
+                    cartItem.Count--;
+                }
+                else
+                {
+                    _context.UserCartItems.Remove(cartItem);
+                }
+                _context.SaveChanges();
+                var cartItemsDropdown = _context.UserCartItems.Include(x => x.Product).ThenInclude(x => x.ProductImages).Where(x => x.AppUserId == userId).ToList();
+
+                return PartialView("_CartPartialView", GenerateCart(cartItemsDropdown));
+            }
+            var basketStr = Request.Cookies["Cart"];
+            if (basketStr == null)
+                return StatusCode(404);
+
+            List<CartItemCookieViewModel> cookieItems = JsonConvert.DeserializeObject<List<CartItemCookieViewModel>>(basketStr);
+
+            CartItemCookieViewModel item = cookieItems.FirstOrDefault(x => x.ProductId == id);
+
+            if (item == null)
+                return StatusCode(404);
+
+            if (item.Count > 1)
+                item.Count--;
+            else
+                cookieItems.Remove(item);
+
+            Response.Cookies.Append("Cart", JsonConvert.SerializeObject(cookieItems));
+
+            CartViewModel bv = new CartViewModel();
+            foreach (var ci in cookieItems)
+            {
+                CartItemViewModel bi = new CartItemViewModel
+                {
+                     Count= ci.Count,
+                    Product = _context.Products.Include(x => x.ProductImages).FirstOrDefault(x => x.Id == ci.ProductId)
+                };
+                bv.Items.Add(bi);
+                bv.TotalPrice += (bi.Product.DiscountPercent > 0 ? (bi.Product.SalePrice * (100 - bi.Product.DiscountPercent) / 100) : bi.Product.SalePrice) * bi.Count;
+            }
+
+            return PartialView("_BasketPartialView", bv);
+        }
 
         public IActionResult WishList()
         {

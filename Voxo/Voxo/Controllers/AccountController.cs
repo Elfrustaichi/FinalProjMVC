@@ -38,16 +38,19 @@ namespace Voxo.Controllers
 
             return View(user);
         }
+        [Authorize]
         public IActionResult OrderDetail(int orderId,string username)
         {
             AppUser user=_context.AppUsers.FirstOrDefault(x=>x.UserName==username);
             if (user==null)
             {
-                return View("error");
+                TempData["Error"] = "user not found";
+                return RedirectToAction("index","home");
             }
             if (user.Orders.Any(x => x.Id == orderId))
             {
-                return View("error");
+                TempData["Error"] = "order not found";
+                return RedirectToAction("index", "home");
             }
             var order=_context.Orders.Include(x=>x.OrderItems).ThenInclude(x=>x.Product).ThenInclude(x=>x.ProductImages).FirstOrDefault(x=>x.Id==orderId&&x.AppUser==user);
             return View(order);
@@ -135,11 +138,13 @@ namespace Voxo.Controllers
             return RedirectToAction("Index","home");
 
         }
-
+        [Authorize]
         public async Task<IActionResult> Logout()
         {
             await _signInManager.SignOutAsync();
-            return RedirectToAction("login", "account");
+            TempData["Success"] = "logged out";
+            
+            return RedirectToAction("index", "home");
         }
         public IActionResult Forgot()
         {
@@ -168,7 +173,8 @@ namespace Voxo.Controllers
 
             _emailSender.Send(viewModel.Email,"Reset Password", $"Click <a href=\"{url}\">here</a> to reset your password");
 
-            return RedirectToAction("login");
+            TempData["Success"] = "Reset email sent";
+            return RedirectToAction("index", "home");
         }
 
         public async Task<IActionResult> ResetPassword(string email,string token)
@@ -197,17 +203,20 @@ namespace Voxo.Controllers
 
             if (user == null)
             {
-                return RedirectToAction("login");
+                TempData["Error"] = "user not found";
+                return RedirectToAction("index", "home");
             }
 
             var result= await _userManager.ResetPasswordAsync(user, viewModel.Token,viewModel.Password);
 
             if (!result.Succeeded)
             {
-                return RedirectToAction("login");
+                TempData["Error"] = "user not found";
+                return RedirectToAction("index", "home");
             }
 
-            return RedirectToAction("login");
+            TempData["Success"] = "Password resetted";
+            return RedirectToAction("index", "home");
         }
         [Authorize]
         public async Task<IActionResult> EditProfile()
@@ -215,7 +224,8 @@ namespace Voxo.Controllers
             var user= await _userManager.FindByNameAsync(User.Identity.Name);
             if (user == null)
             {
-                return RedirectToAction("login");
+                TempData["Error"] = "user not found";
+                return RedirectToAction("index", "home");
             }
             ProfileEditViewModel viewModel = new ProfileEditViewModel
             {
@@ -241,6 +251,7 @@ namespace Voxo.Controllers
             }
             if(viewModel.Username !=user.UserName&&_context.AppUsers.Any(x=>x.UserName==viewModel.Username)) 
             {
+                TempData["Error"] = "Username is already in use";
                 return RedirectToAction("dashboard");
             }
 
@@ -265,9 +276,11 @@ namespace Voxo.Controllers
 
             if(!result.Succeeded)
             {
-                return View("error");
+                TempData["Error"] = "User not updated";
+                return RedirectToAction("dashboard");
             }
-
+            TempData["Success"] = "user edited";
+            
             return RedirectToAction("dashboard");
         }
         [Authorize]
@@ -291,24 +304,22 @@ namespace Voxo.Controllers
         {
             if(!ModelState.IsValid)
             {
-                return RedirectToAction("error");
+                TempData["Error"] = "something went wrong";
+                return RedirectToAction("dashboard");
             }
             var loggedUser = await _userManager.FindByNameAsync(User.Identity.Name);
             if (loggedUser == null)
             {
-                return RedirectToAction("login");
+                TempData["Error"] = "user not found";
+                return RedirectToAction("login", "account");
             }
 
             loggedUser.PasswordHash = _userManager.PasswordHasher.HashPassword(loggedUser, viewModel.Password);
             var result = await _userManager.UpdateAsync(loggedUser);
             if (!result.Succeeded)
             {
-                foreach (var item in result.Errors)
-                {
-                    ModelState.AddModelError("", item.Description);
-
-                }
-                return View();
+                TempData["Error"] = "Something went wrong";
+                return RedirectToAction("dashboard");
             }
 
             return RedirectToAction("dashboard");

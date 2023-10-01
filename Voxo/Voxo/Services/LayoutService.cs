@@ -60,7 +60,7 @@ namespace Voxo.Services
                     {
                         CartItemViewModel cartItem = new CartItemViewModel
                         {
-                            Product=_context.Products.FirstOrDefault(x=>x.Id==item.ProductId),
+                            Product=_context.Products.Include(x=>x.ProductImages).FirstOrDefault(x=>x.Id==item.ProductId),
                             Count=item.Count,
                         };
                         viewModel.Items.Add(cartItem);

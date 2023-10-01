@@ -15,8 +15,9 @@ namespace Voxo.Controllers
         {
             _context = context;
         }
-        public IActionResult Index(List<int> brandId, List<int> categoryId,List<int> tagId,int discount=0,int page=1)
+        public IActionResult Index(List<int> brandId, List<int> categoryId,List<int> tagId, double? minPrice = null, double? maxPrice = null,int discount=0,int page=1)
         {
+            
             ShopViewModel model = new ShopViewModel
             {
                 Brands = _context.Brands.Include(x => x.Products).ToList(),
@@ -50,7 +51,17 @@ namespace Voxo.Controllers
                 query = query.Where(x => x.DiscountPercent > discount);
             }
 
+            if (minPrice != null && maxPrice != null)
+                query = query.Where(x => x.SalePrice >= (decimal)minPrice && x.SalePrice <= (decimal)maxPrice);
+
             model.Products= PaginatedList<Product>.Create(query, page, 12);
+
+            ViewBag.MinPrice = _context.Products.Min(x => x.SalePrice);
+            ViewBag.MaxPrice = _context.Products.Max(x => x.SalePrice);
+            ViewBag.BrandId = brandId;
+            ViewBag.CategoryId = categoryId;
+            ViewBag.TagId = tagId;
+            ViewBag.Discount= discount;
 
             return View(model);
         }

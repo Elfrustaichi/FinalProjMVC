@@ -37,7 +37,7 @@ namespace Voxo.Controllers
                     Email=user.Email, 
                 };
             }
-
+            
             viewModel.TotalPrice = viewModel.CheckoutItems.Any() ? viewModel.CheckoutItems.Sum(x => x.Price * x.Count) : 0;
             return View(viewModel);
         }
@@ -45,6 +45,11 @@ namespace Voxo.Controllers
         [AutoValidateAntiforgeryToken]
         public async Task<IActionResult> CheckoutCreate(OrderCreateViewModel viewModel)
         {
+            if(viewModel.PostalCode == null)
+            {
+                TempData["error"] = "You must enter postal code";
+                return RedirectToAction("checkout");
+            }
             OrderViewModel vm = new OrderViewModel();
             vm.CheckoutItems = GenerateCheckoutItems();
             vm.Order = viewModel;
@@ -61,8 +66,9 @@ namespace Voxo.Controllers
 
             if (!ModelState.IsValid)
             {
-                
-                return View("Checkout", vm);
+
+                TempData["Error"] = "Checkout cannot created";
+                return RedirectToAction("index", "home");
             }
 
             Order order = new Order
@@ -114,7 +120,7 @@ namespace Voxo.Controllers
             _context.Orders.Add(order);
             _context.SaveChanges();
 
-            return RedirectToAction("index", "home");
+            return RedirectToAction("ordersuccess",new {orderId=order.Id});
         }
 
         private List<CheckoutViewModel> GenerateCheckoutItems()
@@ -173,9 +179,10 @@ namespace Voxo.Controllers
         }
         //Checkout end
 
-        public IActionResult OrderSuccess()
+        public IActionResult OrderSuccess(int orderId)
         {
-            return View();
+            var orderExist = _context.Orders.Include(x=>x.OrderItems).ThenInclude(x=>x.Product).ThenInclude(x=>x.ProductImages).Include(x=>x.OrderItems).ThenInclude(x=>x.Product).ThenInclude(x=>x.Brand).FirstOrDefault(x => x.Id == orderId);
+            return View(orderExist);
         }
     }
 }

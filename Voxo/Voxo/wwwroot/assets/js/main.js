@@ -90,6 +90,23 @@ $(document).on("click", "#change-password-btn", function (e) {
         })
 })
 
+$(document).on("click", ".removefromcart", function (e) {
+    e.preventDefault();
+    let url = $(this).attr("href");
+    fetch(url)
+        .then(response => {
+            if (!response.ok) {
+                alert("xeta bas verdi")
+                return
+            }
+            return response.text()
+        })
+        .then(data => {
+            $(".cart-partial .onhover-div").html(data)
+            $(".show-total").text($(".total-price").text())
+        })
+})
+
 
 
 

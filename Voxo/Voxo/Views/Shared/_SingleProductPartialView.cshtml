@@ -3,13 +3,13 @@
     <div class="product-box">
         <div class="img-wrapper">
             <div class="front">
-                <a href="product-left-sidebar.html">
+                <a asp-action="detail" asp-controller="product" asp-route-id="@Model.Id">
                     <img src="~/uploads/ProductImages/@Model.ProductImages.FirstOrDefault(x=>x.PosterStatus==true).ImageName"
                          class="bg-img blur-up lazyload" alt="">
                 </a>
             </div>
             <div class="back">
-                <a href="product-left-sidebar.html">
+                <a asp-action="detail" asp-controller="product" asp-route-id="@Model.Id">
                     <img src="~/uploads/ProductImages/@Model.ProductImages.FirstOrDefault(x=>x.PosterStatus==false&&x.DetailPicture==false).ImageName"
                          class="bg-img blur-up lazyload" alt="">
                 </a>
@@ -26,16 +26,6 @@
                         <a asp-action="ProductDetailModal" class="modal-btn" asp-controller="product" asp-route-id="@Model.Id" data-bs-toggle="modal"
                            data-bs-target="#quick-view">
                             <i data-feather="eye"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="compare.html">
-                            <i data-feather="refresh-cw"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="wishlist.html" class="wishlist">
-                            <i data-feather="heart"></i>
                         </a>
                     </li>
                 </ul>

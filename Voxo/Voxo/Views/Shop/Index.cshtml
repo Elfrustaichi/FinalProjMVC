@@ -24,11 +24,11 @@
                 <nav>
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item">
-                            <a href="index.html">
+                            <a asp-action="index" asp-controller="home">
                                 <i class="fas fa-home"></i>
                             </a>
                         </li>
-                        <li class="breadcrumb-item active" aria-current="page">Shop Fashion</li>
+                        
                     </ol>
                 </nav>
             </div>
@@ -144,6 +144,8 @@
                                 <div class="accordion-body">
                                     <div class="range-slider category-list">
                                         <input type="text" class="js-range-slider" value="" />
+                                        <input class="js-input-from" hidden name="minPrice" />
+                                        <input class="js-input-to" hidden name="maxPrice" />
                                     </div>
                                 </div>
                             </div>
@@ -312,18 +314,18 @@
                 <nav class="page-section">
                     <ul class="pagination pagination-primary">
                         <li class="page-item @(Model.Products.HasPrev==true?"":"disabled")">
-                            <a class="page-link" asp-action="index" asp-route-page="@(Model.Products.PageIndex-1)">Previous</a>
+                            <a class="page-link" asp-route-categoryId="@ViewBag.CategoryId" asp-route-brandId="@ViewBag.BrandId" asp-route-tagId="@ViewBag.TagId" asp-route-discount="@ViewBag.Discount" asp-action="index" asp-route-page="@(Model.Products.PageIndex-1)">Previous</a>
                         </li>
 
                         @for (int i = 1; i <= Model.Products.TotalPage; i++)
                         {
                             <li class="page-item @(i==Model.Products.PageIndex?"active":"")">
-                                <a class="page-link" asp-action="index" asp-route-page="@i">@i</a>
+                                <a asp-route-categoryId="@ViewBag.CategoryId" asp-route-brandId="@ViewBag.BrandId" asp-route-tagId="@ViewBag.TagId" asp-route-discount="@ViewBag.Discount" class="page-link" asp-action="index" asp-route-page="@i">@i</a>
                             </li>
                         }
 
                         <li class="page-item @(Model.Products.HasNext==true?"":"disabled")">
-                            <a class="page-link" asp-action="index" asp-route-page="@(Model.Products.PageIndex+1)">Next</a>
+                            <a asp-route-categoryId="@ViewBag.CategoryId" asp-route-brandId="@ViewBag.BrandId" asp-route-tagId="@ViewBag.TagId" asp-route-discount="@ViewBag.Discount" class="page-link" asp-action="index" asp-route-page="@(Model.Products.PageIndex+1)">Next</a>
                         </li>
                     </ul>
                 </nav>
@@ -358,10 +360,6 @@
     </div>
 </section>
 <!-- Subscribe Section End -->
-@section PriceFilterScript
-{
-    <script src="~/assets/js/price-filter.js" defer></script>
-}
 @section PluginScript
 {
     <!--Plugin JavaScript file-->
@@ -371,5 +369,83 @@
 {
     <!-- Filter Hide and show Js -->
     <script src="~/assets/js/filter.js" defer></script>
+}
+@section Filter
+{
+    <script defer>
+        // Trigger
+        $(document).ready(function () {
+            $(function () {
+                var $range = $(".js-range-slider"),
+                    $inputFrom = $(".js-input-from"),
+                    $inputTo = $(".js-input-to"),
+                    instance,
+                    min = 0,
+                    max = @ViewBag.MaxPrice,
+                    from = 0,
+                    to = 0;
+
+                $range.ionRangeSlider({
+                    type: "double",
+                    min: min,
+                    max: max,
+                    from: 0,
+                    to: @ViewBag.MaxPrice,
+                    prefix: "$ ",
+                    onStart: updateInputs,
+                    onChange: updateInputs,
+                    step: 1,
+                    prettify_enabled: true,
+                    prettify_separator: ".",
+                    values_separator: " - ",
+                    force_edges: true,
+                });
+
+                instance = $range.data("ionRangeSlider");
+                console.log(instance);
+                function updateInputs(data) {
+                    from = data.from;
+                    to = data.to;
+
+                    $inputFrom.prop("value", from);
+                    $inputTo.prop("value", to);
+                }
+
+                $inputFrom.on("input", function () {
+                    var val = $(this).prop("value");
+
+                    // validate
+                    if (val < min) {
+                        val = min;
+                    } else if (val > to) {
+                        val = to;
+                    }
+
+                    instance.update({
+                        from: val,
+                    });
+                });
+
+                $inputTo.on("input", function () {
+                    var val = $(this).prop("value");
+
+                    // validate
+                    if (val < from) {
+                        val = from;
+                    } else if (val > max) {
+                        val = max;
+                    }
+
+                    instance.update({
+                        to: val,
+                    });
+                });
+            });
+        });
+
+       
+        
+    </script>
+
 }
 
