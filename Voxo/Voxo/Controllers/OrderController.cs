@@ -1,4 +1,5 @@
 ﻿using MailKit.Search;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -41,6 +42,7 @@ namespace Voxo.Controllers
             viewModel.TotalPrice = viewModel.CheckoutItems.Any() ? viewModel.CheckoutItems.Sum(x => x.Price * x.Count) : 0;
             return View(viewModel);
         }
+        
         [HttpPost]
         [AutoValidateAntiforgeryToken]
         public async Task<IActionResult> CheckoutCreate(OrderCreateViewModel viewModel)

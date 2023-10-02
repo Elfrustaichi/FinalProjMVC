@@ -8,6 +8,8 @@ namespace Voxo.ViewModels
 
         public List<Product> RelatedProducts { get; set; }
 
+        public List<ProductReview> Reviews { get; set; }
+
         public ProductReview ProductReview { get; set; }
     }
 }

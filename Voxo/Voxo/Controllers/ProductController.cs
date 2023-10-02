@@ -23,7 +23,7 @@ namespace Voxo.Controllers
             _signInManager = signInManager;
         }
         //Product review start
-        [Authorize]
+        [Authorize(Roles = "Member")]
         [HttpPost]
         [AutoValidateAntiforgeryToken]
         public async Task<IActionResult> PostComment(ProductReviewViewModel viewModel)
@@ -86,8 +86,10 @@ namespace Voxo.Controllers
             ProductDetailViewModel viewModel = new ProductDetailViewModel
             {
                 Product = product,
-                RelatedProducts=_context.Products.Where(x=>x.CategoryId==product.CategoryId).Include(x=>x.ProductImages).Include(x=>x.ProductTags).ThenInclude(x=>x.Tag).ToList(),
-                ProductReview=new ProductReview { ProductId=product.Id}
+                RelatedProducts = _context.Products.Where(x => x.CategoryId == product.CategoryId).Include(x => x.ProductImages).Include(x => x.ProductTags).ThenInclude(x => x.Tag).ToList(),
+                ProductReview = new ProductReview { ProductId = product.Id },
+                Reviews = _context.ProductReviews.Include(x => x.Product).ThenInclude(x => x.ProductImages).Include(x=>x.AppUser).Where(x => x.ProductId == id).ToList()
+                
 
             };
             return View(viewModel);
@@ -112,6 +114,7 @@ namespace Voxo.Controllers
         //Product quick-view modal end
 
         //Product cart start
+        [Authorize(Roles = "Member")]
         public IActionResult AddToCart(int id)
         {
             if (User.Identity.IsAuthenticated )

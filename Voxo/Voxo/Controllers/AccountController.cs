@@ -23,7 +23,7 @@ namespace Voxo.Controllers
             _emailSender = emailSender;
             _context = context;
         }
-        [Authorize]
+        [Authorize(Roles = "Member")]
         public async Task<IActionResult> Dashboard()
         {
             AppUser user= _context.AppUsers
@@ -38,7 +38,7 @@ namespace Voxo.Controllers
 
             return View(user);
         }
-        [Authorize]
+        [Authorize(Roles = "Member")]
         public IActionResult OrderDetail(int orderId,string username)
         {
             AppUser user=_context.AppUsers.FirstOrDefault(x=>x.UserName==username);
@@ -138,7 +138,7 @@ namespace Voxo.Controllers
             return RedirectToAction("Index","home");
 
         }
-        [Authorize]
+        [Authorize(Roles = "Member")]
         public async Task<IActionResult> Logout()
         {
             await _signInManager.SignOutAsync();
@@ -218,7 +218,7 @@ namespace Voxo.Controllers
             TempData["Success"] = "Password resetted";
             return RedirectToAction("index", "home");
         }
-        [Authorize]
+        [Authorize(Roles ="Member")]
         public async Task<IActionResult> EditProfile()
         {
             var user= await _userManager.FindByNameAsync(User.Identity.Name);
@@ -237,7 +237,7 @@ namespace Voxo.Controllers
 
             return PartialView("_ProfileEditPartialView",viewModel);
         }
-        [Authorize]
+        [Authorize(Roles = "Member")]
         [HttpPost]
         [AutoValidateAntiforgeryToken]
         public async Task<IActionResult> EditProfile(ProfileEditViewModel viewModel)
@@ -283,7 +283,7 @@ namespace Voxo.Controllers
             
             return RedirectToAction("dashboard");
         }
-        [Authorize]
+        [Authorize(Roles = "Member")]
         public async Task<IActionResult> ChangePassword()
         {
             var user = _userManager.FindByNameAsync(User.Identity.Name);
@@ -297,7 +297,7 @@ namespace Voxo.Controllers
 
             return PartialView("_ChangePasswordPartialView",changeViewModel);
         }
-        [Authorize]
+        [Authorize(Roles = "Member")]
         [HttpPost]
         [AutoValidateAntiforgeryToken]
         public async Task<IActionResult> ChangePassword(ChangePasswordViewModel viewModel)
