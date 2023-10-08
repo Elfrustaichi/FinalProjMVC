@@ -21,9 +21,16 @@ namespace Voxo.Areas.Manage.Controllers
             _userManager = userManager;
         }
         //User Index
-        public IActionResult Index(int page=1)
+        public IActionResult Index(int page=1, string search = null)
         {
             var query=_context.AppUsers.AsQueryable();
+
+            if (search != null)
+            {
+                query = query.Where(x => x.UserName.Contains(search));
+            }
+
+            ViewBag.Search = search;
 
             return View(PaginatedList<AppUser>.Create(query,page,7));
         }

@@ -18,9 +18,16 @@ namespace Voxo.Areas.Manage.Controllers
             _context = context;
         }
         //ProductReview index start
-        public IActionResult Index(int page=1)
+        public IActionResult Index(int page=1, string search = null)
         {
             var query=_context.ProductReviews.Include(x=>x.Product).Include(x=>x.AppUser).AsQueryable();
+
+            if (search != null)
+            {
+                query = query.Where(x => x.AppUser.UserName.Contains(search));
+            }
+
+            ViewBag.Search = search;
 
             return View(PaginatedList<ProductReview>.Create(query,page,7));
         }

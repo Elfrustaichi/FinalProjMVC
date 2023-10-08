@@ -21,10 +21,16 @@ namespace Voxo.Areas.Manage.Controllers
             _env = env;
         }
         //Category index start
-        public IActionResult Index(int page=1)
+        public IActionResult Index(int page=1,string search=null)
         {
             var query=_context.Categories.AsQueryable();
-            
+
+            if (search != null)
+            {
+                query=query.Where(x=>x.Name.Contains(search));
+            }
+
+            ViewBag.Search = search;
             return View(PaginatedList<Category>.Create(query,page,7));
         }
         //Category index end

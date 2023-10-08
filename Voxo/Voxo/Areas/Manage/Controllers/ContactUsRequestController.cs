@@ -17,9 +17,16 @@ namespace Voxo.Areas.Manage.Controllers
             _context = context;
         }
         //Contact us request index start
-        public IActionResult Index(int page=1)
+        public IActionResult Index(int page=1,string search=null)
         {
             var query=_context.ContactUsRequests.AsQueryable();
+
+            if (search != null)
+            {
+                query = query.Where(x => x.Name.Contains(search));
+            }
+
+            ViewBag.Search = search;
 
             return View(PaginatedList<ContactUsRequest>.Create(query,page,7));
         }

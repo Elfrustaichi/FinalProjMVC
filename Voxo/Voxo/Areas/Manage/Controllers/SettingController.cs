@@ -17,9 +17,16 @@ namespace Voxo.Areas.Manage.Controllers
             _context = context;
         }
         //Settings index start
-        public IActionResult Index(int page=1)
+        public IActionResult Index(int page=1, string search = null)
         {
             var query=_context.Settings.AsQueryable();
+
+            if (search != null)
+            {
+                query = query.Where(x => x.Key.Contains(search));
+            }
+
+            ViewBag.Search = search;
 
             return View(PaginatedList<Setting>.Create(query,page,7));
         }

@@ -126,7 +126,7 @@
                                             @foreach(var size in Model.Product.ProductSizes)
                                             {
                                                  <li>
-                                                <a href="javascript:void(0)">s</a>
+                                                <a href="javascript:void(0)">@size.Size.Name</a>
                                             </li>
                                             }
 
@@ -156,11 +156,7 @@
                                 </div>
 
                                 <div class="product-buttons">
-                                    <a href="wishlist.html" class="btn btn-solid">
-                                        <i class="fa fa-bookmark fz-16 me-2"></i>
-                                        <span>Wishlist</span>
-                                    </a>
-                                    <a href="javascript:void(0)" id="cartEffect"
+                                    <a asp-controller="product" asp-action="addtocart" id="cartEffect"
                                        class="btn btn-solid hover-solid btn-animation">
                                         <i class="fa fa-shopping-cart"></i>
                                         <span>Add To Cart</span>
@@ -182,23 +178,6 @@
                                     </h6>
                                     <div class="progress">
                                         <div class="progress-bar" role="progressbar" style="width: 78%"></div>
-                                    </div>
-                                    <div class="font-light timer-5">
-                                        <h5>Order in the next to get</h5>
-                                        <ul class="timer1">
-                                            <li class="counter">
-                                                <h5 id="days">&#9251;</h5> Days :
-                                            </li>
-                                            <li class="counter">
-                                                <h5 id="hours">&#9251;</h5> Hour :
-                                            </li>
-                                            <li class="counter">
-                                                <h5 id="minutes">&#9251;</h5> Min :
-                                            </li>
-                                            <li class="counter">
-                                                <h5 id="seconds">&#9251;</h5> Sec
-                                            </li>
-                                        </ul>
                                     </div>
                                 </div>
 
@@ -275,18 +254,9 @@
                         <div class="tab-pane fade show active" id="desc">
                             <div class="shipping-chart">
                                 <div class="part">
-                                    <h4 class="inner-title mb-2">Give you a complete account of the system</h4>
+                                    <h4 class="inner-title mb-2">Description</h4>
                                     <p class="font-light">
-                                        Nor again is there anyone who loves or pursues or desires
-                                        to
-                                        obtain pain of itself, because it is pain, but because occasionally
-                                        circumstances occur in which toil and pain can procure him some great
-                                        pleasure.
-                                        To take a trivial example, which of us ever undertakes laborious physical
-                                        exercise, except to obtain some advantage from it? But who has any right to
-                                        find
-                                        fault with a man who chooses to enjoy a pleasure that has no annoying
-                                        consequences, or one who avoids a pain that produces no resultant pleasure.
+                                        @Model.Product.Description
                                     </p>
                                 </div>
 
@@ -561,7 +531,9 @@
                             <div class="row g-4">
                                 <div class="col-lg-4">
                                     <div class="customer-rating">
-                                        <h2>Customer reviews</h2>
+                                        
+                                            <h2>Customer reviews</h2>
+                                        
                                         <ul class="rating my-2 d-inline-block">
                                             @for (int i = 1; i <= 5; i++)
                                             {
@@ -648,7 +620,10 @@
 
                                 <div class="col-12 mt-4">
                                     <div class="customer-review-box">
-                                        <h4>Customer Reviews</h4>
+                                        @if (Model.Reviews.Any())
+                                        {
+                                            <h4>Customer Reviews</h4>
+                                        }
                                         @if (Model.Reviews.Any())
                                         {
                                             @foreach (var item in Model.Reviews)

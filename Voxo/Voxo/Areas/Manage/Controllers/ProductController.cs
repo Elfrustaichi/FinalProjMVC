@@ -22,7 +22,7 @@ namespace Voxo.Areas.Manage.Controllers
             _env = env;
         }
         //Product index start
-        public IActionResult Index(int page=1)
+        public IActionResult Index(int page=1, string search = null)
         {
             var query=_context.Products
                 .Include(x=>x.Brand)
@@ -31,6 +31,13 @@ namespace Voxo.Areas.Manage.Controllers
                 .Include (x=>x.ProductReviews)
                 .Include(x=>x.ProductSizes)
                 .Include(x=>x.ProductTags).AsQueryable();
+
+            if (search != null)
+            {
+                query = query.Where(x => x.Name.Contains(search));
+            }
+
+            ViewBag.Search = search;
 
             return View(PaginatedList<Product>.Create(query,page,7));
         }

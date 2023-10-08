@@ -20,9 +20,16 @@ namespace Voxo.Areas.Manage.Controllers
             _context = context;
         }
         //Order index start
-        public IActionResult Index(int page=1)
+        public IActionResult Index(int page=1, string search = null)
         {
             var query=_context.Orders.Include(x=>x.AppUser).Include(x=>x.OrderItems).AsQueryable();
+
+            if (search != null)
+            {
+                query = query.Where(x => x.Fullname.Contains(search));
+            }
+
+            ViewBag.Search = search;
 
             return View(PaginatedList<Order>.Create(query,page,7));
         }

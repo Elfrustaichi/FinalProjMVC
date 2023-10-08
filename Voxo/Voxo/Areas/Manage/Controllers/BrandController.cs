@@ -17,10 +17,16 @@ namespace Voxo.Areas.Manage.Controllers
             _context = context;
         }
         //Brand index start
-        public IActionResult Index(int page=1)
+        public IActionResult Index(int page=1,string search=null)
         {
             var query=_context.Brands.AsQueryable();
 
+            if (search != null)
+            {
+                query=query.Where(x=>x.Name.Contains(search));
+            }
+
+            ViewBag.Search = search;
             return View(PaginatedList<Brand>.Create(query,page,7));
         }
         //Brand index end

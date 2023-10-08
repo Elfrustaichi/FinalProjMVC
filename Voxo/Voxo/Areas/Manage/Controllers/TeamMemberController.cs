@@ -20,9 +20,16 @@ namespace Voxo.Areas.Manage.Controllers
             _env = env;
         }
         //TeamMember index start
-        public IActionResult Index(int page=1)
+        public IActionResult Index(int page=1, string search = null)
         {
             var query = _context.TeamMembers.AsQueryable();
+
+            if (search != null)
+            {
+                query = query.Where(x => x.Fullname.Contains(search));
+            }
+
+            ViewBag.Search = search;
 
             return View(PaginatedList<TeamMember>.Create(query,page,7));
         }

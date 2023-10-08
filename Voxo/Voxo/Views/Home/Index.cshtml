@@ -61,9 +61,9 @@
                                                 </div>
                                             </li>
                                         </ul>
-                                        <div class="add-btn addtocart-btn">
-                                            <a asp-controller="product" asp-action="addtocart" asp-route-id="@sld.Product.Id" class="btn btn-white">Add to cart</a>
-                                        </div>
+                                        
+                                            <a style="margin-bottom:30px;" asp-controller="product" asp-action="addtocart" asp-route-id="@sld.Product.Id" data-bs-toggle="modal" data-bs-target="#addtocart" class="btn btn-white addtocart-btn">Add to cart</a>
+                                        
                                         <div class="share-icons">
                                             <span>share with</span>
                                             <ul class="share-icons p-0">

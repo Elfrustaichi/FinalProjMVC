@@ -62,8 +62,8 @@
                 </ul>
             </div>
             <div class="product-btns">
-                <a href="cart.html" class="btn btn-solid-default btn-sm">Add to cart</a>
-                <a href="product-left-sidebar.html" class="btn btn-solid-default btn-sm">
+                <a asp-controller="product" asp-action="addtocart" asp-route-id="@Model.Id" class="btn btn-solid-default btn-sm addtocart-btn" data-bs-toggle="modal" data-bs-target="#addtocart">Add to cart</a>
+                <a asp-action="detail" asp-controller="product" asp-route-id="@Model.Id" class="btn btn-solid-default btn-sm ">
                     View
                     details
                 </a>

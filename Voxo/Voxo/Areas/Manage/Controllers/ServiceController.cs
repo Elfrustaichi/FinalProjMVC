@@ -20,9 +20,16 @@ namespace Voxo.Areas.Manage.Controllers
             _env = env;
         }
         //Service index start
-        public IActionResult Index(int page=1)
+        public IActionResult Index(int page=1, string search = null)
         {
             var query = _context.Services.AsQueryable();
+
+            if (search != null)
+            {
+                query = query.Where(x => x.Header.Contains(search));
+            }
+
+            ViewBag.Search = search;
 
             return View(PaginatedList<Service>.Create(query,page,7));
         }

@@ -86,7 +86,7 @@ namespace Voxo.Controllers
             ProductDetailViewModel viewModel = new ProductDetailViewModel
             {
                 Product = product,
-                RelatedProducts = _context.Products.Where(x => x.CategoryId == product.CategoryId).Include(x => x.ProductImages).Include(x => x.ProductTags).ThenInclude(x => x.Tag).ToList(),
+                RelatedProducts = _context.Products.Where(x => x.CategoryId == product.CategoryId).Include(x => x.ProductImages).Include(x => x.ProductTags).ThenInclude(x => x.Tag).Include(x=>x.Brand).ToList(),
                 ProductReview = new ProductReview { ProductId = product.Id },
                 Reviews = _context.ProductReviews.Include(x => x.Product).ThenInclude(x => x.ProductImages).Include(x=>x.AppUser).Where(x => x.ProductId == id).ToList()
                 
@@ -114,7 +114,7 @@ namespace Voxo.Controllers
         //Product quick-view modal end
 
         //Product cart start
-        [Authorize(Roles = "Member")]
+        
         public IActionResult AddToCart(int id)
         {
             if (User.Identity.IsAuthenticated )
@@ -229,13 +229,13 @@ namespace Voxo.Controllers
             else
             {
                 var cookieItems = Request.Cookies["Cart"];
-
-                var cartItems = JsonConvert.DeserializeObject<List<CartItemCookieViewModel>>(cookieItems);
-                if (!cartItems.Any())
+                if (cookieItems==null)
                 {
                     TempData["Error"] = "There is no item in cart";
                     return RedirectToAction("index", "home");
                 }
+                var cartItems = JsonConvert.DeserializeObject<List<CartItemCookieViewModel>>(cookieItems);
+                
                 return View(GenerateCart(cartItems));
             }
             

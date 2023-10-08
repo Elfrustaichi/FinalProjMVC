@@ -41,6 +41,10 @@
       "PackagePath": "staticwebassets\\assets\\css\\vendors\\rating.css"
     },
     {
+      "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\css\\vendors\\ratingstar.css",
+      "PackagePath": "staticwebassets\\assets\\css\\vendors\\ratingstar.css"
+    },
+    {
       "Id": "C:\\Users\\umid_\\Desktop\\VoxoMVC\\Voxo\\Voxo\\wwwroot\\assets\\css\\vendors\\slick\\slick-theme.css",
       "PackagePath": "staticwebassets\\assets\\css\\vendors\\slick\\slick-theme.css"
     },

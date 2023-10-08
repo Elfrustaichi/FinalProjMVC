@@ -27,6 +27,11 @@ namespace Voxo.Controllers
             OrderViewModel viewModel = new OrderViewModel();
             viewModel.CheckoutItems = GenerateCheckoutItems();
 
+            if (!viewModel.CheckoutItems.Any())
+            {
+                TempData["Error"] = "There is no item in cart";
+                return RedirectToAction("Index","home");
+            }
             if (User.Identity.IsAuthenticated)
             {
                 AppUser user = await _userManager.FindByNameAsync(User.Identity.Name);

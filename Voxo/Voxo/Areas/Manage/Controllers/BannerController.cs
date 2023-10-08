@@ -20,9 +20,17 @@ namespace Voxo.Areas.Manage.Controllers
             _env = env;
         }
         //Banner index start
-        public IActionResult Index(int page=1)
+        public IActionResult Index(int page=1,string search=null)
         {
             var query=_context.Banners.AsQueryable();
+
+            if (search != null)
+            {
+                query = query.Where(x => x.Header.Contains(search));
+                
+            }
+            ViewBag.Search = search;
+
 
             return View(PaginatedList<Banner>.Create(query,page,7));
         }
@@ -51,6 +59,22 @@ namespace Voxo.Areas.Manage.Controllers
             {
                 ModelState.AddModelError("BackgroundImage", "Banner must have background image");
                 return View();
+            }
+            if (banner.Type == "ShopBanner")
+            {
+                if (_context.Banners.Any(x=>x.Type=="ShopBanner"))
+                {
+                    ModelState.AddModelError("", "You can only have 1 shop banner");
+                    return View();
+                }
+            }
+            if (banner.Type == "DealOfTheDayBanner")
+            {
+                if (_context.Banners.Any(x => x.Type == "DealOfTheDayBanner"))
+                {
+                    ModelState.AddModelError("", "You can only have 1 DealOfTheDayBanner");
+                    return View();
+                }
             }
 
             banner.BackgroundImageName = FileManager.Save(_env.WebRootPath,"uploads/BannerImages",banner.BackgroundImage);
