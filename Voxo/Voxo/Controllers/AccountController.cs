@@ -233,6 +233,7 @@ namespace Voxo.Controllers
                 Email = user.Email,
                 Username = user.UserName,
                 PhoneNumber = user.PhoneNumber,
+                Fullname=user.Fullname,
             };
 
             return PartialView("_ProfileEditPartialView",viewModel);
@@ -271,6 +272,10 @@ namespace Voxo.Controllers
             {
                 user.PhoneNumber = viewModel.PhoneNumber;
             }
+            if (viewModel.Fullname != null)
+            {
+                user.Fullname = viewModel.Fullname;
+            }
 
             var result= await _userManager.UpdateAsync(user);
 
@@ -280,7 +285,7 @@ namespace Voxo.Controllers
                 return RedirectToAction("dashboard");
             }
             TempData["Success"] = "user edited";
-            
+            await _signInManager.SignInAsync(user, isPersistent: false);
             return RedirectToAction("dashboard");
         }
         [Authorize(Roles = "Member")]

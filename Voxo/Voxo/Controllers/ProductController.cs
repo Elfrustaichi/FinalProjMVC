@@ -214,28 +214,28 @@ namespace Voxo.Controllers
         }
         public IActionResult Cart()
         {
-            if(User.Identity.IsAuthenticated)
+            if (User.Identity.IsAuthenticated)
             {
                 var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-                var cartItems = _context.UserCartItems.Include(x=>x.Product).ThenInclude(x=>x.ProductImages).Where(x => x.AppUserId == userId).ToList();
+                var cartItems = _context.UserCartItems.Include(x => x.Product).ThenInclude(x => x.ProductImages).Where(x => x.AppUserId == userId).ToList();
                 if (!cartItems.Any())
                 {
                     TempData["Error"] = "There is no item in cart";
                     return RedirectToAction("index", "home");
                 }
                 return View(GenerateCart(cartItems));
-                
+
             }
             else
             {
                 var cookieItems = Request.Cookies["Cart"];
-                if (cookieItems==null)
+                
+                var cartItems = JsonConvert.DeserializeObject<List<CartItemCookieViewModel>>(cookieItems);
+                if (!cartItems.Any())
                 {
                     TempData["Error"] = "There is no item in cart";
                     return RedirectToAction("index", "home");
                 }
-                var cartItems = JsonConvert.DeserializeObject<List<CartItemCookieViewModel>>(cookieItems);
-                
                 return View(GenerateCart(cartItems));
             }
             
@@ -249,7 +249,7 @@ namespace Voxo.Controllers
                 string userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
                 var cartItem = _context.UserCartItems.FirstOrDefault(x => x.ProductId == id && x.AppUserId == userId);
 
-                if (cartItem != null)
+                if (cartItem.Count > 1)
                 {
                     cartItem.Count--;
                 }
@@ -260,7 +260,13 @@ namespace Voxo.Controllers
                 _context.SaveChanges();
                 var cartItemsDropdown = _context.UserCartItems.Include(x => x.Product).ThenInclude(x => x.ProductImages).Where(x => x.AppUserId == userId).ToList();
 
-                return PartialView("_CartPartialView", GenerateCart(cartItemsDropdown));
+                if (!_context.UserCartItems.Where(x=>x.AppUserId==userId).Any())
+                {
+                    TempData["Success"] = "Item deleted succesfully";
+                    return RedirectToAction("index", "home");
+                }
+                TempData["Success"] = "Item deleted succesfully";
+                return RedirectToAction("cart");
             }
             var basketStr = Request.Cookies["Cart"];
             if (basketStr == null)
@@ -291,8 +297,13 @@ namespace Voxo.Controllers
                 bv.Items.Add(bi);
                 bv.TotalPrice += (bi.Product.DiscountPercent > 0 ? (bi.Product.SalePrice * (100 - bi.Product.DiscountPercent) / 100) : bi.Product.SalePrice) * bi.Count;
             }
-
-            return PartialView("_BasketPartialView", bv);
+            if (!cookieItems.Any())
+            {
+                TempData["Success"] = "Item deleted succesfully";
+                return RedirectToAction("index", "home");
+            }
+            TempData["Success"] = "Item deleted succesfully";
+            return RedirectToAction("cart");
         }
 
         public IActionResult WishList()

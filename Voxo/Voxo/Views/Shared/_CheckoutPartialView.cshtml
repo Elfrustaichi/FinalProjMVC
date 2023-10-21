@@ -3,12 +3,12 @@
     <div class="row g-4">
         <div class="col-md-6">
             <label for="fname" class="form-label">Fullname</label>
-            <input asp-for="Fullname" class="form-control" id="fname" placeholder="Enter Fullname" readonly="@(User.Identity.IsAuthenticated)">
+            <input asp-for="Fullname" class="form-control" id="fname" placeholder="Enter Fullname">
             <span asp-validation-for="Fullname" class="text-danger"></span>
         </div>
         <div class="col-md-6">
             <label for="email1" class="form-label">Email</label>
-            <input asp-for="Email" class="form-control" id="email1" placeholder="Enter Email" readonly="@(User.Identity.IsAuthenticated)>
+            <input asp-for="Email" class="form-control" id="email1" placeholder="Enter Email" readonly="@(User.Identity.IsAuthenticated)" />
             <span asp-validation-for="Email" class="text-danger"></span>
         </div>
         <div class="col-md-6">

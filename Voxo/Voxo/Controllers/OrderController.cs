@@ -63,17 +63,34 @@ namespace Voxo.Controllers
             if (!User.Identity.IsAuthenticated)
             {
                 if (string.IsNullOrWhiteSpace(viewModel.Fullname))
-                    ModelState.AddModelError("FullName", "FullName is required");
+                {
+                    TempData["Error"] = "Fullname required";
+                    return RedirectToAction("checkout");
+                }
+                    
 
                 if (string.IsNullOrWhiteSpace(viewModel.Email))
-                    ModelState.AddModelError("Email", "Email is required");
+                {
+                    TempData["Error"] = "Email Required";
+                    return RedirectToAction("checkout");
+                }
+                   
                 if (string.IsNullOrWhiteSpace(viewModel.FullAddress))
-                    ModelState.AddModelError("Address", "Adress is required");
+                {
+                    TempData["Error"] = "Adress reuqired";
+                    return RedirectToAction("checkout");
+                }
+                    
             }
 
             if (!ModelState.IsValid)
             {
-
+                if (string.IsNullOrWhiteSpace(viewModel.Fullname))
+                {
+                    TempData["Error"] = "Fullname required";
+                    return RedirectToAction("checkout");
+                }
+                    
                 TempData["Error"] = "Checkout cannot created";
                 return RedirectToAction("index", "home");
             }
@@ -156,7 +173,7 @@ namespace Voxo.Controllers
         private List<CheckoutViewModel> GenerateCheckoutItemsCK()
         {
             List<CheckoutViewModel> checkoutItems = new List<CheckoutViewModel>();
-            var basketStr = Request.Cookies["basket"];
+            var basketStr = Request.Cookies["cart"];
 
             if (basketStr != null)
             {
